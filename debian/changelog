@@ -1,5 +1,14 @@
+wingpanel-indicator-weather (0.2.0) bionic; urgency=medium
+
+  * Project forked from https://github.com/PlugaruT/wingpanel-monitor.
+  * Project renamed to wingpanel-indicator-weather
+  * System monitor widgets removed
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Sun, 10 Apr 2021 14:30:00 +0200
+
+
 wingpanel-monitor (0.1.0) bionic; urgency=medium
 
   * Initial release.
 
- -- Tudor Plugaru <plugaru.tudor@gmail.com>  Wed, 05 Feb 2020
+ -- Tudor Plugaru <plugaru.tudor@gmail.com>  Wed, 05 Feb 2020 12:25:00 +0200

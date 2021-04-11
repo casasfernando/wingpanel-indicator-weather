@@ -1,6 +1,6 @@
 Format: http://dep.debian.net/deps/dep5
-Upstream-Name: wingpanel-monitor
-Source: https://github.com/PlugaruT/wingpanel-monitor
+Upstream-Name: wingpanel-indicator-weather
+Source: https://github.com/casasfernando/wingpanel-indicator-weather
 
 Files: *
 Copyright: 2020 Tudor Plugaru <plugaru.tudor@gmail.com>.
