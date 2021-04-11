@@ -97,7 +97,7 @@ namespace WingpanelWeather {
         public async void get_location () {
             try {
                 var simple = yield new GClue.Simple (
-                    "com.github.plugarut.wingpanel-monitor", GClue.AccuracyLevel.CITY, null
+                    "com.github.casasfernando.wingpanel-indicator-weather", GClue.AccuracyLevel.CITY, null
                     );
 
                 simple.notify["location"].connect (() => {
