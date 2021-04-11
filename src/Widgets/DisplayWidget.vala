@@ -38,8 +38,6 @@ namespace WingpanelWeather {
                 settings.get_string ("weather-details"), settings.get_string ("weather-location")
                 );
 
-            settings.bind ("show-weather", weather_info, "display", SettingsBindFlags.GET);
-
             add (weather_info);
 
         }

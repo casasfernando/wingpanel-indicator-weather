@@ -33,16 +33,9 @@ namespace WingpanelWeather {
         construct {
             orientation = Gtk.Orientation.VERTICAL;
 
-            weather_switch = new Wingpanel.Widgets.Switch (
-                "Weather for %s".printf (settings.get_string ("weather-location")),
-                settings.get_boolean ("show-weather")
-                );
             indicator = new Wingpanel.Widgets.Switch ("ON/OFF", settings.get_boolean ("display-indicator"));
 
             settings.bind ("display-indicator", indicator.get_switch (), "active", SettingsBindFlags.DEFAULT);
-
-            settings.bind ("show-weather", weather_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
-
 
             weather_refresh_spin = new SpinRow ("Weather refresh rate (min)", 1, 60);
             weather_refresh_spin.set_spin_value (settings.get_int ("weather-refresh-rate"));
@@ -52,7 +45,6 @@ namespace WingpanelWeather {
 
             add (indicator);
             add (new Wingpanel.Widgets.Separator ());
-            add (weather_switch);
             add (weather_refresh_spin);
             add (new Wingpanel.Widgets.Separator ());
         }
