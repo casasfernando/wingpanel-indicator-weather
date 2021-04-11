@@ -21,7 +21,6 @@
 
 namespace WingpanelWeather {
     public class TogglesWidget : Gtk.Grid {
-        private Wingpanel.Widgets.Switch weather_switch;
         private Wingpanel.Widgets.Switch indicator;
         private SpinRow weather_refresh_spin;
         public unowned Settings settings { get; construct set; }
