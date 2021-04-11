@@ -5,11 +5,6 @@
       <summary>Display indicator in Wingpanel</summary>
       <description></description>
     </key>
-    <key type="s" name="weather-temperature">
-      <default>"0"</default>
-      <summary>Current temperature</summary>
-      <description></description>
-    </key>
     <key type="s" name="weather-icon">
       <default>"N/A"</default>
       <summary>Current icon name for weather</summary>
@@ -20,9 +15,54 @@
       <summary>Current location for weather</summary>
       <description></description>
     </key>
+    <key type="s" name="weather-temperature">
+      <default>"N/A"</default>
+      <summary>Current temperature</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-pressure">
+      <default>"N/A"</default>
+      <summary>Current pressure</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-humidity">
+      <default>"N/A"</default>
+      <summary>Current humidity</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-feel">
+      <default>"N/A"</default>
+      <summary>Current temperature feels like</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-dew">
+      <default>"N/A"</default>
+      <summary>Current dew point</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-wind">
+      <default>"N/A"</default>
+      <summary>Current wind</summary>
+      <description></description>
+    </key>
     <key type="s" name="weather-details">
       <default>"N/A"</default>
       <summary>Weather details for location</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-sunrise">
+      <default>"N/A"</default>
+      <summary>Sunrise time</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-sunset">
+      <default>"N/A"</default>
+      <summary>Sunset time</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-moonphase">
+      <default>"N/A"</default>
+      <summary>Sunset time</summary>
       <description></description>
     </key>
     <key type="i" name="weather-refresh-rate">

@@ -89,7 +89,17 @@ namespace WingpanelWeather {
 
         private void update_popover_widget_data () {
             if (popover_widget == null) return;
-
+            popover_widget.update_current_location (settings.get_string ("weather-location"));
+            popover_widget.update_current_temperature (settings.get_string ("weather-temperature"));
+            popover_widget.update_current_pressure (settings.get_string ("weather-pressure"));
+            popover_widget.update_current_humidity (settings.get_string ("weather-humidity"));
+            popover_widget.update_current_feelslike (settings.get_string ("weather-feel"));
+            popover_widget.update_current_dewpoint (settings.get_string ("weather-dew"));
+            popover_widget.update_current_wind (settings.get_string ("weather-wind"));
+            popover_widget.update_current_details (settings.get_string ("weather-details"));
+            popover_widget.update_sunrise (settings.get_string ("weather-sunrise"));
+            popover_widget.update_sunset (settings.get_string ("weather-sunset"));
+            popover_widget.update_moonphase (settings.get_string ("weather-moonphase"));
         }
 
         private void enable_weather_update () {

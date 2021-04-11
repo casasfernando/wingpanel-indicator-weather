@@ -1,3 +1,11 @@
+wingpanel-indicator-weather (0.3.0) bionic; urgency=medium
+
+  * Removed weather widget enable/disable setting since is not needed anymore
+  * Added many weather details to the popover widget
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Sun, 10 Apr 2021 19:15:00 +0200
+
+
 wingpanel-indicator-weather (0.2.0) bionic; urgency=medium
 
   * Project forked from https://github.com/PlugaruT/wingpanel-monitor.

@@ -21,6 +21,17 @@
 
 namespace WingpanelWeather {
     public class PopoverWidget : Gtk.Grid {
+        private PopoverWidgetRow cur_loc;
+        private PopoverWidgetRow cur_temp;
+        private PopoverWidgetRow cur_press;
+        private PopoverWidgetRow cur_hum;
+        private PopoverWidgetRow cur_feel;
+        private PopoverWidgetRow cur_dew;
+        private PopoverWidgetRow cur_wind;
+        private PopoverWidgetRow cur_details;
+        private PopoverWidgetRow srise;
+        private PopoverWidgetRow sset;
+        private PopoverWidgetRow mphase;
 
         public unowned Settings settings { get; construct set; }
 
@@ -32,6 +43,18 @@ namespace WingpanelWeather {
             orientation = Gtk.Orientation.VERTICAL;
             column_spacing = 4;
 
+            cur_loc = new PopoverWidgetRow ("Location", "N/A", 4);
+            cur_temp = new PopoverWidgetRow ("Temperature", "N/A", 4);
+            cur_press = new PopoverWidgetRow ("Pressure", "N/A", 4);
+            cur_hum = new PopoverWidgetRow ("Humidity", "N/A", 4);
+            cur_feel = new PopoverWidgetRow ("Feels Like", "N/A", 4);
+            cur_dew = new PopoverWidgetRow ("Dew Point", "N/A", 4);
+            cur_wind = new PopoverWidgetRow ("Wind", "N/A", 4);
+            cur_details = new PopoverWidgetRow ("Details", "N/A", 4);
+            srise = new PopoverWidgetRow ("Sunrise", "N/A", 4);
+            sset = new PopoverWidgetRow ("Sunset", "N/A", 4);
+            mphase = new PopoverWidgetRow ("Moon Phase", "N/A", 4);
+
             var settings_button = new Gtk.ModelButton ();
             settings_button.text = _ ("Open Settings…");
             settings_button.clicked.connect (open_settings);
@@ -42,6 +65,14 @@ namespace WingpanelWeather {
                 settings.set_value ("display-indicator", false);
             });
 
+            /*
+            var refresh_button = new Gtk.ModelButton ();
+            refresh_button.text = _ ("Refresh weather information");
+            refresh_button.clicked.connect ( () => {
+                refresh_weather_information();
+            });
+            */
+
             var title_label = new Gtk.Label ("Wingpanel Weather");
             title_label.halign = Gtk.Align.CENTER;
             title_label.hexpand = true;
@@ -51,7 +82,22 @@ namespace WingpanelWeather {
 
             add (title_label);
             add (new Wingpanel.Widgets.Separator ());
+            add (cur_loc);
+            add (cur_temp);
+            add (cur_press);
+            add (cur_hum);
+            add (cur_feel);
+            add (cur_dew);
+            add (cur_wind);
+            add (cur_details);
+            add (new Wingpanel.Widgets.Separator ());
+            add (srise);
+            add (sset);
+            add (new Wingpanel.Widgets.Separator ());
+            add (mphase);
+            add (new Wingpanel.Widgets.Separator ());
             add (hide_button);
+            //add (refresh_button);
             add (settings_button);
         }
 
@@ -64,6 +110,50 @@ namespace WingpanelWeather {
             } catch (Error e) {
                 warning ("%s\n", e.message);
             }
+        }
+
+        public void update_current_location (string val) {
+            cur_loc.label_value = val;
+        }
+
+        public void update_current_temperature (string val) {
+            cur_temp.label_value = val;
+        }
+
+        public void update_current_humidity (string val) {
+            cur_hum.label_value = val;
+        }
+
+        public void update_current_pressure (string val) {
+            cur_press.label_value = val;
+        }
+
+        public void update_current_feelslike (string val) {
+            cur_feel.label_value = val;
+        }
+
+        public void update_current_dewpoint (string val) {
+            cur_dew.label_value = val;
+        }
+
+        public void update_current_wind (string val) {
+            cur_wind.label_value = val;
+        }
+
+        public void update_current_details (string val) {
+            cur_details.label_value = val;
+        }
+
+        public void update_sunrise (string val) {
+            srise.label_value = val;
+        }
+
+        public void update_sunset (string val) {
+            sset.label_value = val;
+        }
+
+        public void update_moonphase (string val) {
+            mphase.label_value = val;
         }
 
     }
