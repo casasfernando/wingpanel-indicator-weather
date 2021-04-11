@@ -19,7 +19,7 @@
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
 
-namespace WingpanelMonitor {
+namespace WingpanelWeather {
     public class MainWindow : Gtk.Window {
         private GLib.Settings settings;
         private GWeather.Location location;
@@ -29,15 +29,15 @@ namespace WingpanelMonitor {
             Object (
                 application: application,
                 border_width: 1,
-                icon_name: "com.github.plugarut.wingpanel-monitor",
-                resizable: false, title: "Wingpanel Monitor",
+                icon_name: "com.github.casasfernando.wingpanel-indicator-weather",
+                resizable: false, title: "Wingpanel Weather",
                 window_position: Gtk.WindowPosition.CENTER,
                 default_width: 300
                 );
         }
 
         construct {
-            settings = new GLib.Settings ("com.github.plugarut.wingpanel-monitor");
+            settings = new GLib.Settings ("com.github.casasfernando.wingpanel-indicator-weather");
             var toggles = new TogglesWidget (settings);
 
             get_location.begin ();

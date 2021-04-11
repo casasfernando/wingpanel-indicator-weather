@@ -19,7 +19,7 @@
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
 
-namespace WingpanelMonitor {
+namespace WingpanelWeather {
     public class IndicatorWidget : Gtk.Box {
         private Gtk.Label label;
         private Gtk.Image icon;

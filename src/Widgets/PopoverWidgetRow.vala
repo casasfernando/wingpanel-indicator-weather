@@ -19,7 +19,7 @@
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
 
-namespace WingpanelMonitor {
+namespace WingpanelWeather {
     public class PopoverWidgetRow : Gtk.Grid {
         private Gtk.Label text_label;
         private Gtk.Label value_label;

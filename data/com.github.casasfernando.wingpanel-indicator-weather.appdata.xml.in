@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>com.github.casasfernando.wingpanel-indicator-weather</id>
+  <metadata_license>CC0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>Wingpanel Weather</name>
+  <summary>Weather indicator for Wingpanel</summary>
+  <description>
+    <p>Display weather information in Wingpanel.</p>
+  </description>
+  <custom>
+     <value key="x-appcenter-suggested-price">0</value>
+  </custom>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/casasfernando/wingpanel-indicator-weather/raw/master/data/screenshot_1.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://github.com/casasfernando/wingpanel-indicator-weather/raw/master/data/screenshot_2.png</image>
+    </screenshot>
+  </screenshots>
+  <developer_name>Fernando Casas Schössow</developer_name>
+  <url type="homepage">https://github.com/casasfernando/wingpanel-indicator-weather</url>
+  <url type="bugtracker">https://github.com/casasfernando/wingpanel-indicator-weather/issues</url>
+  <url type="help">https://github.com/casasfernando/wingpanel-indicator-weather/issues</url>
+
+  <releases>
+    <release version="0.2.0" date="2021-04-10">
+​      <description>
+​        <ul>
+           <li>Initial release</li>
+        </ul>
+​      </description>
+​    </release>
+​  </releases>
+</component>

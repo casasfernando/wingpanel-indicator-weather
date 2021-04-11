@@ -1,4 +1,4 @@
-namespace WingpanelMonitor {
+namespace WingpanelWeather {
     public class SpinRow : Gtk.Grid {
         public new signal void changed ();
 

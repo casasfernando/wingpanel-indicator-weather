@@ -1,14 +1,9 @@
 <p align="center">
-  <img src="data/icons/128/com.github.plugarut.wingpanel-monitor.svg" alt="Icon" />
+  <img src="data/icons/128/com.github.casasfernando.wingpanel-indicator-weather.svg" alt="Icon" />
 </p>
-<h1 align="center">Wingpanel Monitor</h1>
-
-<!-- <p align="center">
-  <a href="https://appcenter.elementary.io/com.github.plugarut.wingpanel-monitor"><img src="https://appcenter.elementary.io/badge.svg" alt="Get it on AppCenter" /></a>
-</p> -->
+<h1 align="center">Wingpanel Weather</h1>
 
 ![Screenshot](data/screenshot_1.png)
-
 
 ## Building and Installation
 
@@ -16,7 +11,6 @@ You'll need the following dependencies:
 
 ```
 libglib2.0-dev
-libgtop2-dev
 libgranite-dev
 libgtk-3-dev
 libwingpanel-2.0-dev
@@ -26,9 +20,10 @@ meson
 valac
 ```
 
-You can install them running
+You can install them running:
+
 ```
-sudo apt install libgtop2-dev libgranite-dev libgtk-3-dev libwingpanel-2.0-dev meson valac libgeoclue-2-dev libgweather-3-dev
+sudo apt install libgranite-dev libgtk-3-dev libwingpanel-2.0-dev meson valac libgeoclue-2-dev libgweather-3-dev
 ```
 
 Run `meson` to configure the build environment and then `ninja` to build
@@ -43,8 +38,9 @@ To install, use `ninja install`
 
 ```
 sudo ninja install
-com.github.plugarut.wingpanel-monitor
+com.github.casasfernando.wingpanel-indicator-weather
 ```
 
-## Special Thanks
- - [Nararyans R.I.](https://github.com/Fatih20) for the icon
+## Special thanks and credits
+ - [Plugaru T.](https://github.com/PlugaruT/) for developing the [original project](https://github.com/PlugaruT/wingpanel-monitor).
+ - Application [icon](http://iynque.deviantart.com/art/iOS-7-Icons-Updated-378969049) by [iynque (Andrew Williams)](https://www.deviantart.com/iynque)

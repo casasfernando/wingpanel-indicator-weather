@@ -1,38 +1,8 @@
 <schemalist>
-  <schema path="/com/github/plugarut/wingpanel-monitor/" id="com.github.plugarut.wingpanel-monitor" gettext-domain="wingpanel-monitor">
+  <schema path="/com/github/casasfernando/wingpanel-indicator-weather/" id="com.github.casasfernando.wingpanel-indicator-weather" gettext-domain="wingpanel-indicator-weather">
     <key type="b" name="display-indicator">
       <default>true</default>
       <summary>Display indicator in Wingpanel</summary>
-      <description></description>
-    </key>
-    <key type="b" name="icon-only">
-      <default>false</default>
-      <summary>Show only indicator icon in wingpanel</summary>
-      <description></description>
-    </key>
-    <key type="b" name="show-cpu">
-      <default>true</default>
-      <summary>Show CPU load in Wingpanel</summary>
-      <description></description>
-    </key>
-    <key type="b" name="show-ram">
-      <default>true</default>
-      <summary>Show RAM usage in Wingpanel</summary>
-      <description></description>
-    </key>
-    <key type="b" name="show-network">
-      <default>false</default>
-      <summary>Show Network usage in Wingpanel</summary>
-      <description></description>
-    </key>
-    <key type="b" name="show-graph">
-      <default>false</default>
-      <summary>Show graph for CPU/RAM in Wingpanel</summary>
-      <description></description>
-    </key>
-    <key type="b" name="show-workspace">
-      <default>false</default>
-      <summary>Show workspace number in Wingpanel</summary>
       <description></description>
     </key>
     <key type="b" name="show-weather">

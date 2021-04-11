@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Wingpanel Weather
+GenericName=Wingpanel Weather
+Comment=Display weather information in Wingpanel
+Categories=Utility;
+Exec=com.github.casasfernando.wingpanel-indicator-weather
+Icon=com.github.casasfernando.wingpanel-indicator-weather
+Terminal=false
+Type=Application
+X-GNOME-Gettext-Domain=com.github.casasfernando.wingpanel-indicator-weather
+Keywords=Weather;Utility;
+X-GNOME-UsesNotifications=false

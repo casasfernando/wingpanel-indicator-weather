@@ -19,46 +19,35 @@
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
 
-namespace WingpanelMonitor {
+namespace WingpanelWeather {
     public class Indicator : Wingpanel.Indicator {
-        const string APPNAME = "wingpanel-monitor";
+        const string APPNAME = "wingpanel-indicator-weather";
 
         private DisplayWidget display_widget;
         private PopoverWidget popover_widget;
-
-        private CPU cpu_data;
-        private Memory memory_data;
-        private Network network_data;
-        private System system_data;
-        private Gdk.X11.Screen screen;
 
         private static GLib.Settings settings;
 
         public Indicator (Wingpanel.IndicatorManager.ServerType server_type) {
             Object (
                 code_name: APPNAME,
-                display_name: "Wingpanel-Monitor",
-                description: "System monitor indicator for Wingpanel"
+                display_name: "Wingpanel-Weather",
+                description: "Weather indicator for Wingpanel"
                 );
         }
 
         construct {
             var provider = new Gtk.CssProvider ();
-            provider.load_from_resource ("/com/github/plugarut/wingpanel-monitor/icons/Application.css");
+            provider.load_from_resource ("/com/github/casasfernando/wingpanel-indicator-weather/icons/Application.css");
             Gtk.StyleContext.add_provider_for_screen (
                 Gdk.Screen.get_default (),
                 provider,
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
             );
 
-            Gtk.IconTheme.get_default ().add_resource_path ("/com/github/plugarut/wingpanel-monitor/icons");
-            cpu_data = new CPU ();
-            memory_data = new Memory ();
-            network_data = new Network ();
-            system_data = new System ();
-            screen = Gdk.Screen.get_default () as Gdk.X11.Screen;
+            Gtk.IconTheme.get_default ().add_resource_path ("/com/github/casasfernando/wingpanel-indicator-weather/icons");
 
-            settings = new GLib.Settings ("com.github.plugarut.wingpanel-monitor");
+            settings = new GLib.Settings ("com.github.casasfernando.wingpanel-indicator-weather");
 
             visible = settings.get_boolean ("display-indicator");
 
@@ -91,11 +80,6 @@ namespace WingpanelMonitor {
         private void update_display_widget_data () {
             if (display_widget != null) {
                 Timeout.add_seconds (1, () => {
-                    display_widget.update_workspace ((int)screen.get_current_desktop () + 1);
-                    display_widget.update_cpu (cpu_data.percentage_used);
-                    display_widget.update_memory (memory_data.percentage_used);
-                    var net = network_data.get_bytes ();
-                    display_widget.update_network (net[0], net[1]);
                     display_widget.update_weather ();
                     update_popover_widget_data ();
                     return true;
@@ -105,12 +89,7 @@ namespace WingpanelMonitor {
 
         private void update_popover_widget_data () {
             if (popover_widget == null) return;
-            popover_widget.update_cpu_frequency (cpu_data.frequency);
-            popover_widget.update_uptime (system_data.uptime);
-            popover_widget.update_ram (memory_data.used, memory_data.total);
-            popover_widget.update_swap (memory_data.used_swap, memory_data.total_swap);
-            var net = network_data.get_bytes ();
-            popover_widget.update_network (net[0], net[1]);
+
         }
 
         private void enable_weather_update () {
@@ -130,14 +109,14 @@ namespace WingpanelMonitor {
     }
 }
 public Wingpanel.Indicator ? get_indicator (Module module, Wingpanel.IndicatorManager.ServerType server_type) {
-    debug ("Loading system monitor indicator");
+    debug ("Loading weather indicator");
 
     if (server_type != Wingpanel.IndicatorManager.ServerType.SESSION) {
-        debug ("Wingpanel is not in session, not loading wingpanel-monitor indicator");
+        debug ("Wingpanel is not in session, not loading wingpanel-indicator-weather indicator");
         return null;
     }
 
-    var indicator = new WingpanelMonitor.Indicator (server_type);
+    var indicator = new WingpanelWeather.Indicator (server_type);
 
     return indicator;
 }

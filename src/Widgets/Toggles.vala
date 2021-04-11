@@ -19,14 +19,9 @@
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
 
-namespace WingpanelMonitor {
+namespace WingpanelWeather {
     public class TogglesWidget : Gtk.Grid {
-        private Wingpanel.Widgets.Switch cpu_switch;
-        private Wingpanel.Widgets.Switch ram_switch;
-        private Wingpanel.Widgets.Switch network_switch;
-        private Wingpanel.Widgets.Switch workspace_switch;
         private Wingpanel.Widgets.Switch weather_switch;
-        private Wingpanel.Widgets.Switch icon_only_switch;
         private Wingpanel.Widgets.Switch indicator;
         private SpinRow weather_refresh_spin;
         public unowned Settings settings { get; construct set; }
@@ -38,13 +33,6 @@ namespace WingpanelMonitor {
         construct {
             orientation = Gtk.Orientation.VERTICAL;
 
-            icon_only_switch = new Wingpanel.Widgets.Switch ("Show icon", settings.get_boolean ("icon-only"));
-            cpu_switch = new Wingpanel.Widgets.Switch ("CPU usage", settings.get_boolean ("show-cpu"));
-            ram_switch = new Wingpanel.Widgets.Switch ("RAM usage", settings.get_boolean ("show-ram"));
-            network_switch = new Wingpanel.Widgets.Switch ("Network usage", settings.get_boolean ("show-network"));
-            workspace_switch = new Wingpanel.Widgets.Switch (
-                "Workspace number", settings.get_boolean ("show-workspace")
-                );
             weather_switch = new Wingpanel.Widgets.Switch (
                 "Weather for %s".printf (settings.get_string ("weather-location")),
                 settings.get_boolean ("show-weather")
@@ -53,12 +41,7 @@ namespace WingpanelMonitor {
 
             settings.bind ("display-indicator", indicator.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
-            settings.bind ("show-cpu", cpu_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
-            settings.bind ("show-ram", ram_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
-            settings.bind ("show-network", network_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
-            settings.bind ("show-workspace", workspace_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
             settings.bind ("show-weather", weather_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
-            settings.bind ("icon-only", icon_only_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
 
             weather_refresh_spin = new SpinRow ("Weather refresh rate (min)", 1, 60);
@@ -69,11 +52,6 @@ namespace WingpanelMonitor {
 
             add (indicator);
             add (new Wingpanel.Widgets.Separator ());
-            add (icon_only_switch);
-            add (cpu_switch);
-            add (ram_switch);
-            add (network_switch);
-            add (workspace_switch);
             add (weather_switch);
             add (weather_refresh_spin);
             add (new Wingpanel.Widgets.Separator ());

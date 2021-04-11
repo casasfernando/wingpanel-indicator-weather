@@ -19,15 +19,8 @@
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
  */
 
-namespace WingpanelMonitor {
+namespace WingpanelWeather {
     public class PopoverWidget : Gtk.Grid {
-        private PopoverWidgetRow cpu_freq;
-        private PopoverWidgetRow uptime;
-        private PopoverWidgetRow network_down;
-        private PopoverWidgetRow network_up;
-        private PopoverWidgetRow ram;
-        private PopoverWidgetRow swap;
-
 
         public unowned Settings settings { get; construct set; }
 
@@ -39,13 +32,6 @@ namespace WingpanelMonitor {
             orientation = Gtk.Orientation.VERTICAL;
             column_spacing = 4;
 
-            cpu_freq = new PopoverWidgetRow ("Frequency", "0", 4);
-            uptime = new PopoverWidgetRow ("Uptime", "0", 4);
-            network_down = new PopoverWidgetRow ("Network Down", "0", 4);
-            network_up = new PopoverWidgetRow ("Network Up", "0", 4);
-            ram = new PopoverWidgetRow ("RAM", "0", 4);
-            swap = new PopoverWidgetRow ("Swap", "0", 4);
-
             var settings_button = new Gtk.ModelButton ();
             settings_button.text = _ ("Open Settings…");
             settings_button.clicked.connect (open_settings);
@@ -56,7 +42,7 @@ namespace WingpanelMonitor {
                 settings.set_value ("display-indicator", false);
             });
 
-            var title_label = new Gtk.Label ("Wingpanel Monitor");
+            var title_label = new Gtk.Label ("Wingpanel Weather");
             title_label.halign = Gtk.Align.CENTER;
             title_label.hexpand = true;
             title_label.margin_start = 9;
@@ -65,13 +51,6 @@ namespace WingpanelMonitor {
 
             add (title_label);
             add (new Wingpanel.Widgets.Separator ());
-            add (cpu_freq);
-            add (ram);
-            add (swap);
-            add (uptime);
-            add (network_up);
-            add (network_down);
-            add (new Wingpanel.Widgets.Separator ());
             add (hide_button);
             add (settings_button);
         }
@@ -79,7 +58,7 @@ namespace WingpanelMonitor {
         private void open_settings () {
             try {
                 var appinfo = AppInfo.create_from_commandline (
-                    "com.github.plugarut.wingpanel-monitor", null, AppInfoCreateFlags.NONE
+                    "com.github.casasfernando.wingpanel-indicator-weather", null, AppInfoCreateFlags.NONE
                     );
                 appinfo.launch (null, null);
             } catch (Error e) {
@@ -87,30 +66,5 @@ namespace WingpanelMonitor {
             }
         }
 
-        public void update_cpu_frequency (double val) {
-            var formated_value = Utils.format_frequency (val);
-            cpu_freq.label_value = formated_value;
-        }
-
-        public void update_uptime (string val) {
-            uptime.label_value = val;
-        }
-
-        public void update_ram (double used_ram, double total_ram) {
-            var used = Utils.format_size (used_ram);
-            var total = Utils.format_size (total_ram);
-            ram.label_value = "%s / %s".printf (used, total);
-        }
-
-        public void update_swap (double used_swap, double total_swap) {
-            var used = Utils.format_size (used_swap);
-            var total = Utils.format_size (total_swap);
-            swap.label_value = "%s / %s".printf (used, total);
-        }
-
-        public void update_network (int upload, int download) {
-            network_down.label_value = Utils.format_net_speed (download, true, false);
-            network_up.label_value = Utils.format_net_speed (upload, true, false);
-        }
     }
 }
