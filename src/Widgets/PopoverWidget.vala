@@ -55,14 +55,14 @@ namespace WingpanelWeather {
             srise = new PopoverWidgetRow ("Sunrise", "N/A", 4);
             sset = new PopoverWidgetRow ("Sunset", "N/A", 4);
             mphase = new PopoverWidgetRow ("Moon Phase", "N/A", 4);
-            last_refresh = new PopoverWidgetRow ("Last update", "N/A", 4);
+            last_refresh = new PopoverWidgetRow ("Last Update", "N/A", 4);
 
             var settings_button = new Gtk.ModelButton ();
             settings_button.text = _ ("Preferences");
             settings_button.clicked.connect (open_settings);
 
             var refresh_button = new Gtk.ModelButton ();
-            refresh_button.text = _ ("Update weather");
+            refresh_button.text = _ ("Update Weather");
             /*
             var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             refresh_button.always_show_image = true;
