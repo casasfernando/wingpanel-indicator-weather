@@ -1,3 +1,15 @@
+wingpanel-indicator-weather (0.4.0) bionic; urgency=medium
+
+  * UI minor updates
+  * Added last weather data refresh information to the popover widget
+  * Renamed ON/OFF setting to 'Show indicator'
+  * Added a manual weather information refresh button to the popover widget
+  * Fixed weather data auto refresh and on indicator load since it was not working
+  * Moved the weather information management logic to a separate class
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Mon, 12 Apr 2021 18:15:00 +0200
+
+
 wingpanel-indicator-weather (0.3.0) bionic; urgency=medium
 
   * Removed weather widget enable/disable setting since is not needed anymore
