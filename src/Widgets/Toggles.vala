@@ -32,7 +32,7 @@ namespace WingpanelWeather {
         construct {
             orientation = Gtk.Orientation.VERTICAL;
 
-            indicator = new Wingpanel.Widgets.Switch ("ON/OFF", settings.get_boolean ("display-indicator"));
+            indicator = new Wingpanel.Widgets.Switch ("Show indicator", settings.get_boolean ("display-indicator"));
 
             settings.bind ("display-indicator", indicator.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
