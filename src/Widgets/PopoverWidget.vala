@@ -65,13 +65,12 @@ namespace WingpanelWeather {
                 settings.set_value ("display-indicator", false);
             });
 
-            /*
             var refresh_button = new Gtk.ModelButton ();
             refresh_button.text = _ ("Refresh weather information");
             refresh_button.clicked.connect ( () => {
-                refresh_weather_information();
+                info ("Winpanel Weather: weather information update requested by user (manual)");
+                WingpanelWeather.Weather.weather_data_update();
             });
-            */
 
             var title_label = new Gtk.Label ("Wingpanel Weather");
             title_label.halign = Gtk.Align.CENTER;
@@ -97,7 +96,7 @@ namespace WingpanelWeather {
             add (mphase);
             add (new Wingpanel.Widgets.Separator ());
             add (hide_button);
-            //add (refresh_button);
+            add (refresh_button);
             add (settings_button);
         }
 
