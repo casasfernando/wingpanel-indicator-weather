@@ -28,7 +28,7 @@ namespace WingpanelWeather {
                 application: application,
                 border_width: 1,
                 icon_name: "com.github.casasfernando.wingpanel-indicator-weather",
-                resizable: false, title: "Wingpanel Weather",
+                resizable: false, title: "Wingpanel Weather - Preferences",
                 window_position: Gtk.WindowPosition.CENTER,
                 default_width: 300
                 );
