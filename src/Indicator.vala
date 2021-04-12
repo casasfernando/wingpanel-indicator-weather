@@ -31,7 +31,7 @@ namespace WingpanelWeather {
         public Indicator (Wingpanel.IndicatorManager.ServerType server_type) {
             Object (
                 code_name: APPNAME,
-                display_name: "Wingpanel-Weather",
+                display_name: "Wingpanel Weather",
                 description: "Weather indicator for Wingpanel"
                 );
         }
