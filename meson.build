@@ -63,6 +63,7 @@ shared_module(
     'src/Widgets/PopoverWidget.vala',
     'src/Widgets/IndicatorWidget.vala',
     'src/Widgets/PopoverWidgetRow.vala',
+    'src/Services/Weather.vala',
     icons_gresource,
     c_args: c_args,
     dependencies: [
@@ -71,6 +72,8 @@ shared_module(
         dependency('granite'),
         dependency('gtk+-3.0'),
         dependency('gdk-x11-3.0'),
+        dependency('gweather-3.0'),
+        dependency('libgeoclue-2.0'),
         wingpanel,
     ],
     install: true,
