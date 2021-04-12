@@ -112,8 +112,8 @@ namespace WingpanelWeather {
         }
 
         private bool update_weather () {
-            info ("Indicator: Request weather refresh");
-            settings.set_boolean ("weather-refresh", true);
+            info ("Winpanel Weather: weather information update requested by the indicator: refresh (automatic)");
+            WingpanelWeather.Weather.weather_data_update();
             return true;
         }
     }

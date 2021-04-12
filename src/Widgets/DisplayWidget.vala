@@ -31,6 +31,11 @@ namespace WingpanelWeather {
         }
 
         construct {
+
+            // Update weather information on load
+            info ("Winpanel Weather: weather information update requested by the indicator: on load (automatic)");
+            WingpanelWeather.Weather.weather_data_update();
+
             valign = Gtk.Align.CENTER;
 
             weather_info = new IndicatorWidget ("weather-clear-symbolic", 4);
