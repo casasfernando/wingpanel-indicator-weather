@@ -59,12 +59,6 @@ namespace WingpanelWeather {
             settings_button.text = _ ("Open Settings…");
             settings_button.clicked.connect (open_settings);
 
-            var hide_button = new Gtk.ModelButton ();
-            hide_button.text = _ ("Hide Indicator");
-            hide_button.clicked.connect ( () => {
-                settings.set_value ("display-indicator", false);
-            });
-
             var refresh_button = new Gtk.ModelButton ();
             refresh_button.text = _ ("Refresh weather information");
             refresh_button.clicked.connect ( () => {
@@ -95,7 +89,6 @@ namespace WingpanelWeather {
             add (new Wingpanel.Widgets.Separator ());
             add (mphase);
             add (new Wingpanel.Widgets.Separator ());
-            add (hide_button);
             add (refresh_button);
             add (settings_button);
         }
