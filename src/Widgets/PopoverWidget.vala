@@ -58,7 +58,7 @@ namespace WingpanelWeather {
             last_refresh = new PopoverWidgetRow ("Last update", "N/A", 4);
 
             var settings_button = new Gtk.ModelButton ();
-            settings_button.text = _ ("Open Settings…");
+            settings_button.text = _ ("Preferences");
             settings_button.clicked.connect (open_settings);
 
             var refresh_button = new Gtk.ModelButton ();
