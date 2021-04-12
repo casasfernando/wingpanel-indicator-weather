@@ -32,6 +32,7 @@ namespace WingpanelWeather {
         private PopoverWidgetRow srise;
         private PopoverWidgetRow sset;
         private PopoverWidgetRow mphase;
+        private PopoverWidgetRow last_refresh;
 
         public unowned Settings settings { get; construct set; }
 
@@ -54,6 +55,7 @@ namespace WingpanelWeather {
             srise = new PopoverWidgetRow ("Sunrise", "N/A", 4);
             sset = new PopoverWidgetRow ("Sunset", "N/A", 4);
             mphase = new PopoverWidgetRow ("Moon Phase", "N/A", 4);
+            last_refresh = new PopoverWidgetRow ("Last refresh", "N/A", 4);
 
             var settings_button = new Gtk.ModelButton ();
             settings_button.text = _ ("Open Settings…");
@@ -75,6 +77,9 @@ namespace WingpanelWeather {
 
             add (title_label);
             add (new Wingpanel.Widgets.Separator ());
+            add (refresh_button);
+            add (last_refresh);
+            add (new Wingpanel.Widgets.Separator ());
             add (cur_loc);
             add (cur_temp);
             add (cur_press);
@@ -89,7 +94,6 @@ namespace WingpanelWeather {
             add (new Wingpanel.Widgets.Separator ());
             add (mphase);
             add (new Wingpanel.Widgets.Separator ());
-            add (refresh_button);
             add (settings_button);
         }
 
@@ -146,6 +150,10 @@ namespace WingpanelWeather {
 
         public void update_moonphase (string val) {
             mphase.label_value = val;
+        }
+
+        public void update_last_refresh (string val) {
+            last_refresh.label_value = val;
         }
 
     }

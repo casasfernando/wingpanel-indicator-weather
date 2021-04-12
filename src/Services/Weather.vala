@@ -90,6 +90,9 @@ namespace WingpanelWeather {
                 else if (m < 360) { settings.set_string ("weather-moonphase", "Waning Crescent"); }
                 else { settings.set_string ("weather-moonphase", "N/A"); }
                 //settings.set_string ("weather-moonphase", "%s°".printf (m.to_string ()));
+                // Weather information last update
+                var lupd = new DateTime.now_local ();
+                settings.set_string ("weather-last-update", "%s".printf (lupd.format ("%Y-%m-%d %R")));
 
             });
 

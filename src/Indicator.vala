@@ -100,6 +100,7 @@ namespace WingpanelWeather {
             popover_widget.update_sunrise (settings.get_string ("weather-sunrise"));
             popover_widget.update_sunset (settings.get_string ("weather-sunset"));
             popover_widget.update_moonphase (settings.get_string ("weather-moonphase"));
+            popover_widget.update_last_refresh (settings.get_string ("weather-last-update"));
         }
 
         private void enable_weather_update () {

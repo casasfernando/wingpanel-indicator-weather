@@ -75,5 +75,10 @@
       <summary>Value that is tracked by the settings app to know when to refresh weather info</summary>
       <description></description>
     </key>
+    <key type="s" name="weather-last-update">
+      <default>"N/A"</default>
+      <summary>Weather information last update</summary>
+      <description></description>
+    </key>
   </schema>
 </schemalist>
