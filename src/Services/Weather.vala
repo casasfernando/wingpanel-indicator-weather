@@ -59,11 +59,13 @@ namespace WingpanelWeather {
                 int t = (int) temp;
                 settings.set_string ("weather-temperature", "%s°".printf (t.to_string ()));
                 // Pressure
+                /*
                 double press;
                 weather_info.get_value_pressure (GWeather.PressureUnit.MB, out press);
                 int p = (int) press;
                 settings.set_string ("weather-pressure", "%s".printf (p.to_string ()));
-                //settings.set_string ("weather-pressure", dgettext ("libgweather", weather_info.get_pressure ()));
+                */
+                settings.set_string ("weather-pressure", dgettext ("libgweather", weather_info.get_pressure ()));
                 // Humidity
                 settings.set_string ("weather-humidity", dgettext ("libgweather", weather_info.get_humidity ()));
                 // Feels Like
