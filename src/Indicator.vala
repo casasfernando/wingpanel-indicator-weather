@@ -106,6 +106,18 @@ namespace WingpanelWeather {
         private void enable_weather_update () {
             var refresh_timeout = Timeout.add_seconds (settings.get_int ("weather-refresh-rate") * 60, update_weather);
 
+            settings.changed["location-manual"].connect ( () =>{
+                info ("wingpanel-indicator-weather: weather information update requested by the indicator: manual location change (automatic)");
+                WingpanelWeather.Weather.weather_data_update();
+            });
+
+            settings.changed["location-auto"].connect ( () =>{
+                if (settings.get_boolean ("location-auto")) {
+                    info ("wingpanel-indicator-weather: weather information update requested by the indicator: location discovery enabled (automatic)");
+                    WingpanelWeather.Weather.weather_data_update();
+                }
+            });
+
             settings.changed["weather-refresh-rate"].connect ( () =>{
                 GLib.Source.remove (refresh_timeout);
                 refresh_timeout = Timeout.add_seconds (settings.get_int ("weather-refresh-rate") * 60, update_weather);
@@ -113,17 +125,17 @@ namespace WingpanelWeather {
         }
 
         private bool update_weather () {
-            info ("Winpanel Weather: weather information update requested by the indicator: refresh (automatic)");
+            info ("wingpanel-indicator-weather: weather information update requested by the indicator: refresh (automatic)");
             WingpanelWeather.Weather.weather_data_update();
             return true;
         }
     }
 }
 public Wingpanel.Indicator ? get_indicator (Module module, Wingpanel.IndicatorManager.ServerType server_type) {
-    debug ("Loading weather indicator");
+    debug ("wingpanel-indicator-weather: loading weather indicator");
 
     if (server_type != Wingpanel.IndicatorManager.ServerType.SESSION) {
-        debug ("Wingpanel is not in session, not loading wingpanel-indicator-weather indicator");
+        debug ("wingpanel-indicator-weather: Wingpanel is not in session, not loading wingpanel-indicator-weather indicator");
         return null;
     }
 

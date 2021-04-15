@@ -33,7 +33,7 @@ namespace WingpanelWeather {
         construct {
 
             // Update weather information on load
-            info ("Winpanel Weather: weather information update requested by the indicator: on load (automatic)");
+            info ("wingpanel-indicator-weather: weather information update requested by the indicator on startup (automatic)");
             WingpanelWeather.Weather.weather_data_update();
 
             valign = Gtk.Align.CENTER;

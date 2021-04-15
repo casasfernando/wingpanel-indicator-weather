@@ -39,6 +39,7 @@ executable(
     icons_gresource,
     'src/Application.vala',
     'src/MainWindow.vala',
+    'src/Widgets/PopoverWidgetRow.vala',
     'src/Widgets/SpinRow.vala',
     'src/Widgets/Toggles.vala',
     c_args: c_args,

@@ -5,6 +5,16 @@
       <summary>Display indicator in Wingpanel</summary>
       <description></description>
     </key>
+    <key type="b" name="location-auto">
+      <default>true</default>
+      <summary>Location discovery</summary>
+      <description></description>
+    </key>
+    <key type="(uv)" name="location-manual">
+      <default>(0,&lt;('', '', false, [(0.0, 0.0)], [(0.0, 0.0)])&gt;)</default>
+      <summary>User manually selected location</summary>
+      <description></description>
+    </key>
     <key type="s" name="weather-icon">
       <default>"N/A"</default>
       <summary>Current icon name for weather</summary>
