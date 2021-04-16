@@ -1,5 +1,6 @@
 /*-
  * Copyright (c) 2020 Tudor Plugaru (https://github.com/PlugaruT/wingpanel-monitor)
+ * Copyright (c) 2021 Fernando Casas Schössow (https://github.com/casasfernando/wingpanel-indicator-weather)
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -17,6 +18,7 @@
  * Boston, MA 02110-1301 USA.
  *
  * Authored by: Tudor Plugaru <plugaru.tudor@gmail.com>
+ *              Fernando Casas Schössow <casasfernando@outlook.com>
  */
 
 namespace WingpanelWeather {
