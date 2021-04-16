@@ -3,10 +3,14 @@
 </p>
 <h1 align="center">Wingpanel Weather</h1>
 
+### Indicator
 ![Screenshot](data/screenshot_1.png)
+### Tooltip:
 ![Screenshot](data/screenshot_2.png)
+### Popover:
 ![Screenshot](data/screenshot_3.png)
 ![Screenshot](data/screenshot_4.png)
+### Settings:
 ![Screenshot](data/screenshot_5.png)
 
 ## Building and Installation
