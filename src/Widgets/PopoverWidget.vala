@@ -68,7 +68,7 @@ namespace WingpanelWeather {
             settings_button.clicked.connect (open_settings);
 
             var refresh_button = new Gtk.ModelButton ();
-            refresh_button.text = _ ("Update Weather...");
+            refresh_button.text = _ ("Update Weather");
             /*
             var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             refresh_button.always_show_image = true;
