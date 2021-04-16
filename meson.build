@@ -64,6 +64,7 @@ shared_module(
     'src/Widgets/PopoverWidget.vala',
     'src/Widgets/IndicatorWidget.vala',
     'src/Widgets/PopoverWidgetRow.vala',
+    'src/Widgets/PopoverWidgetRowIconic.vala',
     'src/Services/Weather.vala',
     icons_gresource,
     c_args: c_args,

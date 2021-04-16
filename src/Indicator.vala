@@ -96,10 +96,10 @@ namespace WingpanelWeather {
             popover_widget.update_current_feelslike (settings.get_string ("weather-feel"));
             popover_widget.update_current_dewpoint (settings.get_string ("weather-dew"));
             popover_widget.update_current_wind (settings.get_string ("weather-wind"));
-            popover_widget.update_current_details (settings.get_string ("weather-details"));
+            popover_widget.update_current_details (settings.get_string ("weather-icon"), settings.get_string ("weather-details"));
             popover_widget.update_sunrise (settings.get_string ("weather-sunrise"));
             popover_widget.update_sunset (settings.get_string ("weather-sunset"));
-            popover_widget.update_moonphase (settings.get_string ("weather-moonphase"));
+            popover_widget.update_moonphase (settings.get_string ("weather-moon-phase-icon"), settings.get_string ("weather-moon-phase"));
             popover_widget.update_last_refresh (settings.get_string ("weather-last-update"));
         }
 

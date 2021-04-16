@@ -28,10 +28,10 @@ namespace WingpanelWeather {
         private PopoverWidgetRow cur_feel;
         private PopoverWidgetRow cur_dew;
         private PopoverWidgetRow cur_wind;
-        private PopoverWidgetRow cur_details;
-        private PopoverWidgetRow srise;
-        private PopoverWidgetRow sset;
-        private PopoverWidgetRow mphase;
+        private PopoverWidgetRowIconic cur_details;
+        private PopoverWidgetRowIconic srise;
+        private PopoverWidgetRowIconic sset;
+        private PopoverWidgetRowIconic mphase;
         private PopoverWidgetRow last_refresh;
 
         public unowned Settings settings { get; construct set; }
@@ -51,22 +51,29 @@ namespace WingpanelWeather {
             cur_feel = new PopoverWidgetRow ("Feels Like", "N/A", 4);
             cur_dew = new PopoverWidgetRow ("Dew Point", "N/A", 4);
             cur_wind = new PopoverWidgetRow ("Wind", "N/A", 4);
-            cur_details = new PopoverWidgetRow ("Details", "N/A", 4);
-            srise = new PopoverWidgetRow ("Sunrise", "N/A", 4);
-            sset = new PopoverWidgetRow ("Sunset", "N/A", 4);
-            mphase = new PopoverWidgetRow ("Moon Phase", "N/A", 4);
+            cur_details = new PopoverWidgetRowIconic ("Sky Condition", settings.get_string ("weather-icon"), "N/A", 4);
+            srise = new PopoverWidgetRowIconic ("Sunrise", "daytime-sunrise-symbolic", "N/A", 4);
+            sset = new PopoverWidgetRowIconic ("Sunset", "daytime-sunset-symbolic", "N/A", 4);
+            mphase = new PopoverWidgetRowIconic ("Moon Phase", settings.get_string ("weather-moon-phase-icon"), "N/A", 4);
             last_refresh = new PopoverWidgetRow ("Last Update", "N/A", 4);
 
             var settings_button = new Gtk.ModelButton ();
-            settings_button.text = _ ("Preferences");
+            settings_button.text = _ ("Open Settings...");
+            /*
+            var settings_button = new Gtk.Button.from_icon_name ("preferences-system-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
+            settings_button.always_show_image = true;
+            settings_button.label = "Open Settings...";
+            settings_button.relief = Gtk.ReliefStyle.NONE;
+            */
             settings_button.clicked.connect (open_settings);
 
             var refresh_button = new Gtk.ModelButton ();
-            refresh_button.text = _ ("Update Weather");
+            refresh_button.text = _ ("Update Weather...");
             /*
             var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             refresh_button.always_show_image = true;
-            refresh_button.label = "Update weather";
+            refresh_button.label = "Update weather...";
+            refresh_button.relief = Gtk.ReliefStyle.NONE;
             */
             refresh_button.clicked.connect ( () => {
                 info ("Winpanel Weather: weather information update requested by user (manual)");
@@ -141,7 +148,8 @@ namespace WingpanelWeather {
             cur_wind.label_value = val;
         }
 
-        public void update_current_details (string val) {
+        public void update_current_details (string icn, string val) {
+            cur_details.icon_value = icn;
             cur_details.label_value = val;
         }
 
@@ -153,7 +161,8 @@ namespace WingpanelWeather {
             sset.label_value = val;
         }
 
-        public void update_moonphase (string val) {
+        public void update_moonphase (string icn, string val) {
+            mphase.icon_value = icn;
             mphase.label_value = val;
         }
 

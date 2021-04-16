@@ -17,7 +17,7 @@
     </key>
     <key type="s" name="weather-icon">
       <default>"N/A"</default>
-      <summary>Current icon name for weather</summary>
+      <summary>Current weather icon</summary>
       <description></description>
     </key>
     <key type="s" name="weather-location">
@@ -70,9 +70,14 @@
       <summary>Sunset time</summary>
       <description></description>
     </key>
-    <key type="s" name="weather-moonphase">
+    <key type="s" name="weather-moon-phase">
       <default>"N/A"</default>
-      <summary>Sunset time</summary>
+      <summary>Current moon phase</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-moon-phase-icon">
+      <default>"N/A"</default>
+      <summary>Current moon phase icon</summary>
       <description></description>
     </key>
     <key type="i" name="weather-refresh-rate">
