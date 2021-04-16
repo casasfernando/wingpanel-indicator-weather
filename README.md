@@ -4,6 +4,10 @@
 <h1 align="center">Wingpanel Weather</h1>
 
 ![Screenshot](data/screenshot_1.png)
+![Screenshot](data/screenshot_2.png)
+![Screenshot](data/screenshot_3.png)
+![Screenshot](data/screenshot_4.png)
+![Screenshot](data/screenshot_5.png)
 
 ## Building and Installation
 
