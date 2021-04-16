@@ -5,6 +5,11 @@
       <summary>Display indicator in Wingpanel</summary>
       <description></description>
     </key>
+    <key type="b" name="display-temperature">
+      <default>true</default>
+      <summary>Display temperature value in Wingpanel indicator</summary>
+      <description></description>
+    </key>
     <key type="b" name="location-auto">
       <default>true</default>
       <summary>Location discovery</summary>

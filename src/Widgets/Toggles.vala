@@ -22,6 +22,7 @@
 namespace WingpanelWeather {
     public class TogglesWidget : Gtk.Grid {
         private Wingpanel.Widgets.Switch indicator;
+        private Wingpanel.Widgets.Switch temp_indicator;
         private Wingpanel.Widgets.Switch location_auto;
         private GWeather.LocationEntry location_search;
         private SpinRow weather_refresh_spin;
@@ -40,6 +41,10 @@ namespace WingpanelWeather {
             // Enable indicator switch
             indicator = new Wingpanel.Widgets.Switch ("Show indicator", settings.get_boolean ("display-indicator"));
             settings.bind ("display-indicator", indicator.get_switch (), "active", SettingsBindFlags.DEFAULT);
+
+            // Enable temperature displain in Wingpanel indicator switch
+            temp_indicator = new Wingpanel.Widgets.Switch ("Show temperature", settings.get_boolean ("display-temperature"));
+            settings.bind ("display-temperature", temp_indicator.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
             // Location discovery switch
             location_auto = new Wingpanel.Widgets.Switch ("Location discovery", settings.get_boolean ("location-auto"));
@@ -69,6 +74,7 @@ namespace WingpanelWeather {
             });
 
             add (indicator);
+            add (temp_indicator);
             add (new Wingpanel.Widgets.Separator ());
             add (location_auto);
             add (current_location);

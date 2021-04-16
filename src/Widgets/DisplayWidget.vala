@@ -50,6 +50,7 @@ namespace WingpanelWeather {
         public void update_weather () {
             weather_info.label_value = settings.get_string ("weather-temperature");
             weather_info.new_icon = settings.get_string ("weather-icon");
+            weather_info.show_temp = settings.get_boolean ("display-temperature");
             string location = settings.get_string ("weather-location");
             string details = settings.get_string ("weather-details");
             weather_info.tooltip_text = "%s in %s".printf (details, location);

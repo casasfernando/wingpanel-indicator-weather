@@ -43,6 +43,10 @@ namespace WingpanelWeather {
             get { return widget_revealer.get_reveal_child () ; }
         }
 
+        public bool show_temp {
+            set { label.visible = value; }
+        }
+
         public IndicatorWidget (string icon_name, int char_width) {
             Object (
                 orientation: Gtk.Orientation.HORIZONTAL,
