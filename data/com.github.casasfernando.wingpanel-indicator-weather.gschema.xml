@@ -85,14 +85,10 @@
       <summary>Current moon phase icon</summary>
       <description></description>
     </key>
-    <key type="i" name="weather-refresh-rate">
+    <key type="i" name="weather-update-rate">
       <default>30</default>
-      <summary>Refresh rate of weather info, in minutes</summary>
-      <description></description>
-    </key>
-    <key type="b" name="weather-refresh">
-      <default>true</default>
-      <summary>Value that is tracked by the settings app to know when to refresh weather info</summary>
+      <range min="15" max="1440"/>
+      <summary>Weather information update rate, in minutes</summary>
       <description></description>
     </key>
     <key type="s" name="weather-last-update">

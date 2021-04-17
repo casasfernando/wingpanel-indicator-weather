@@ -69,10 +69,10 @@ namespace WingpanelWeather {
             settings.bind ("location-auto", location_search, "visible", SettingsBindFlags.INVERT_BOOLEAN);
 
             // Weather information update refresh rate selector
-            weather_refresh_spin = new SpinRow ("Weather refresh rate (min)", 1, 60);
-            weather_refresh_spin.set_spin_value (settings.get_int ("weather-refresh-rate"));
+            weather_refresh_spin = new SpinRow ("Weather update rate (in mins)", 15, 1440);
+            weather_refresh_spin.set_spin_value (settings.get_int ("weather-update-rate"));
             weather_refresh_spin.changed.connect ( () => {
-                settings.set_int ("weather-refresh-rate", weather_refresh_spin.get_spin_value ());
+                settings.set_int ("weather-update-rate", weather_refresh_spin.get_spin_value ());
             });
 
             add (indicator);
