@@ -1,2 +1,8 @@
 *~
 build/
+debian/.debhelper/
+debian/com.github.casasfernando.wingpanel-indicator-weather/
+debian/debhelper-build-stamp
+debian/files
+debian/wingpanel-indicator-weather.substvars
+debian/wingpanel-indicator-weather/
