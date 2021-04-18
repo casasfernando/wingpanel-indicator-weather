@@ -31,9 +31,10 @@ namespace WingpanelWeather {
         private PopoverWidgetRow current_location;
         private PopoverWidgetRow find_location;
         private PopoverWidgetRow units_selection;
-        private ComboRow unit_temp;
+        private ComboRow unit_dist;
         private ComboRow unit_press;
         private ComboRow unit_speed;
+        private ComboRow unit_temp;
         private ComboRow date_format;
         private ComboRow time_format;
 
@@ -83,11 +84,11 @@ namespace WingpanelWeather {
 
             // Units selection label
             units_selection = new PopoverWidgetRow ("Units:", "", 4);
-            // Unit Temperature
-            string[] unit_temp_val = { "Celsius (ºC)", "Fahrenheit (ºF)" };
-            unit_temp = new ComboRow ("Temperature", unit_temp_val, settings.get_int ("unit-temperature"));
-            unit_temp.changed.connect( () => {
-                settings.set_int ("unit-temperature", unit_temp.get_combo_value ());
+            // Unit Distance
+            string[] unit_dist_val = { "Kilometer (km)", "Mile (mi)" };
+            unit_dist = new ComboRow ("Distance", unit_dist_val, settings.get_int ("unit-distance"));
+            unit_dist.changed.connect( () => {
+                settings.set_int ("unit-distance", unit_dist.get_combo_value ());
             });
             // Unit Pressure
             string[] unit_press_val = { "Hectopascal (hPa)", "Inches of mercury (inHg)", "Millibars (mbar)", "Millimeters of mercury (mmHg)" };
@@ -95,11 +96,17 @@ namespace WingpanelWeather {
             unit_press.changed.connect( () => {
                 settings.set_int ("unit-pressure", unit_press.get_combo_value ());
             });
-            // Unit speed
+            // Unit Speed
             string[] unit_speed_val = { "Beaufort (bft)", "Kilometers per hour (km/h)", "Knots (knots)", "Meters per second (m/s)", "Miles per hour (mph)" };
             unit_speed = new ComboRow ("Speed", unit_speed_val, settings.get_int ("unit-speed"));
             unit_speed.changed.connect( () => {
                 settings.set_int ("unit-speed", unit_speed.get_combo_value ());
+            });
+            // Unit Temperature
+            string[] unit_temp_val = { "Celsius (ºC)", "Fahrenheit (ºF)" };
+            unit_temp = new ComboRow ("Temperature", unit_temp_val, settings.get_int ("unit-temperature"));
+            unit_temp.changed.connect( () => {
+                settings.set_int ("unit-temperature", unit_temp.get_combo_value ());
             });
 
             // Date Format
@@ -129,6 +136,7 @@ namespace WingpanelWeather {
             add (unit_temp);
             add (unit_press);
             add (unit_speed);
+            add (unit_dist);
             add (new Wingpanel.Widgets.Separator ());
             add (date_format);
             add (time_format);

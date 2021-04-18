@@ -30,6 +30,11 @@
       <summary>Time format</summary>
       <description></description>
     </key>
+    <key type="i" name="unit-distance">
+      <default>0</default>
+      <summary>Distance unit</summary>
+      <description></description>
+    </key>
     <key type="i" name="unit-pressure">
       <default>2</default>
       <summary>Pressure unit</summary>
@@ -45,34 +50,9 @@
       <summary>Temperature unit</summary>
       <description></description>
     </key>
-    <key type="s" name="weather-icon">
+    <key type="s" name="weather-details">
       <default>"N/A"</default>
-      <summary>Current weather icon</summary>
-      <description></description>
-    </key>
-    <key type="s" name="weather-location">
-      <default>"N/A"</default>
-      <summary>Current location for weather</summary>
-      <description></description>
-    </key>
-    <key type="s" name="weather-temperature">
-      <default>"N/A"</default>
-      <summary>Current temperature</summary>
-      <description></description>
-    </key>
-    <key type="s" name="weather-pressure">
-      <default>"N/A"</default>
-      <summary>Current pressure</summary>
-      <description></description>
-    </key>
-    <key type="s" name="weather-humidity">
-      <default>"N/A"</default>
-      <summary>Current humidity</summary>
-      <description></description>
-    </key>
-    <key type="s" name="weather-feel">
-      <default>"N/A"</default>
-      <summary>Current temperature feels like</summary>
+      <summary>Weather details for location</summary>
       <description></description>
     </key>
     <key type="s" name="weather-dew">
@@ -80,24 +60,29 @@
       <summary>Current dew point</summary>
       <description></description>
     </key>
-    <key type="s" name="weather-wind">
+    <key type="s" name="weather-feel">
       <default>"N/A"</default>
-      <summary>Current wind</summary>
+      <summary>Current temperature feels like</summary>
       <description></description>
     </key>
-    <key type="s" name="weather-details">
+    <key type="s" name="weather-humidity">
       <default>"N/A"</default>
-      <summary>Weather details for location</summary>
+      <summary>Current humidity</summary>
       <description></description>
     </key>
-    <key type="s" name="weather-sunrise">
+    <key type="s" name="weather-icon">
       <default>"N/A"</default>
-      <summary>Sunrise time</summary>
+      <summary>Current weather icon</summary>
       <description></description>
     </key>
-    <key type="s" name="weather-sunset">
+    <key type="s" name="weather-last-update">
       <default>"N/A"</default>
-      <summary>Sunset time</summary>
+      <summary>Weather information last update</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-location">
+      <default>"N/A"</default>
+      <summary>Current location for weather</summary>
       <description></description>
     </key>
     <key type="s" name="weather-moon-phase">
@@ -110,15 +95,40 @@
       <summary>Current moon phase icon</summary>
       <description></description>
     </key>
+    <key type="s" name="weather-pressure">
+      <default>"N/A"</default>
+      <summary>Current pressure</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-sunrise">
+      <default>"N/A"</default>
+      <summary>Sunrise time</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-sunset">
+      <default>"N/A"</default>
+      <summary>Sunset time</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-temperature">
+      <default>"N/A"</default>
+      <summary>Current temperature</summary>
+      <description></description>
+    </key>
     <key type="i" name="weather-update-rate">
       <default>30</default>
       <range min="15" max="1440"/>
       <summary>Weather information update rate, in minutes</summary>
       <description></description>
     </key>
-    <key type="s" name="weather-last-update">
+    <key type="s" name="weather-visibility">
       <default>"N/A"</default>
-      <summary>Weather information last update</summary>
+      <summary>Current visibility</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-wind">
+      <default>"N/A"</default>
+      <summary>Current wind</summary>
       <description></description>
     </key>
   </schema>

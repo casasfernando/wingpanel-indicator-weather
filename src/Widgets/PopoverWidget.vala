@@ -23,18 +23,19 @@
 
 namespace WingpanelWeather {
     public class PopoverWidget : Gtk.Grid {
+        private PopoverWidgetRow last_refresh;
         private PopoverWidgetRow cur_loc;
-        private PopoverWidgetRow cur_temp;
-        private PopoverWidgetRow cur_press;
-        private PopoverWidgetRow cur_hum;
-        private PopoverWidgetRow cur_feel;
-        private PopoverWidgetRow cur_dew;
-        private PopoverWidgetRow cur_wind;
         private PopoverWidgetRowIconic cur_details;
+        private PopoverWidgetRow cur_temp;
+        private PopoverWidgetRow cur_feel;
+        private PopoverWidgetRow cur_wind;
+        private PopoverWidgetRow cur_hum;
+        private PopoverWidgetRow cur_dew;
+        private PopoverWidgetRow cur_press;
+        private PopoverWidgetRow cur_vis;
         private PopoverWidgetRowIconic srise;
         private PopoverWidgetRowIconic sset;
         private PopoverWidgetRowIconic mphase;
-        private PopoverWidgetRow last_refresh;
 
         public unowned Settings settings { get; construct set; }
 
@@ -46,18 +47,19 @@ namespace WingpanelWeather {
             orientation = Gtk.Orientation.VERTICAL;
             column_spacing = 4;
 
+            last_refresh = new PopoverWidgetRow ("Last Update", "N/A", 4);
             cur_loc = new PopoverWidgetRow ("Location", "N/A", 4);
-            cur_temp = new PopoverWidgetRow ("Temperature", "N/A", 4);
-            cur_press = new PopoverWidgetRow ("Pressure", "N/A", 4);
-            cur_hum = new PopoverWidgetRow ("Humidity", "N/A", 4);
-            cur_feel = new PopoverWidgetRow ("Feels Like", "N/A", 4);
-            cur_dew = new PopoverWidgetRow ("Dew Point", "N/A", 4);
-            cur_wind = new PopoverWidgetRow ("Wind", "N/A", 4);
             cur_details = new PopoverWidgetRowIconic ("Sky Condition", settings.get_string ("weather-icon"), "N/A", 4);
+            cur_temp = new PopoverWidgetRow ("Temperature", "N/A", 4);
+            cur_feel = new PopoverWidgetRow ("Feels Like", "N/A", 4);
+            cur_wind = new PopoverWidgetRow ("Wind", "N/A", 4);
+            cur_hum = new PopoverWidgetRow ("Humidity", "N/A", 4);
+            cur_dew = new PopoverWidgetRow ("Dew Point", "N/A", 4);
+            cur_press = new PopoverWidgetRow ("Pressure", "N/A", 4);
+            cur_vis = new PopoverWidgetRow ("Visibility", "N/A", 4);
             srise = new PopoverWidgetRowIconic ("Sunrise", "daytime-sunrise-symbolic", "N/A", 4);
             sset = new PopoverWidgetRowIconic ("Sunset", "daytime-sunset-symbolic", "N/A", 4);
             mphase = new PopoverWidgetRowIconic ("Moon Phase", settings.get_string ("weather-moon-phase-icon"), "N/A", 4);
-            last_refresh = new PopoverWidgetRow ("Last Update", "N/A", 4);
 
             var settings_button = new Gtk.ModelButton ();
             settings_button.text = _ ("Open Settings...");
@@ -102,6 +104,7 @@ namespace WingpanelWeather {
             add (cur_hum);
             add (cur_dew);
             add (cur_press);
+            add (cur_vis);
             add (new Wingpanel.Widgets.Separator ());
             add (srise);
             add (sset);
@@ -122,37 +125,45 @@ namespace WingpanelWeather {
             }
         }
 
+        public void update_last_refresh (string val) {
+            last_refresh.label_value = val;
+        }
+
         public void update_current_location (string val) {
             cur_loc.label_value = val;
+        }
+
+        public void update_current_details (string icn, string val) {
+            cur_details.icon_value = icn;
+            cur_details.label_value = val;
         }
 
         public void update_current_temperature (string val) {
             cur_temp.label_value = val;
         }
 
-        public void update_current_humidity (string val) {
-            cur_hum.label_value = val;
-        }
-
-        public void update_current_pressure (string val) {
-            cur_press.label_value = val;
-        }
-
         public void update_current_feelslike (string val) {
             cur_feel.label_value = val;
-        }
-
-        public void update_current_dewpoint (string val) {
-            cur_dew.label_value = val;
         }
 
         public void update_current_wind (string val) {
             cur_wind.label_value = val;
         }
 
-        public void update_current_details (string icn, string val) {
-            cur_details.icon_value = icn;
-            cur_details.label_value = val;
+        public void update_current_humidity (string val) {
+            cur_hum.label_value = val;
+        }
+
+        public void update_current_dewpoint (string val) {
+            cur_dew.label_value = val;
+        }
+
+        public void update_current_pressure (string val) {
+            cur_press.label_value = val;
+        }
+
+        public void update_current_visibility (string val) {
+            cur_vis.label_value = val;
         }
 
         public void update_sunrise (string val) {
@@ -166,10 +177,6 @@ namespace WingpanelWeather {
         public void update_moonphase (string icn, string val) {
             mphase.icon_value = icn;
             mphase.label_value = val;
-        }
-
-        public void update_last_refresh (string val) {
-            last_refresh.label_value = val;
         }
 
     }

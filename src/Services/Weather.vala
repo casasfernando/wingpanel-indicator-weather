@@ -51,10 +51,12 @@ namespace WingpanelWeather {
                     return;
                 }
                 info ("wingpanel-indicator-weather: weather information updated");
-                // Weather icon
-                settings.set_string ("weather-icon", weather_info.get_symbolic_icon_name ());
                 // Location
                 settings.set_string ("weather-location", dgettext ("libgweather-locations", location.get_city_name ()));
+                // Weather icon
+                settings.set_string ("weather-icon", weather_info.get_symbolic_icon_name ());
+                // Details
+                settings.set_string ("weather-details", dgettext ("libgweather", weather_info.get_sky ()));
                 // Temperature
                 GWeather.TemperatureUnit utemp;
                 string utempsym;
@@ -79,40 +81,6 @@ namespace WingpanelWeather {
                 } else {
                     settings.set_string ("weather-temperature", "N/A");
                 }
-                // Pressure
-                GWeather.PressureUnit upress;
-                string upresssym;
-                switch (settings.get_int ("unit-pressure")) {
-                    case 0:
-                        upress = GWeather.PressureUnit.HPA;
-                        upresssym = "hPa";
-                        break;
-                    case 1:
-                        upress = GWeather.PressureUnit.INCH_HG;
-                        upresssym = "inHg";
-                        break;
-                    case 2:
-                        upress = GWeather.PressureUnit.MB;
-                        upresssym = "mbar";
-                        break;
-                    case 3:
-                        upress = GWeather.PressureUnit.MM_HG;
-                        upresssym = "mmHg";
-                        break;
-                    default:
-                        upress = GWeather.PressureUnit.MB;
-                        upresssym = "mbar";
-                        break;
-                }
-                double press;
-                if (weather_info.get_value_pressure (upress, out press)) {
-                    int p = (int) press;
-                    settings.set_string ("weather-pressure", "%s".printf (p.to_string ()).concat(" ", upresssym));
-                } else {
-                    settings.set_string ("weather-pressure", "N/A");
-                }
-                // Humidity
-                settings.set_string ("weather-humidity", dgettext ("libgweather", weather_info.get_humidity ()));
                 // Feels Like
                 double feel;
                 if (weather_info.get_value_apparent (utemp, out feel)) {
@@ -120,14 +88,6 @@ namespace WingpanelWeather {
                     settings.set_string ("weather-feel", "%s".printf (f.to_string ()).concat (utempsym));
                 } else {
                     settings.set_string ("weather-feel", "N/A");
-                }
-                // Dew Point
-                double dew;
-                if (weather_info.get_value_dew (utemp, out dew)) {
-                    int d = (int) dew;
-                    settings.set_string ("weather-dew", "%s".printf (d.to_string ()).concat (utempsym));
-                } else {
-                    settings.set_string ("weather-dew", "N/A");
                 }
                 // Wind
                 GWeather.SpeedUnit uspeed;
@@ -223,8 +183,72 @@ namespace WingpanelWeather {
                 } else {
                     settings.set_string ("weather-wind", "N/A");
                 }
-                // Details
-                settings.set_string ("weather-details", dgettext ("libgweather", weather_info.get_sky ()));
+                // Humidity
+                settings.set_string ("weather-humidity", dgettext ("libgweather", weather_info.get_humidity ()));
+                // Dew Point
+                double dew;
+                if (weather_info.get_value_dew (utemp, out dew)) {
+                    int d = (int) dew;
+                    settings.set_string ("weather-dew", "%s".printf (d.to_string ()).concat (utempsym));
+                } else {
+                    settings.set_string ("weather-dew", "N/A");
+                }
+                // Pressure
+                GWeather.PressureUnit upress;
+                string upresssym;
+                switch (settings.get_int ("unit-pressure")) {
+                    case 0:
+                        upress = GWeather.PressureUnit.HPA;
+                        upresssym = "hPa";
+                        break;
+                    case 1:
+                        upress = GWeather.PressureUnit.INCH_HG;
+                        upresssym = "inHg";
+                        break;
+                    case 2:
+                        upress = GWeather.PressureUnit.MB;
+                        upresssym = "mbar";
+                        break;
+                    case 3:
+                        upress = GWeather.PressureUnit.MM_HG;
+                        upresssym = "mmHg";
+                        break;
+                    default:
+                        upress = GWeather.PressureUnit.MB;
+                        upresssym = "mbar";
+                        break;
+                }
+                double press;
+                if (weather_info.get_value_pressure (upress, out press)) {
+                    int p = (int) press;
+                    settings.set_string ("weather-pressure", "%s".printf (p.to_string ()).concat(" ", upresssym));
+                } else {
+                    settings.set_string ("weather-pressure", "N/A");
+                }
+                // Visibility
+                GWeather.DistanceUnit udist;
+                string udistsym;
+                switch (settings.get_int ("unit-distance")) {
+                    case 0:
+                        udist = GWeather.TemperatureUnit.KM;
+                        udistsym = "km";
+                        break;
+                    case 1:
+                        udist = GWeather.TemperatureUnit.MILES;
+                        udistsym = "mi";
+                        break;
+                    default:
+                        udist = GWeather.TemperatureUnit.KM;
+                        udistsym = "km";
+                        break;
+                }
+                double dist;
+                if (weather_info.get_value_visibility (udist, out dist)) {
+                    int di = (int) dist;
+                    settings.set_string ("weather-visibility", "%s".printf (di.to_string ()).concat (" ", udistsym));
+                } else {
+                    settings.set_string ("weather-visibility", "N/A");
+                }
                 // Sunrise
                 settings.set_string ("weather-sunrise", dgettext ("libgweather", weather_info.get_sunrise ()));
                 // Sunset

@@ -130,6 +130,11 @@ namespace WingpanelWeather {
                 WingpanelWeather.Weather.weather_data_update();
             });
 
+            settings.changed["unit-distance"].connect ( () =>{
+                info ("wingpanel-indicator-weather: weather information update requested by the indicator: distance unit change (automatic)");
+                WingpanelWeather.Weather.weather_data_update();
+            });
+
             settings.changed["unit-pressure"].connect ( () =>{
                 info ("wingpanel-indicator-weather: weather information update requested by the indicator: pressure unit change (automatic)");
                 WingpanelWeather.Weather.weather_data_update();
