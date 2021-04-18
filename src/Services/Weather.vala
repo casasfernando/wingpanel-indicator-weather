@@ -107,7 +107,7 @@ namespace WingpanelWeather {
                 double press;
                 if (weather_info.get_value_pressure (upress, out press)) {
                     int p = (int) press;
-                    settings.set_string ("weather-pressure", "%s".printf (p.to_string ()).concat(upresssym));
+                    settings.set_string ("weather-pressure", "%s".printf (p.to_string ()).concat(" ", upresssym));
                 } else {
                     settings.set_string ("weather-pressure", "N/A");
                 }
