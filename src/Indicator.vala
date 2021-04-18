@@ -108,6 +108,11 @@ namespace WingpanelWeather {
         private void enable_weather_update () {
             var refresh_timeout = Timeout.add_seconds (settings.get_int ("weather-update-rate") * 60, update_weather);
 
+            settings.changed["date-format"].connect ( () =>{
+                info ("wingpanel-indicator-weather: weather information update requested by the indicator: date format change (automatic)");
+                WingpanelWeather.Weather.weather_data_update();
+            });
+
             settings.changed["location-manual"].connect ( () =>{
                 info ("wingpanel-indicator-weather: weather information update requested by the indicator: manual location change (automatic)");
                 WingpanelWeather.Weather.weather_data_update();
@@ -118,6 +123,26 @@ namespace WingpanelWeather {
                     info ("wingpanel-indicator-weather: weather information update requested by the indicator: location discovery enabled (automatic)");
                     WingpanelWeather.Weather.weather_data_update();
                 }
+            });
+
+            settings.changed["time-format"].connect ( () =>{
+                info ("wingpanel-indicator-weather: weather information update requested by the indicator: time format change (automatic)");
+                WingpanelWeather.Weather.weather_data_update();
+            });
+
+            settings.changed["unit-pressure"].connect ( () =>{
+                info ("wingpanel-indicator-weather: weather information update requested by the indicator: pressure unit change (automatic)");
+                WingpanelWeather.Weather.weather_data_update();
+            });
+
+            settings.changed["unit-speed"].connect ( () =>{
+                info ("wingpanel-indicator-weather: weather information update requested by the indicator: speed unit change (automatic)");
+                WingpanelWeather.Weather.weather_data_update();
+            });
+
+            settings.changed["unit-temperature"].connect ( () =>{
+                info ("wingpanel-indicator-weather: weather information update requested by the indicator: temperature unit change (automatic)");
+                WingpanelWeather.Weather.weather_data_update();
             });
 
             settings.changed["weather-update-rate"].connect ( () =>{

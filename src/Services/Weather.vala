@@ -56,32 +56,173 @@ namespace WingpanelWeather {
                 // Location
                 settings.set_string ("weather-location", dgettext ("libgweather-locations", location.get_city_name ()));
                 // Temperature
+                GWeather.TemperatureUnit utemp;
+                string utempsym;
+                switch (settings.get_int ("unit-temperature")) {
+                    case 0:
+                        utemp = GWeather.TemperatureUnit.CENTIGRADE;
+                        utempsym = "°C";
+                        break;
+                    case 1:
+                        utemp = GWeather.TemperatureUnit.FAHRENHEIT;
+                        utempsym = "°F";
+                        break;
+                    default:
+                        utemp = GWeather.TemperatureUnit.CENTIGRADE;
+                        utempsym = "°C";
+                        break;
+                }
                 double temp;
-                weather_info.get_value_temp (GWeather.TemperatureUnit.DEFAULT, out temp);
-                int t = (int) temp;
-                settings.set_string ("weather-temperature", "%s°".printf (t.to_string ()));
+                if (weather_info.get_value_temp (utemp, out temp)) {
+                    int t = (int) temp;
+                    settings.set_string ("weather-temperature", "%s".printf (t.to_string ()).concat (utempsym));
+                } else {
+                    settings.set_string ("weather-temperature", "N/A");
+                }
                 // Pressure
-                /*
+                GWeather.PressureUnit upress;
+                string upresssym;
+                switch (settings.get_int ("unit-pressure")) {
+                    case 0:
+                        upress = GWeather.PressureUnit.HPA;
+                        upresssym = "hPa";
+                        break;
+                    case 1:
+                        upress = GWeather.PressureUnit.INCH_HG;
+                        upresssym = "inHg";
+                        break;
+                    case 2:
+                        upress = GWeather.PressureUnit.MB;
+                        upresssym = "mbar";
+                        break;
+                    case 3:
+                        upress = GWeather.PressureUnit.MM_HG;
+                        upresssym = "mmHg";
+                        break;
+                    default:
+                        upress = GWeather.PressureUnit.MB;
+                        upresssym = "mbar";
+                        break;
+                }
                 double press;
-                weather_info.get_value_pressure (GWeather.PressureUnit.MB, out press);
-                int p = (int) press;
-                settings.set_string ("weather-pressure", "%s".printf (p.to_string ()));
-                */
-                settings.set_string ("weather-pressure", dgettext ("libgweather", weather_info.get_pressure ()));
+                if (weather_info.get_value_pressure (upress, out press)) {
+                    int p = (int) press;
+                    settings.set_string ("weather-pressure", "%s".printf (p.to_string ()).concat(upresssym));
+                } else {
+                    settings.set_string ("weather-pressure", "N/A");
+                }
                 // Humidity
                 settings.set_string ("weather-humidity", dgettext ("libgweather", weather_info.get_humidity ()));
                 // Feels Like
                 double feel;
-                weather_info.get_value_apparent (GWeather.TemperatureUnit.DEFAULT, out feel);
-                int f = (int) feel;
-                settings.set_string ("weather-feel", "%s°".printf (f.to_string ()));
+                if (weather_info.get_value_apparent (utemp, out feel)) {
+                    int f = (int) feel;
+                    settings.set_string ("weather-feel", "%s".printf (f.to_string ()).concat (utempsym));
+                } else {
+                    settings.set_string ("weather-feel", "N/A");
+                }
                 // Dew Point
                 double dew;
-                weather_info.get_value_dew (GWeather.TemperatureUnit.DEFAULT, out dew);
-                int d = (int) dew;
-                settings.set_string ("weather-dew", "%s°".printf (d.to_string ()));
+                if (weather_info.get_value_dew (utemp, out dew)) {
+                    int d = (int) dew;
+                    settings.set_string ("weather-dew", "%s".printf (d.to_string ()).concat (utempsym));
+                } else {
+                    settings.set_string ("weather-dew", "N/A");
+                }
                 // Wind
-                settings.set_string ("weather-wind", dgettext ("libgweather", weather_info.get_wind ()));
+                GWeather.SpeedUnit uspeed;
+                string uspeedsym;
+                switch (settings.get_int ("unit-speed")) {
+                    case 0:
+                        uspeed = GWeather.SpeedUnit.BFT;
+                        uspeedsym = "bft";
+                        break;
+                    case 1:
+                        uspeed = GWeather.SpeedUnit.KPH;
+                        uspeedsym = "km/h";
+                        break;
+                    case 2:
+                        uspeed = GWeather.SpeedUnit.KNOTS;
+                        uspeedsym = "knots";
+                        break;
+                    case 3:
+                        uspeed = GWeather.SpeedUnit.MS;
+                        uspeedsym = "m/s";
+                        break;
+                    case 4:
+                        uspeed = GWeather.SpeedUnit.MPH;
+                        uspeedsym = "mph";
+                        break;
+                    default:
+                        uspeed = GWeather.SpeedUnit.KPH;
+                        uspeedsym = "km/h";
+                        break;
+                }
+                double wspd;
+                GWeather.WindDirection wdir;
+                if (weather_info.get_value_wind (uspeed, out wspd, out wdir)) {
+                    int ws = (int) wspd;
+                    string wdirstr;
+                    switch (wdir) {
+                        case E:
+                            wdirstr = "E";
+                            break;
+                        case ENE:
+                            wdirstr = "ENE";
+                            break;
+                        case ESE:
+                            wdirstr = "ESE";
+                            break;
+                        case N:
+                            wdirstr = "N";
+                            break;
+                        case NE:
+                            wdirstr = "NE";
+                            break;
+                        case NNE:
+                            wdirstr = "NNE";
+                            break;
+                        case NNW:
+                            wdirstr = "NNW";
+                            break;
+                        case NW:
+                            wdirstr = "NW";
+                            break;
+                        case S:
+                            wdirstr = "S";
+                            break;
+                        case SE:
+                            wdirstr = "SE";
+                            break;
+                        case SSE:
+                            wdirstr = "SSE";
+                            break;
+                        case SSW:
+                            wdirstr = "SSW";
+                            break;
+                        case SW:
+                            wdirstr = "SW";
+                            break;
+                        case VARIABLE:
+                            wdirstr = "Variable";
+                            break;
+                        case W:
+                            wdirstr = "W";
+                            break;
+                        case WNW:
+                            wdirstr = "WNW";
+                            break;
+                        case WSW:
+                            wdirstr = "WSW";
+                            break;
+                        default:
+                            wdirstr = "N/A";
+                            break;
+                    }
+                    settings.set_string ("weather-wind", "%s".printf (ws.to_string ().concat (" ", uspeedsym, " ", "(", wdirstr, ")")));
+                } else {
+                    settings.set_string ("weather-wind", "N/A");
+                }
                 // Details
                 settings.set_string ("weather-details", dgettext ("libgweather", weather_info.get_sky ()));
                 // Sunrise
@@ -91,20 +232,45 @@ namespace WingpanelWeather {
                 // Moon Phase
                 double mp;
                 double lat;
-                weather_info.get_value_moonphase (out mp, out lat);
-                if (mp < 22.5 | mp > 337.5) { settings.set_string ("weather-moon-phase", "New Moon"); settings.set_string ("weather-moon-phase-icon", "new-moon"); }
-                else if (mp > 22.5 & mp < 67.5) { settings.set_string ("weather-moon-phase", "Waxing Crescent"); settings.set_string ("weather-moon-phase-icon", "waxing-crescent-moon"); }
-                else if (mp > 67.5 & mp < 112.5) { settings.set_string ("weather-moon-phase", "1st Quarter"); settings.set_string ("weather-moon-phase-icon", "first-quarter-moon"); }
-                else if (mp > 112.5 & mp < 157.5) { settings.set_string ("weather-moon-phase", "Waxing Gibbous"); settings.set_string ("weather-moon-phase-icon", "waxing-gibbous-moon"); }
-                else if (mp > 157.5 & mp < 202.5) { settings.set_string ("weather-moon-phase", "Full Moon"); settings.set_string ("weather-moon-phase-icon", "full-moon"); }
-                else if (mp > 202.5 & mp < 247.5) { settings.set_string ("weather-moon-phase", "Waning Gibbous"); settings.set_string ("weather-moon-phase-icon", "waning-gibbous-moon"); }
-                else if (mp > 247.5 & mp < 292.5) { settings.set_string ("weather-moon-phase", "3rd Quarter"); settings.set_string ("weather-moon-phase-icon", "third-quarter-moon"); }
-                else if (mp > 292.5 & mp < 337.5) { settings.set_string ("weather-moon-phase", "Waning Crescent"); settings.set_string ("weather-moon-phase-icon", "waning-crescent-moon"); }
-                else { settings.set_string ("weather-moon-phase", "N/A"); settings.set_string ("weather-moon-phase-icon", "full-moon"); }
-                //info("wingpanel-indicator-weather: current phase of the moon in degrees: ".concat ("%s".printf (mp.to_string ())));
+                if (weather_info.get_value_moonphase (out mp, out lat)) {
+                    if (mp < 22.5 | mp > 337.5) { settings.set_string ("weather-moon-phase", "New Moon"); settings.set_string ("weather-moon-phase-icon", "new-moon"); }
+                    else if (mp > 22.5 & mp < 67.5) { settings.set_string ("weather-moon-phase", "Waxing Crescent"); settings.set_string ("weather-moon-phase-icon", "waxing-crescent-moon"); }
+                    else if (mp > 67.5 & mp < 112.5) { settings.set_string ("weather-moon-phase", "1st Quarter"); settings.set_string ("weather-moon-phase-icon", "first-quarter-moon"); }
+                    else if (mp > 112.5 & mp < 157.5) { settings.set_string ("weather-moon-phase", "Waxing Gibbous"); settings.set_string ("weather-moon-phase-icon", "waxing-gibbous-moon"); }
+                    else if (mp > 157.5 & mp < 202.5) { settings.set_string ("weather-moon-phase", "Full Moon"); settings.set_string ("weather-moon-phase-icon", "full-moon"); }
+                    else if (mp > 202.5 & mp < 247.5) { settings.set_string ("weather-moon-phase", "Waning Gibbous"); settings.set_string ("weather-moon-phase-icon", "waning-gibbous-moon"); }
+                    else if (mp > 247.5 & mp < 292.5) { settings.set_string ("weather-moon-phase", "3rd Quarter"); settings.set_string ("weather-moon-phase-icon", "third-quarter-moon"); }
+                    else if (mp > 292.5 & mp < 337.5) { settings.set_string ("weather-moon-phase", "Waning Crescent"); settings.set_string ("weather-moon-phase-icon", "waning-crescent-moon"); }
+                    else { settings.set_string ("weather-moon-phase", "N/A"); settings.set_string ("weather-moon-phase-icon", "full-moon"); }
+                    //info("wingpanel-indicator-weather: current phase of the moon in degrees: ".concat ("%s".printf (mp.to_string ())));
+                } else {
+                    settings.set_string ("weather-moon-phase", "N/A");
+                    settings.set_string ("weather-moon-phase-icon", "full-moon"); 
+                }
                 // Weather information last update
                 var lupd = new DateTime.now_local ();
-                settings.set_string ("weather-last-update", "%s".printf (lupd.format ("%Y-%m-%d %R")));
+                string tformat;
+                string dformat;
+                switch (settings.get_int ("date-format")) {
+                    case 0:
+                        dformat = "%d/%m/%Y";
+                        break;
+                    case 1:
+                        dformat = "%m/%d/%Y";
+                        break;
+                    case 2:
+                        dformat = "%d.%m.%Y";
+                        break;
+                    default:
+                        dformat = "%d/%m/%Y";
+                        break;
+                }
+                if (settings.get_int ("time-format") == 0) {
+                    tformat = "%I:%M %p";
+                } else {
+                    tformat = "%R";
+                }
+                settings.set_string ("weather-last-update", "%s".printf (lupd.format (dformat.concat (" ", tformat))));
 
             });
 

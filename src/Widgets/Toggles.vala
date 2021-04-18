@@ -30,6 +30,12 @@ namespace WingpanelWeather {
         private SpinRow weather_refresh_spin;
         private PopoverWidgetRow current_location;
         private PopoverWidgetRow find_location;
+        private PopoverWidgetRow units_selection;
+        private ComboRow unit_temp;
+        private ComboRow unit_press;
+        private ComboRow unit_speed;
+        private ComboRow date_format;
+        private ComboRow time_format;
 
         public unowned Settings settings { get; construct set; }
 
@@ -75,6 +81,40 @@ namespace WingpanelWeather {
                 settings.set_int ("weather-update-rate", weather_refresh_spin.get_spin_value ());
             });
 
+            // Units selection label
+            units_selection = new PopoverWidgetRow ("Units:", "", 4);
+            // Unit Temperature
+            string[] unit_temp_val = { "Celsius (ºC)", "Fahrenheit (ºF)" };
+            unit_temp = new ComboRow ("Temperature", unit_temp_val, settings.get_int ("unit-temperature"));
+            unit_temp.changed.connect( () => {
+                settings.set_int ("unit-temperature", unit_temp.get_combo_value ());
+            });
+            // Unit Pressure
+            string[] unit_press_val = { "Hectopascal (hPa)", "Inches of mercury (inHg)", "Millibars (mbar)", "Millimeters of mercury (mmHg)" };
+            unit_press = new ComboRow ("Pressure", unit_press_val, settings.get_int ("unit-pressure"));
+            unit_press.changed.connect( () => {
+                settings.set_int ("unit-pressure", unit_press.get_combo_value ());
+            });
+            // Unit speed
+            string[] unit_speed_val = { "Beaufort (bft)", "Kilometers per hour (km/h)", "Knots (knots)", "Meters per second (m/s)", "Miles per hour (mph)" };
+            unit_speed = new ComboRow ("Speed", unit_speed_val, settings.get_int ("unit-speed"));
+            unit_speed.changed.connect( () => {
+                settings.set_int ("unit-speed", unit_speed.get_combo_value ());
+            });
+
+            // Date Format
+            string[] date_format_val = { "DD/MM/YYYY", "MM/DD/YYYY", "DD.MM.YYYY" };
+            date_format = new ComboRow ("Date format", date_format_val, settings.get_int ("date-format"));
+            date_format.changed.connect( () => {
+                settings.set_int ("date-format", date_format.get_combo_value ());
+            });
+            // Time Format
+            string[] time_format_val = { "12 hour (AM/PM)", "24 hour" };
+            time_format = new ComboRow ("Time format", time_format_val, settings.get_int ("time-format"));
+            time_format.changed.connect( () => {
+                settings.set_int ("time-format", time_format.get_combo_value ());
+            });
+
             add (indicator);
             add (temp_indicator);
             add (new Wingpanel.Widgets.Separator ());
@@ -82,7 +122,16 @@ namespace WingpanelWeather {
             add (current_location);
             add (find_location);
             add (location_search);
+            add (new Wingpanel.Widgets.Separator ());
             add (weather_refresh_spin);
+            add (new Wingpanel.Widgets.Separator ());
+            add (units_selection);
+            add (unit_temp);
+            add (unit_press);
+            add (unit_speed);
+            add (new Wingpanel.Widgets.Separator ());
+            add (date_format);
+            add (time_format);
             add (new Wingpanel.Widgets.Separator ());
 
         }

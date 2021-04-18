@@ -1,5 +1,10 @@
 <schemalist>
   <schema path="/com/github/casasfernando/wingpanel-indicator-weather/" id="com.github.casasfernando.wingpanel-indicator-weather" gettext-domain="wingpanel-indicator-weather">
+    <key type="i" name="date-format">
+      <default>0</default>
+      <summary>Date format</summary>
+      <description></description>
+    </key>
     <key type="b" name="display-indicator">
       <default>true</default>
       <summary>Display indicator in Wingpanel</summary>
@@ -18,6 +23,26 @@
     <key type="(uv)" name="location-manual">
       <default>(0,&lt;('', '', false, [(0.0, 0.0)], [(0.0, 0.0)])&gt;)</default>
       <summary>User manually selected location</summary>
+      <description></description>
+    </key>
+    <key type="i" name="time-format">
+      <default>1</default>
+      <summary>Time format</summary>
+      <description></description>
+    </key>
+    <key type="i" name="unit-pressure">
+      <default>2</default>
+      <summary>Pressure unit</summary>
+      <description></description>
+    </key>
+    <key type="i" name="unit-speed">
+      <default>1</default>
+      <summary>Speed unit</summary>
+      <description></description>
+    </key>
+    <key type="i" name="unit-temperature">
+      <default>0</default>
+      <summary>Temperature unit</summary>
       <description></description>
     </key>
     <key type="s" name="weather-icon">
