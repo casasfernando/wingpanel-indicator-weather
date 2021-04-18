@@ -100,8 +100,8 @@ namespace WingpanelWeather {
             add (cur_feel);
             add (cur_wind);
             add (cur_hum);
-            add (cur_press);
             add (cur_dew);
+            add (cur_press);
             add (new Wingpanel.Widgets.Separator ());
             add (srise);
             add (sset);
