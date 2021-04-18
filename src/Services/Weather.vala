@@ -219,7 +219,7 @@ namespace WingpanelWeather {
                             wdirstr = "N/A";
                             break;
                     }
-                    settings.set_string ("weather-wind", "%s".printf (ws.to_string ().concat (" ", uspeedsym, " ", "(", wdirstr, ")")));
+                    settings.set_string ("weather-wind", "%s".printf (wdirstr.concat (" ", ws.to_string (), " ", uspeedsym)));
                 } else {
                     settings.set_string ("weather-wind", "N/A");
                 }
