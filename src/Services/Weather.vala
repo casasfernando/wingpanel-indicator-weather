@@ -51,6 +51,30 @@ namespace WingpanelWeather {
                     return;
                 }
                 info ("wingpanel-indicator-weather: weather information updated");
+                // Weather information last update
+                var lupd = new DateTime.now_local ();
+                string tformat;
+                string dformat;
+                switch (settings.get_int ("date-format")) {
+                    case 0:
+                        dformat = "%d/%m/%Y";
+                        break;
+                    case 1:
+                        dformat = "%m/%d/%Y";
+                        break;
+                    case 2:
+                        dformat = "%d.%m.%Y";
+                        break;
+                    default:
+                        dformat = "%d/%m/%Y";
+                        break;
+                }
+                if (settings.get_int ("time-format") == 0) {
+                    tformat = "%I:%M %p";
+                } else {
+                    tformat = "%R";
+                }
+                settings.set_string ("weather-last-update", "%s".printf (lupd.format (dformat.concat (" ", tformat))));
                 // Location
                 settings.set_string ("weather-location", dgettext ("libgweather-locations", location.get_city_name ()));
                 // Weather icon
@@ -250,9 +274,21 @@ namespace WingpanelWeather {
                     settings.set_string ("weather-visibility", "N/A");
                 }
                 // Sunrise
-                settings.set_string ("weather-sunrise", dgettext ("libgweather", weather_info.get_sunrise ()));
+                ulong srte;
+                if (weather_info.get_value_sunrise(out srte)) {
+                    var srtl = new DateTime.from_unix_local (srte);
+                    settings.set_string ("weather-sunrise", "%s".printf (srtl.format (tformat)));
+                } else {
+                    settings.set_string ("weather-sunrise", "N/A");
+                }
                 // Sunset
-                settings.set_string ("weather-sunset", dgettext ("libgweather", weather_info.get_sunset ()));
+                ulong sste;
+                if (weather_info.get_value_sunset(out sste)) {
+                    var sstl = new DateTime.from_unix_local (sste);
+                    settings.set_string ("weather-sunset", "%s".printf (sstl.format (tformat)));
+                } else {
+                    settings.set_string ("weather-sunset", "N/A");
+                }
                 // Moon Phase
                 double mp;
                 double lat;
@@ -271,30 +307,6 @@ namespace WingpanelWeather {
                     settings.set_string ("weather-moon-phase", "N/A");
                     settings.set_string ("weather-moon-phase-icon", "full-moon"); 
                 }
-                // Weather information last update
-                var lupd = new DateTime.now_local ();
-                string tformat;
-                string dformat;
-                switch (settings.get_int ("date-format")) {
-                    case 0:
-                        dformat = "%d/%m/%Y";
-                        break;
-                    case 1:
-                        dformat = "%m/%d/%Y";
-                        break;
-                    case 2:
-                        dformat = "%d.%m.%Y";
-                        break;
-                    default:
-                        dformat = "%d/%m/%Y";
-                        break;
-                }
-                if (settings.get_int ("time-format") == 0) {
-                    tformat = "%I:%M %p";
-                } else {
-                    tformat = "%R";
-                }
-                settings.set_string ("weather-last-update", "%s".printf (lupd.format (dformat.concat (" ", tformat))));
 
             });
 
