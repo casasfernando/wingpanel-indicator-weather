@@ -15,6 +15,21 @@
       <summary>Display temperature value in Wingpanel indicator</summary>
       <description></description>
     </key>
+    <key type="b" name="display-weather-extended">
+      <default>false</default>
+      <summary>Display extended weather information</summary>
+      <description></description>
+    </key>
+    <key type="b" name="display-weather-moon">
+      <default>false</default>
+      <summary>Display moon phase information</summary>
+      <description></description>
+    </key>
+    <key type="b" name="display-weather-sun">
+      <default>false</default>
+      <summary>Display sunrise/sunset time</summary>
+      <description></description>
+    </key>
     <key type="b" name="location-auto">
       <default>true</default>
       <summary>Location discovery</summary>

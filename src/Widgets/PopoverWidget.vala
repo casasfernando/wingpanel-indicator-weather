@@ -33,8 +33,10 @@ namespace WingpanelWeather {
         private PopoverWidgetRow cur_dew;
         private PopoverWidgetRow cur_press;
         private PopoverWidgetRow cur_vis;
+        private Wingpanel.Widgets.Separator sun_info;
         private PopoverWidgetRowIconic srise;
         private PopoverWidgetRowIconic sset;
+        private Wingpanel.Widgets.Separator moon_info;
         private PopoverWidgetRowIconic mphase;
 
         public unowned Settings settings { get; construct set; }
@@ -57,8 +59,10 @@ namespace WingpanelWeather {
             cur_dew = new PopoverWidgetRow ("Dew Point", "N/A", 4);
             cur_press = new PopoverWidgetRow ("Pressure", "N/A", 4);
             cur_vis = new PopoverWidgetRow ("Visibility", "N/A", 4);
+            sun_info = new Wingpanel.Widgets.Separator ();
             srise = new PopoverWidgetRowIconic ("Sunrise", "daytime-sunrise-symbolic", "N/A", 4);
             sset = new PopoverWidgetRowIconic ("Sunset", "daytime-sunset-symbolic", "N/A", 4);
+            moon_info = new Wingpanel.Widgets.Separator ();
             mphase = new PopoverWidgetRowIconic ("Moon Phase", settings.get_string ("weather-moon-phase-icon"), "N/A", 4);
 
             var settings_button = new Gtk.ModelButton ();
@@ -90,7 +94,6 @@ namespace WingpanelWeather {
             title_label.margin_start = 9;
             title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
-
             add (title_label);
             add (new Wingpanel.Widgets.Separator ());
             add (last_refresh);
@@ -102,14 +105,21 @@ namespace WingpanelWeather {
             add (cur_feel);
             add (cur_wind);
             add (cur_hum);
+
             add (cur_dew);
             add (cur_press);
             add (cur_vis);
-            add (new Wingpanel.Widgets.Separator ());
+            update_weather_extended ();
+
+            add (sun_info);
             add (srise);
             add (sset);
-            add (new Wingpanel.Widgets.Separator ());
+            update_weather_sun ();
+
+            add (moon_info);
             add (mphase);
+            update_weather_moon ();
+
             add (new Wingpanel.Widgets.Separator ());
             add (settings_button);
         }
@@ -122,6 +132,45 @@ namespace WingpanelWeather {
                 appinfo.launch (null, null);
             } catch (Error e) {
                 warning ("%s\n", e.message);
+            }
+        }
+
+        public void set_widget_visible (Gtk.Widget widget, bool visible) {
+            widget.no_show_all = !visible;
+            widget.visible = visible;
+        }
+
+        public void update_weather_extended () {
+            if (settings.get_boolean ("display-weather-extended")) {
+                set_widget_visible (cur_dew, true);
+                set_widget_visible (cur_press, true);
+                set_widget_visible (cur_vis, true);
+            } else {
+                set_widget_visible (cur_dew, false);
+                set_widget_visible (cur_press, false);
+                set_widget_visible (cur_vis, false);
+            }
+        }
+
+        public void update_weather_sun () {
+            if (settings.get_boolean ("display-weather-sun")) {
+                set_widget_visible (sun_info, true);
+                set_widget_visible (srise, true);
+                set_widget_visible (sset, true);
+            } else {
+                set_widget_visible (sun_info, false);
+                set_widget_visible (srise, false);
+                set_widget_visible (sset, false);
+            }
+        }
+
+        public void update_weather_moon () {
+            if (settings.get_boolean ("display-weather-moon")) {
+                set_widget_visible (moon_info, true);
+                set_widget_visible (mphase, true);
+            } else {
+                set_widget_visible (moon_info, false);
+                set_widget_visible (mphase, false);
             }
         }
 

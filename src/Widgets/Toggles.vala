@@ -25,6 +25,9 @@ namespace WingpanelWeather {
     public class TogglesWidget : Gtk.Grid {
         private Wingpanel.Widgets.Switch indicator;
         private Wingpanel.Widgets.Switch temp_indicator;
+        private Wingpanel.Widgets.Switch weather_extended;
+        private Wingpanel.Widgets.Switch weather_sun;
+        private Wingpanel.Widgets.Switch weather_moon;
         private Wingpanel.Widgets.Switch location_auto;
         private GWeather.LocationEntry location_search;
         private SpinRow weather_refresh_spin;
@@ -52,7 +55,7 @@ namespace WingpanelWeather {
             settings.bind ("display-indicator", indicator.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
             // Enable temperature displain in Wingpanel indicator switch
-            temp_indicator = new Wingpanel.Widgets.Switch ("Show temperature", settings.get_boolean ("display-temperature"));
+            temp_indicator = new Wingpanel.Widgets.Switch ("Show temperature in panel", settings.get_boolean ("display-temperature"));
             settings.bind ("display-temperature", temp_indicator.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
             // Location discovery switch
@@ -81,6 +84,16 @@ namespace WingpanelWeather {
             weather_refresh_spin.changed.connect ( () => {
                 settings.set_int ("weather-update-rate", weather_refresh_spin.get_spin_value ());
             });
+
+            // Show extended weather information
+            weather_extended = new Wingpanel.Widgets.Switch ("Show weather extended information", settings.get_boolean ("display-weather-extended"));
+            settings.bind ("display-weather-extended", weather_extended.get_switch (), "active", SettingsBindFlags.DEFAULT);
+            // Show sunrise/sunset information
+            weather_sun = new Wingpanel.Widgets.Switch ("Show sunrise/sunset time", settings.get_boolean ("display-weather-sun"));
+            settings.bind ("display-weather-sun", weather_sun.get_switch (), "active", SettingsBindFlags.DEFAULT);
+            // Show moon phase information
+            weather_moon = new Wingpanel.Widgets.Switch ("Show moon phase information", settings.get_boolean ("display-weather-moon"));
+            settings.bind ("display-weather-moon", weather_moon.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
             // Units selection label
             units_selection = new PopoverWidgetRow ("Units:", "", 4);
@@ -124,6 +137,10 @@ namespace WingpanelWeather {
 
             add (indicator);
             add (temp_indicator);
+            add (new Wingpanel.Widgets.Separator ());
+            add (weather_extended);
+            add (weather_sun);
+            add (weather_moon);
             add (new Wingpanel.Widgets.Separator ());
             add (location_auto);
             add (current_location);
