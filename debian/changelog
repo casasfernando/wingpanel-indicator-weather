@@ -1,3 +1,16 @@
+wingpanel-indicator-weather (0.6.0) bionic; urgency=medium
+
+  * Updated Debian package copyright file
+  * Updated desktop file
+  * Added new settings to display or not, extended weather information, sunrise/sunset time and moon phase information
+  * Added visibility value to popover widget
+  * Changed pressure, temperature, wind, sunrise, sunset and last update values processing according to the new settings available.
+  * Added new settings for weather units, date and time format.
+  * Set the range of values for weather update rate setting
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Tue, 20 Apr 2021 18:42:00 +0200
+
+
 wingpanel-indicator-weather (0.5.0) bionic; urgency=medium
 
   * Updated Debian package copyright file to fix license and copyright information
@@ -6,7 +19,7 @@ wingpanel-indicator-weather (0.5.0) bionic; urgency=medium
   * Added some visual icons to the popover widget to make it more appealing
   * Added support for manual location search and configuration
 
- -- Fernando Casas Schössow <casasfernando@outlook.com>  Thu, 16 Apr 2021 18:00:00 +0200
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Fri, 16 Apr 2021 18:00:00 +0200
 
 
 wingpanel-indicator-weather (0.4.0) bionic; urgency=medium
