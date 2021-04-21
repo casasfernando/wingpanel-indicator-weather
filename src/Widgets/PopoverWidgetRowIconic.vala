@@ -31,6 +31,10 @@ namespace WingpanelWeather {
             set { value_label.label = value; }
         }
 
+        public int label_value_width {
+            set { value_label.width_chars = value; }
+        }
+
         public string icon_value {
             set { icon.icon_name = value; }
         }
@@ -50,6 +54,7 @@ namespace WingpanelWeather {
             value_label.halign = Gtk.Align.END;
             value_label.set_width_chars (char_width);
             value_label.set_justify (Gtk.Justification.FILL);
+            value_label.margin_start = 4;
             value_label.margin_end = 9;
 
             add (text_label);

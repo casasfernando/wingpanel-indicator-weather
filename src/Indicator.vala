@@ -101,8 +101,16 @@ namespace WingpanelWeather {
             popover_widget.update_current_pressure (settings.get_string ("weather-pressure"));
             popover_widget.update_current_dewpoint (settings.get_string ("weather-dew"));
             popover_widget.update_current_visibility (settings.get_string ("weather-visibility"));
-            popover_widget.update_sunrise (settings.get_string ("weather-sunrise"));
-            popover_widget.update_sunset (settings.get_string ("weather-sunset"));
+
+            int stlvw;
+            if (settings.get_int ("time-format") == 0) {
+                stlvw = 8;
+            } else {
+                stlvw = 5;
+            }
+            popover_widget.update_sunrise (settings.get_string ("weather-sunrise"), stlvw);
+            popover_widget.update_sunset (settings.get_string ("weather-sunset"), stlvw);
+
             popover_widget.update_moonphase (settings.get_string ("weather-moon-phase-icon"), settings.get_string ("weather-moon-phase"));
 
             settings.changed["display-weather-extended"].connect ( () =>{

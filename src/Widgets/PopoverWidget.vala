@@ -215,12 +215,14 @@ namespace WingpanelWeather {
             cur_vis.label_value = val;
         }
 
-        public void update_sunrise (string val) {
+        public void update_sunrise (string val, int cwval) {
             srise.label_value = val;
+            srise.label_value_width = cwval;
         }
 
-        public void update_sunset (string val) {
+        public void update_sunset (string val, int cwval) {
             sset.label_value = val;
+            sset.label_value_width = cwval;
         }
 
         public void update_moonphase (string icn, string val) {
