@@ -70,7 +70,7 @@ namespace WingpanelWeather {
                         break;
                 }
                 if (settings.get_int ("time-format") == 0) {
-                    tformat = "%I:%M %p";
+                    tformat = "%l:%M %p";
                 } else {
                     tformat = "%R";
                 }

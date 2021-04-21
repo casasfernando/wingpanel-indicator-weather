@@ -129,7 +129,7 @@ namespace WingpanelWeather {
                 settings.set_int ("date-format", date_format.get_combo_value ());
             });
             // Time Format
-            string[] time_format_val = { "12 hour (AM/PM)", "24 hour" };
+            string[] time_format_val = { "AM/PM", "24-hour" };
             time_format = new ComboRow ("Time format", time_format_val, settings.get_int ("time-format"));
             time_format.changed.connect( () => {
                 settings.set_int ("time-format", time_format.get_combo_value ());
