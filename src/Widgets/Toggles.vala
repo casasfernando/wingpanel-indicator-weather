@@ -137,27 +137,27 @@ namespace WingpanelWeather {
 
             add (indicator);
             add (temp_indicator);
-            add (new Wingpanel.Widgets.Separator ());
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (weather_extended);
             add (weather_sun);
             add (weather_moon);
-            add (new Wingpanel.Widgets.Separator ());
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (location_auto);
             add (current_location);
             add (find_location);
             add (location_search);
-            add (new Wingpanel.Widgets.Separator ());
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (weather_refresh_spin);
-            add (new Wingpanel.Widgets.Separator ());
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (units_selection);
             add (unit_temp);
             add (unit_press);
             add (unit_speed);
             add (unit_dist);
-            add (new Wingpanel.Widgets.Separator ());
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (date_format);
             add (time_format);
-            add (new Wingpanel.Widgets.Separator ());
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
 
         }
 

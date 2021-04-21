@@ -33,10 +33,10 @@ namespace WingpanelWeather {
         private PopoverWidgetRow cur_dew;
         private PopoverWidgetRow cur_press;
         private PopoverWidgetRow cur_vis;
-        private Wingpanel.Widgets.Separator sun_info;
+        private Gtk.Separator sun_info;
         private PopoverWidgetRowIconic srise;
         private PopoverWidgetRowIconic sset;
-        private Wingpanel.Widgets.Separator moon_info;
+        private Gtk.Separator moon_info;
         private PopoverWidgetRowIconic mphase;
 
         public unowned Settings settings { get; construct set; }
@@ -59,10 +59,10 @@ namespace WingpanelWeather {
             cur_dew = new PopoverWidgetRow ("Dew Point", "N/A", 4);
             cur_press = new PopoverWidgetRow ("Pressure", "N/A", 4);
             cur_vis = new PopoverWidgetRow ("Visibility", "N/A", 4);
-            sun_info = new Wingpanel.Widgets.Separator ();
+            sun_info = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
             srise = new PopoverWidgetRowIconic ("Sunrise", "daytime-sunrise-symbolic", "N/A", 4);
             sset = new PopoverWidgetRowIconic ("Sunset", "daytime-sunset-symbolic", "N/A", 4);
-            moon_info = new Wingpanel.Widgets.Separator ();
+            moon_info = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
             mphase = new PopoverWidgetRowIconic ("Moon Phase", settings.get_string ("weather-moon-phase-icon"), "N/A", 4);
 
             var settings_button = new Gtk.ModelButton ();
@@ -95,10 +95,10 @@ namespace WingpanelWeather {
             title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
 
             add (title_label);
-            add (new Wingpanel.Widgets.Separator ());
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (last_refresh);
             add (refresh_button);
-            add (new Wingpanel.Widgets.Separator ());
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (cur_loc);
             add (cur_details);
             add (cur_temp);
@@ -120,7 +120,7 @@ namespace WingpanelWeather {
             add (mphase);
             update_weather_moon ();
 
-            add (new Wingpanel.Widgets.Separator ());
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (settings_button);
         }
 
