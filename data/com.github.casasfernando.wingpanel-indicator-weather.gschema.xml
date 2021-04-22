@@ -65,9 +65,9 @@
       <summary>Temperature unit</summary>
       <description></description>
     </key>
-    <key type="s" name="weather-details">
+    <key type="s" name="weather-conditions">
       <default>"N/A"</default>
-      <summary>Weather details for location</summary>
+      <summary>Weather conditions for location</summary>
       <description></description>
     </key>
     <key type="s" name="weather-dew">
@@ -113,6 +113,11 @@
     <key type="s" name="weather-pressure">
       <default>"N/A"</default>
       <summary>Current pressure</summary>
+      <description></description>
+    </key>
+    <key type="s" name="weather-sky">
+      <default>"N/A"</default>
+      <summary>Sky conditions for location</summary>
       <description></description>
     </key>
     <key type="s" name="weather-sunrise">

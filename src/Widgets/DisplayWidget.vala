@@ -25,6 +25,7 @@
 namespace WingpanelWeather {
     public class DisplayWidget : Gtk.Grid {
         private IndicatorWidget weather_info;
+        public string conditions;
 
         public unowned Settings settings { get; construct set; }
 
@@ -41,9 +42,11 @@ namespace WingpanelWeather {
             valign = Gtk.Align.CENTER;
 
             weather_info = new IndicatorWidget ("weather-clear-symbolic", 4);
-            weather_info.tooltip_text = "%s in %s".printf (
-                settings.get_string ("weather-details"), settings.get_string ("weather-location")
-                );
+            conditions = settings.get_string ("weather-conditions");
+            if (conditions == "-") {
+                conditions = settings.get_string ("weather-sky");
+            }
+            weather_info.tooltip_text = "%s in %s".printf (conditions, settings.get_string ("weather-location"));
 
             add (weather_info);
 
@@ -53,9 +56,11 @@ namespace WingpanelWeather {
             weather_info.label_value = settings.get_string ("weather-temperature");
             weather_info.new_icon = settings.get_string ("weather-icon");
             weather_info.show_temp = settings.get_boolean ("display-temperature");
-            string location = settings.get_string ("weather-location");
-            string details = settings.get_string ("weather-details");
-            weather_info.tooltip_text = "%s in %s".printf (details, location);
+            conditions = settings.get_string ("weather-conditions");
+            if (conditions == "-") {
+                conditions = settings.get_string ("weather-sky");
+            }
+            weather_info.tooltip_text = "%s in %s".printf (conditions, settings.get_string ("weather-location"));
         }
     }
 }

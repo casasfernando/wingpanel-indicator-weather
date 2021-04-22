@@ -51,7 +51,7 @@ namespace WingpanelWeather {
 
             last_refresh = new PopoverWidgetRow ("Last Update", "N/A", 4);
             cur_loc = new PopoverWidgetRow ("Location", "N/A", 4);
-            cur_details = new PopoverWidgetRowIconic ("Sky Condition", settings.get_string ("weather-icon"), "N/A", 4);
+            cur_details = new PopoverWidgetRowIconic ("", settings.get_string ("weather-icon"), "N/A", 4);
             cur_temp = new PopoverWidgetRow ("Temperature", "N/A", 4);
             cur_feel = new PopoverWidgetRow ("Feels Like", "N/A", 4);
             cur_wind = new PopoverWidgetRow ("Wind", "N/A", 4);

@@ -79,8 +79,10 @@ namespace WingpanelWeather {
                 settings.set_string ("weather-location", dgettext ("libgweather-locations", location.get_city_name ()));
                 // Weather icon
                 settings.set_string ("weather-icon", weather_info.get_symbolic_icon_name ());
-                // Details
-                settings.set_string ("weather-details", dgettext ("libgweather", weather_info.get_sky ()));
+                // Weather conditions
+                settings.set_string ("weather-conditions", dgettext ("libgweather", weather_info.get_conditions ()));
+                // Sky conditions
+                settings.set_string ("weather-sky", dgettext ("libgweather", weather_info.get_sky ()));
                 // Temperature
                 GWeather.TemperatureUnit utemp;
                 string utempsym;

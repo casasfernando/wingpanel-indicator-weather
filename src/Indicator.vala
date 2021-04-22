@@ -93,7 +93,11 @@ namespace WingpanelWeather {
             if (popover_widget == null) return;
             popover_widget.update_last_refresh (settings.get_string ("weather-last-update"));
             popover_widget.update_current_location (settings.get_string ("weather-location"));
-            popover_widget.update_current_details (settings.get_string ("weather-icon"), settings.get_string ("weather-details"));
+            string conditions = settings.get_string ("weather-conditions");
+            if (conditions == "-") {
+                conditions = settings.get_string ("weather-sky");
+            }
+            popover_widget.update_current_details (settings.get_string ("weather-icon"), conditions);
             popover_widget.update_current_temperature (settings.get_string ("weather-temperature"));
             popover_widget.update_current_feelslike (settings.get_string ("weather-feel"));
             popover_widget.update_current_wind (settings.get_string ("weather-wind"));
