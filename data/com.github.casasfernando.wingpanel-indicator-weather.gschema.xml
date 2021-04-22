@@ -10,6 +10,11 @@
       <summary>Display indicator in Wingpanel</summary>
       <description></description>
     </key>
+    <key type="b" name="display-notifications">
+      <default>true</default>
+      <summary>Enable indicator notifications</summary>
+      <description></description>
+    </key>
     <key type="b" name="display-temperature">
       <default>true</default>
       <summary>Display temperature value in Wingpanel indicator</summary>

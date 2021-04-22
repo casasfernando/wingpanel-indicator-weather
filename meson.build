@@ -77,6 +77,7 @@ shared_module(
         dependency('gdk-x11-3.0'),
         dependency('gweather-3.0'),
         dependency('libgeoclue-2.0'),
+        dependency('libnotify'),
         wingpanel,
     ],
     install: true,

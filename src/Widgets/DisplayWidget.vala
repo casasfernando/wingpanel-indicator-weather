@@ -26,6 +26,8 @@ namespace WingpanelWeather {
     public class DisplayWidget : Gtk.Grid {
         private IndicatorWidget weather_info;
         public string conditions;
+        public string prevcond;
+        public string nbody;
 
         public unowned Settings settings { get; construct set; }
 
@@ -35,20 +37,18 @@ namespace WingpanelWeather {
 
         construct {
 
-            // Update weather information on load
-            info ("wingpanel-indicator-weather: weather information update requested by the indicator on startup (automatic)");
-            WingpanelWeather.Weather.weather_data_update();
+            prevcond = "-";
 
             valign = Gtk.Align.CENTER;
 
             weather_info = new IndicatorWidget ("weather-clear-symbolic", 4);
-            conditions = settings.get_string ("weather-conditions");
-            if (conditions == "-") {
-                conditions = settings.get_string ("weather-sky");
-            }
-            weather_info.tooltip_text = "%s in %s".printf (conditions, settings.get_string ("weather-location"));
+            weather_info.tooltip_text = "%s in %s".printf ("Clear sky", settings.get_string ("weather-location"));
 
             add (weather_info);
+
+            // Update weather information on load
+            info ("wingpanel-indicator-weather: weather information update requested by the indicator on startup (automatic)");
+            WingpanelWeather.Weather.weather_data_update();
 
         }
 
@@ -57,10 +57,34 @@ namespace WingpanelWeather {
             weather_info.new_icon = settings.get_string ("weather-icon");
             weather_info.show_temp = settings.get_boolean ("display-temperature");
             conditions = settings.get_string ("weather-conditions");
-            if (conditions == "-") {
+            if (prevcond != conditions) {
+                prevcond = conditions;
+                if (conditions == "-") {
+                    conditions = settings.get_string ("weather-sky");
+                }
+                if (settings.get_boolean ("display-notifications")) {
+                    nbody = "%s in %s\nTemperature: %s\nFeels like: %s\nWind: %s\nHumidity: %s".printf (conditions, settings.get_string ("weather-location"), settings.get_string ("weather-temperature"), settings.get_string ("weather-feel"), settings.get_string ("weather-wind"), settings.get_string ("weather-humidity"));
+                    weather_conditions_change_notify (nbody);
+                }
+            } else if (conditions == "-") {
                 conditions = settings.get_string ("weather-sky");
             }
             weather_info.tooltip_text = "%s in %s".printf (conditions, settings.get_string ("weather-location"));
         }
+
+        public void weather_conditions_change_notify (string body) {
+            Notify.init ("com.github.casasfernando.wingpanel-indicator-weather");
+            var notification = new Notify.Notification ("Weather conditions update", body, "com.github.casasfernando.wingpanel-indicator-weather");
+            notification.set_app_name ("Wingpanel Weather");
+            notification.set_hint ("desktop-entry", "com.github.casasfernando.wingpanel-indicator-weather");
+            notification.set_urgency (Notify.Urgency.LOW);
+            try {
+                notification.show ();
+            } catch (Error e) {
+                error ("wingpanel-indicator-weather: %s", e.message);
+            }
+            return;
+        }
+
     }
 }

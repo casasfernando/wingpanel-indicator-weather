@@ -9,5 +9,5 @@ Terminal=false
 Type=Application
 X-GNOME-Gettext-Domain=com.github.casasfernando.wingpanel-indicator-weather
 Keywords=Weather;Forecast;
-X-GNOME-UsesNotifications=false
+X-GNOME-UsesNotifications=true
 X-Geoclue-Reason=Allows weather information to be displayed for your location.

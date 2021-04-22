@@ -25,6 +25,7 @@ namespace WingpanelWeather {
     public class TogglesWidget : Gtk.Grid {
         private Wingpanel.Widgets.Switch indicator;
         private Wingpanel.Widgets.Switch temp_indicator;
+        private Wingpanel.Widgets.Switch indicator_notifications;
         private Wingpanel.Widgets.Switch weather_extended;
         private Wingpanel.Widgets.Switch weather_sun;
         private Wingpanel.Widgets.Switch weather_moon;
@@ -57,6 +58,10 @@ namespace WingpanelWeather {
             // Enable temperature displain in Wingpanel indicator switch
             temp_indicator = new Wingpanel.Widgets.Switch ("Show temperature in panel", settings.get_boolean ("display-temperature"));
             settings.bind ("display-temperature", temp_indicator.get_switch (), "active", SettingsBindFlags.DEFAULT);
+
+            // Enable weather conditions change notifications
+            indicator_notifications = new Wingpanel.Widgets.Switch ("Show notifications", settings.get_boolean ("display-notifications"));
+            settings.bind ("display-notifications", indicator_notifications.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
             // Location discovery switch
             location_auto = new Wingpanel.Widgets.Switch ("Location discovery", settings.get_boolean ("location-auto"));
@@ -137,6 +142,7 @@ namespace WingpanelWeather {
 
             add (indicator);
             add (temp_indicator);
+            add (indicator_notifications);
             add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (weather_extended);
             add (weather_sun);
