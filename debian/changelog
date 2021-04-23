@@ -1,10 +1,17 @@
+wingpanel-indicator-weather (0.6.7) bionic; urgency=medium
+
+  * Minor UI changes
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Fri, 23 Apr 2021 10:07:00 +0200
+
+
 wingpanel-indicator-weather (0.6.5) bionic; urgency=medium
 
   * Added support for weather conditions change notifications
   * Improved weather conditions information
   * Minor UI changes
 
- -- Fernando Casas Schössow <casasfernando@outlook.com>  Wed, 21 Apr 2021 18:42:00 +0200
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Fri, 23 Apr 2021 00:07:00 +0200
 
 
 wingpanel-indicator-weather (0.6.0) bionic; urgency=medium
