@@ -7,7 +7,9 @@
 ![Screenshot](data/screenshot_1.png)
 ### Tooltip:
 ![Screenshot](data/screenshot_2.png)
-### Popover:
+### Popover (minimal view):
+![Screenshot](data/screenshot_6.png)
+### Popover (full view):
 ![Screenshot](data/screenshot_3.png)
 ![Screenshot](data/screenshot_4.png)
 ### Settings:
@@ -24,6 +26,7 @@ libgtk-3-dev
 libwingpanel-2.0-dev
 libgeoclue-2-dev
 libgweather-3-dev
+libnotify-dev
 meson
 valac
 ```
@@ -31,7 +34,7 @@ valac
 You can install them running:
 
 ```
-sudo apt install libgranite-dev libgtk-3-dev libwingpanel-2.0-dev meson valac libgeoclue-2-dev libgweather-3-dev
+sudo apt install libgranite-dev libgtk-3-dev libwingpanel-2.0-dev meson valac libgeoclue-2-dev libgweather-3-dev libnotify-dev
 ```
 
 Run `meson` to configure the build environment and then `ninja` to build
