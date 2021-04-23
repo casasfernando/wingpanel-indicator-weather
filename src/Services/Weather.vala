@@ -295,14 +295,14 @@ namespace WingpanelWeather {
                 double mp;
                 double lat;
                 if (weather_info.get_value_moonphase (out mp, out lat)) {
-                    if (mp < 22.5 | mp > 337.5) { settings.set_string ("weather-moon-phase", "New Moon"); settings.set_string ("weather-moon-phase-icon", "new-moon"); }
-                    else if (mp > 22.5 & mp < 67.5) { settings.set_string ("weather-moon-phase", "Waxing Crescent"); settings.set_string ("weather-moon-phase-icon", "waxing-crescent-moon"); }
-                    else if (mp > 67.5 & mp < 112.5) { settings.set_string ("weather-moon-phase", "1st Quarter"); settings.set_string ("weather-moon-phase-icon", "first-quarter-moon"); }
-                    else if (mp > 112.5 & mp < 157.5) { settings.set_string ("weather-moon-phase", "Waxing Gibbous"); settings.set_string ("weather-moon-phase-icon", "waxing-gibbous-moon"); }
-                    else if (mp > 157.5 & mp < 202.5) { settings.set_string ("weather-moon-phase", "Full Moon"); settings.set_string ("weather-moon-phase-icon", "full-moon"); }
-                    else if (mp > 202.5 & mp < 247.5) { settings.set_string ("weather-moon-phase", "Waning Gibbous"); settings.set_string ("weather-moon-phase-icon", "waning-gibbous-moon"); }
-                    else if (mp > 247.5 & mp < 292.5) { settings.set_string ("weather-moon-phase", "3rd Quarter"); settings.set_string ("weather-moon-phase-icon", "third-quarter-moon"); }
-                    else if (mp > 292.5 & mp < 337.5) { settings.set_string ("weather-moon-phase", "Waning Crescent"); settings.set_string ("weather-moon-phase-icon", "waning-crescent-moon"); }
+                    if (mp < 22.5 | mp > 337.5) { settings.set_string ("weather-moon-phase", "New moon"); settings.set_string ("weather-moon-phase-icon", "new-moon"); }
+                    else if (mp > 22.5 & mp < 67.5) { settings.set_string ("weather-moon-phase", "Waxing crescent"); settings.set_string ("weather-moon-phase-icon", "waxing-crescent-moon"); }
+                    else if (mp > 67.5 & mp < 112.5) { settings.set_string ("weather-moon-phase", "First quarter"); settings.set_string ("weather-moon-phase-icon", "first-quarter-moon"); }
+                    else if (mp > 112.5 & mp < 157.5) { settings.set_string ("weather-moon-phase", "Waxing gibbous"); settings.set_string ("weather-moon-phase-icon", "waxing-gibbous-moon"); }
+                    else if (mp > 157.5 & mp < 202.5) { settings.set_string ("weather-moon-phase", "Full moon"); settings.set_string ("weather-moon-phase-icon", "full-moon"); }
+                    else if (mp > 202.5 & mp < 247.5) { settings.set_string ("weather-moon-phase", "Waning gibbous"); settings.set_string ("weather-moon-phase-icon", "waning-gibbous-moon"); }
+                    else if (mp > 247.5 & mp < 292.5) { settings.set_string ("weather-moon-phase", "Third quarter"); settings.set_string ("weather-moon-phase-icon", "third-quarter-moon"); }
+                    else if (mp > 292.5 & mp < 337.5) { settings.set_string ("weather-moon-phase", "Waning crescent"); settings.set_string ("weather-moon-phase-icon", "waning-crescent-moon"); }
                     else { settings.set_string ("weather-moon-phase", "N/A"); settings.set_string ("weather-moon-phase-icon", "full-moon"); }
                     //info("wingpanel-indicator-weather: current phase of the moon in degrees: ".concat ("%s".printf (mp.to_string ())));
                 } else {
