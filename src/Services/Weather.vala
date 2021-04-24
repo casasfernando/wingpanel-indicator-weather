@@ -44,6 +44,7 @@ namespace WingpanelWeather {
             weather_info = new GWeather.Info (location);
             // Update weather data
             info ("wingpanel-indicator-weather: weather information update requested");
+            settings.set_int64 ("weather-last-update-req", new DateTime.now_local ().to_unix ());
             weather_info.update ();
             // Process updated weather data
             weather_info.updated.connect ( () => {
@@ -52,29 +53,7 @@ namespace WingpanelWeather {
                 }
                 info ("wingpanel-indicator-weather: weather information updated");
                 // Weather information last update
-                var lupd = new DateTime.now_local ();
-                string tformat;
-                string dformat;
-                switch (settings.get_int ("date-format")) {
-                    case 0:
-                        dformat = "%d/%m/%Y";
-                        break;
-                    case 1:
-                        dformat = "%m/%d/%Y";
-                        break;
-                    case 2:
-                        dformat = "%d.%m.%Y";
-                        break;
-                    default:
-                        dformat = "%d/%m/%Y";
-                        break;
-                }
-                if (settings.get_int ("time-format") == 0) {
-                    tformat = "%l:%M %p";
-                } else {
-                    tformat = "%R";
-                }
-                settings.set_string ("weather-last-update", "%s".printf (lupd.format (dformat.concat (" ", tformat))));
+                settings.set_int64 ("weather-last-update", new DateTime.now_local ().to_unix ());
                 // Location
                 settings.set_string ("weather-location", dgettext ("libgweather-locations", location.get_city_name ()));
                 // Weather icon
@@ -274,6 +253,13 @@ namespace WingpanelWeather {
                     settings.set_string ("weather-visibility", "%s".printf (di.to_string ()).concat (" ", udistsym));
                 } else {
                     settings.set_string ("weather-visibility", "N/A");
+                }
+                // Sunrise / Sunset
+                string tformat;
+                if (settings.get_int ("time-format") == 0) {
+                    tformat = "%l:%M %p";
+                } else {
+                    tformat = "%R";
                 }
                 // Sunrise
                 ulong srte;

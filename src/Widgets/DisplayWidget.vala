@@ -53,6 +53,13 @@ namespace WingpanelWeather {
         }
 
         public void update_weather () {
+
+            // Request weather data update if coming back from hibernation/suspend state
+            if ((new DateTime.now_local ().to_unix() - settings.get_int64 ("weather-last-update-req")) > ((settings.get_int ("weather-update-rate") * 60) + 10)) {
+                info ("wingpanel-indicator-weather: weather information update requested by the indicator: resuming from hibernation/suspend state (automatic)");
+                WingpanelWeather.Weather.weather_data_update();
+            }
+
             weather_info.label_value = settings.get_string ("weather-temperature");
             weather_info.new_icon = settings.get_string ("weather-icon");
             weather_info.show_temp = settings.get_boolean ("display-temperature");

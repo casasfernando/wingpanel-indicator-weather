@@ -91,7 +91,29 @@ namespace WingpanelWeather {
 
         private void update_popover_widget_data () {
             if (popover_widget == null) return;
-            popover_widget.update_last_refresh (settings.get_string ("weather-last-update"));
+            string tformat;
+            string dformat;
+            switch (settings.get_int ("date-format")) {
+                case 0:
+                    dformat = "%d/%m/%Y";
+                    break;
+                case 1:
+                    dformat = "%m/%d/%Y";
+                    break;
+                case 2:
+                    dformat = "%d.%m.%Y";
+                    break;
+                default:
+                    dformat = "%d/%m/%Y";
+                    break;
+            }
+            if (settings.get_int ("time-format") == 0) {
+                tformat = "%l:%M %p";
+            } else {
+                tformat = "%R";
+            }
+            var lupd = new DateTime.from_unix_local (settings.get_int64 ("weather-last-update"));
+            popover_widget.update_last_refresh (lupd.format (dformat.concat (" ", tformat)));
             popover_widget.update_current_location (settings.get_string ("weather-location"));
             string conditions = settings.get_string ("weather-conditions");
             if (conditions == "-") {
@@ -132,8 +154,10 @@ namespace WingpanelWeather {
         }
 
         private void enable_weather_update () {
+            // Set the timer to request weather data updates automatically
             var refresh_timeout = Timeout.add_seconds (settings.get_int ("weather-update-rate") * 60, update_weather);
 
+            // Request weather data update on application settings change
             settings.changed["date-format"].connect ( () =>{
                 info ("wingpanel-indicator-weather: weather information update requested by the indicator: date format change (automatic)");
                 WingpanelWeather.Weather.weather_data_update();

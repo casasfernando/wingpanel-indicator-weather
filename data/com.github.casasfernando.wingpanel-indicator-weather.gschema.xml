@@ -95,9 +95,14 @@
       <summary>Current weather icon</summary>
       <description></description>
     </key>
-    <key type="s" name="weather-last-update">
-      <default>"N/A"</default>
-      <summary>Weather information last update</summary>
+    <key type="x" name="weather-last-update">
+      <default>1619273700</default>
+      <summary>Weather information last update time</summary>
+      <description></description>
+    </key>
+    <key type="x" name="weather-last-update-req">
+      <default>1619273700</default>
+      <summary>Weather information last update request time</summary>
       <description></description>
     </key>
     <key type="s" name="weather-location">
