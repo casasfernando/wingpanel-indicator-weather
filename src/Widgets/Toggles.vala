@@ -163,7 +163,6 @@ namespace WingpanelWeather {
             add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (date_format);
             add (time_format);
-            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
 
         }
 
