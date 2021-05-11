@@ -34,7 +34,6 @@ namespace WingpanelWeather {
         private SpinRow weather_refresh_spin;
         private PopoverWidgetRow current_location;
         private PopoverWidgetRow find_location;
-        private PopoverWidgetRow units_selection;
         private ComboRow unit_dist;
         private ComboRow unit_press;
         private ComboRow unit_speed;
@@ -100,8 +99,6 @@ namespace WingpanelWeather {
             weather_moon = new Wingpanel.Widgets.Switch ("Show moon phase information", settings.get_boolean ("display-weather-moon"));
             settings.bind ("display-weather-moon", weather_moon.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
-            // Units selection label
-            units_selection = new PopoverWidgetRow ("Units:", "", 4);
             // Unit Distance
             string[] unit_dist_val = { "Kilometer (km)", "Mile (mi)" };
             unit_dist = new ComboRow ("Distance", unit_dist_val, settings.get_int ("unit-distance"));
@@ -155,7 +152,6 @@ namespace WingpanelWeather {
             add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (weather_refresh_spin);
             add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-            add (units_selection);
             add (unit_temp);
             add (unit_press);
             add (unit_speed);
