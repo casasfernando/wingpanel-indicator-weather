@@ -47,7 +47,7 @@ namespace WingpanelWeather {
             add (weather_info);
 
             // Update weather information on load
-            info ("wingpanel-indicator-weather: weather information update requested by the indicator on startup (automatic)");
+            debug ("wingpanel-indicator-weather: weather information update requested by the indicator on startup (automatic)");
             WingpanelWeather.Weather.weather_data_update();
 
         }
@@ -56,7 +56,7 @@ namespace WingpanelWeather {
 
             // Request weather data update if coming back from hibernation/suspend state
             if ((new DateTime.now_local ().to_unix() - settings.get_int64 ("weather-last-update-req")) > ((settings.get_int ("weather-update-rate") * 60) + 10)) {
-                info ("wingpanel-indicator-weather: weather information update requested by the indicator: resuming from hibernation/suspend state (automatic)");
+                debug ("wingpanel-indicator-weather: weather information update requested by the indicator: resuming from hibernation/suspend state (automatic)");
                 WingpanelWeather.Weather.weather_data_update();
             }
 

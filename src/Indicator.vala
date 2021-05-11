@@ -159,44 +159,44 @@ namespace WingpanelWeather {
 
             // Request weather data update on application settings change
             settings.changed["date-format"].connect ( () =>{
-                info ("wingpanel-indicator-weather: weather information update requested by the indicator: date format change (automatic)");
+                debug ("wingpanel-indicator-weather: weather information update requested by the indicator: date format change (automatic)");
                 WingpanelWeather.Weather.weather_data_update();
             });
 
             settings.changed["location-manual"].connect ( () =>{
-                info ("wingpanel-indicator-weather: weather information update requested by the indicator: manual location change (automatic)");
+                debug ("wingpanel-indicator-weather: weather information update requested by the indicator: manual location change (automatic)");
                 WingpanelWeather.Weather.weather_data_update();
             });
 
             settings.changed["location-auto"].connect ( () =>{
                 if (settings.get_boolean ("location-auto")) {
-                    info ("wingpanel-indicator-weather: weather information update requested by the indicator: location discovery enabled (automatic)");
+                    debug ("wingpanel-indicator-weather: weather information update requested by the indicator: location discovery enabled (automatic)");
                     WingpanelWeather.Weather.weather_data_update();
                 }
             });
 
             settings.changed["time-format"].connect ( () =>{
-                info ("wingpanel-indicator-weather: weather information update requested by the indicator: time format change (automatic)");
+                debug ("wingpanel-indicator-weather: weather information update requested by the indicator: time format change (automatic)");
                 WingpanelWeather.Weather.weather_data_update();
             });
 
             settings.changed["unit-distance"].connect ( () =>{
-                info ("wingpanel-indicator-weather: weather information update requested by the indicator: distance unit change (automatic)");
+                debug ("wingpanel-indicator-weather: weather information update requested by the indicator: distance unit change (automatic)");
                 WingpanelWeather.Weather.weather_data_update();
             });
 
             settings.changed["unit-pressure"].connect ( () =>{
-                info ("wingpanel-indicator-weather: weather information update requested by the indicator: pressure unit change (automatic)");
+                debug ("wingpanel-indicator-weather: weather information update requested by the indicator: pressure unit change (automatic)");
                 WingpanelWeather.Weather.weather_data_update();
             });
 
             settings.changed["unit-speed"].connect ( () =>{
-                info ("wingpanel-indicator-weather: weather information update requested by the indicator: speed unit change (automatic)");
+                debug ("wingpanel-indicator-weather: weather information update requested by the indicator: speed unit change (automatic)");
                 WingpanelWeather.Weather.weather_data_update();
             });
 
             settings.changed["unit-temperature"].connect ( () =>{
-                info ("wingpanel-indicator-weather: weather information update requested by the indicator: temperature unit change (automatic)");
+                debug ("wingpanel-indicator-weather: weather information update requested by the indicator: temperature unit change (automatic)");
                 WingpanelWeather.Weather.weather_data_update();
             });
 
@@ -207,7 +207,7 @@ namespace WingpanelWeather {
         }
 
         private bool update_weather () {
-            info ("wingpanel-indicator-weather: weather information update requested by the indicator: refresh (automatic)");
+            debug ("wingpanel-indicator-weather: weather information update requested by the indicator: refresh (automatic)");
             WingpanelWeather.Weather.weather_data_update();
             return true;
         }

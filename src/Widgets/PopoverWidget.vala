@@ -84,7 +84,7 @@ namespace WingpanelWeather {
             refresh_button.relief = Gtk.ReliefStyle.NONE;
             */
             refresh_button.clicked.connect ( () => {
-                info ("Winpanel Weather: weather information update requested by user (manual)");
+                debug ("Winpanel Weather: weather information update requested by user (manual)");
                 WingpanelWeather.Weather.weather_data_update();
             });
 

@@ -32,18 +32,18 @@ namespace WingpanelWeather {
 
             // Discover current location if location discovery is enabled
             if (settings.get_boolean ("location-auto")) {
-                info ("wingpanel-indicator-weather: discovering current location");
+                debug ("wingpanel-indicator-weather: discovering current location");
                 get_location.begin ();
             // Otherwise use the manually user selected location
             } else {
-                info ("wingpanel-indicator-weather: using manual location setting");
+                debug ("wingpanel-indicator-weather: using manual location setting");
                 location = GWeather.Location.get_world ();
                 location = location.deserialize (settings.get_value ("location-manual"));
             }
             // Set current location
             weather_info = new GWeather.Info (location);
             // Update weather data
-            info ("wingpanel-indicator-weather: weather information update requested");
+            debug ("wingpanel-indicator-weather: weather information update requested");
             settings.set_int64 ("weather-last-update-req", new DateTime.now_local ().to_unix ());
             weather_info.update ();
             // Process updated weather data
@@ -51,7 +51,7 @@ namespace WingpanelWeather {
                 if (location == null) {
                     return;
                 }
-                info ("wingpanel-indicator-weather: weather information updated");
+                debug ("wingpanel-indicator-weather: weather information updated");
                 // Weather information last update
                 settings.set_int64 ("weather-last-update", new DateTime.now_local ().to_unix ());
                 // Location
@@ -304,18 +304,18 @@ namespace WingpanelWeather {
 
         public static async void get_location () {
             // Discover current location using GeoClue
-            info ("wingpanel-indicator-weather: location discovery started");
+            debug ("wingpanel-indicator-weather: location discovery started");
             try {
                 var simple = yield new GClue.Simple (
                     "com.github.casasfernando.wingpanel-indicator-weather", GClue.AccuracyLevel.CITY, null
                     );
 
                 simple.notify["location"].connect (() => {
-                    info ("wingpanel-indicator-weather: location discovery completed (notify)");
+                    debug ("wingpanel-indicator-weather: location discovery completed (notify)");
                     on_location_updated (simple.location.latitude, simple.location.longitude);
                 });
 
-                info ("wingpanel-indicator-weather: location discovery completed");
+                debug ("wingpanel-indicator-weather: location discovery completed");
                 on_location_updated (simple.location.latitude, simple.location.longitude);
 
             } catch (Error e) {
@@ -326,12 +326,12 @@ namespace WingpanelWeather {
 
         public static void on_location_updated (double latitude, double longitude) {
             // Change current location to the discovered one
-            info ("wingpanel-indicator-weather: updating current location");
+            debug ("wingpanel-indicator-weather: updating current location");
             location = GWeather.Location.get_world ();
             location = location.find_nearest_city (latitude, longitude);
             if (location != null) {
                 weather_info.location = location;
-                info ("wingpanel-indicator-weather: weather information update requested on discovered location change (automatic)");
+                debug ("wingpanel-indicator-weather: weather information update requested on discovered location change (automatic)");
                 weather_info.update ();
             }
         }
