@@ -3,6 +3,30 @@
 </p>
 <h1 align="center">Wingpanel Weather</h1>
 
+## About
+
+Wingpanel Weather is a status indicator that displays weather status information in elementary OS Wingpanel.
+
+Being this one of my first Vala applications I'm sure that the code can be improved, so:
+
+- If you find any problems while running the application please report it through an issue.
+- Pull requests are welcome.
+- Feedback and suggestions are always welcome as well.
+
+### Features:
+
+- Displays weather status
+- Displays current temperature in the indicator
+- Displays extended weather information in the popover including sunrise, sunset time and moon phase data.
+- Automatically tries to discover your current location. Otherwise the current location name can be manually entered in the settings page.
+- Notifys the user of important weather conditions change
+
+### Requirements
+
+- elementary OS 5.1.7 Hera
+
+## Screenshots
+
 ### Indicator
 ![Screenshot](data/screenshot_1.png)
 ### Tooltip:
@@ -15,7 +39,7 @@
 ### Settings:
 ![Screenshot](data/screenshot_5.png)
 
-## Building and Installation
+## Building and installation from source
 
 You'll need the following dependencies:
 
@@ -50,6 +74,15 @@ To install, use `ninja install`
 ```
 sudo ninja install
 com.github.casasfernando.wingpanel-indicator-weather
+```
+
+## Installation using the deb package
+
+You can also find a deb package available with every release in the releases page.
+To install it you just need to download it and run:
+
+```
+sudo dpkg -i wingpanel-indicator-weather_<release>_amd64.deb
 ```
 
 ## Special thanks and credits
