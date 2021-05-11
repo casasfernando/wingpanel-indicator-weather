@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="data/icons/128/com.github.casasfernando.wingpanel-indicator-weather.svg" alt="Icon" />
+  <img src="data/icons/128/com.github.casasfernando.wingpanel-indicator-weather.svg" alt="Wingpanel Weather icon" />
 </p>
 <h1 align="center">Wingpanel Weather</h1>
 
