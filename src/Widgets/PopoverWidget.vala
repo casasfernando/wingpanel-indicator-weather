@@ -88,14 +88,6 @@ namespace WingpanelWeather {
                 WingpanelWeather.Weather.weather_data_update();
             });
 
-            var title_label = new Gtk.Label ("Wingpanel Weather");
-            title_label.halign = Gtk.Align.CENTER;
-            title_label.hexpand = true;
-            title_label.margin_start = 9;
-            title_label.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
-
-            add (title_label);
-            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (last_refresh);
             add (refresh_button);
             add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
