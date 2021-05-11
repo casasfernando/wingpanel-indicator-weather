@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Wingpanel Weather
 GenericName=Wingpanel Weather
-Comment=Display weather information in Wingpanel
+Comment=Display weather status information in elementary OS Wingpanel
 Categories=Utility;
 Exec=com.github.casasfernando.wingpanel-indicator-weather
 Icon=com.github.casasfernando.wingpanel-indicator-weather
