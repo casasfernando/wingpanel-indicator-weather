@@ -8,14 +8,10 @@ Copyright: 2020 Tudor Plugaru <plugaru.tudor@gmail.com>
            2021 Fernando Casas Schössow <casasfernando@outlook.com>
 License: GPL-3
 
-Files: data/icons/*-moon.svg
+Files: *.png
+       *.svg
 Copyright: 2021 Fernando Casas Schössow <casasfernando@outlook.com>
 License: CC-BY-NC-SA-4.0
-
-Files: */com.github.casasfernando.wingpanel-indicator-weather.png
-       */com.github.casasfernando.wingpanel-indicator-weather.svg
-Copyright: iynque (Andrew Williams)
-License: CC-BY-NC-ND-4.0
 
 License: GPL-3
  This program is free software: you can redistribute it and/or modify it under
@@ -39,10 +35,4 @@ License: CC-BY-NC-SA-4.0
  License. To view a copy of this license, visit
  https://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to Creative
  Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
-License: CC-BY-NC-ND-4.0
- This work is licensed under the Creative Commons Attribution 4.0 International
- License. To view a copy of this license, visit
- https://creativecommons.org/licenses/by-nc-nd/4.0/ or send a letter to Creative
- Commons, PO Box 1866, Mountain View, CA 94042, USA
 

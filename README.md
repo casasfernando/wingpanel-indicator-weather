@@ -86,5 +86,4 @@ sudo dpkg -i wingpanel-indicator-weather_<release>_amd64.deb
 ```
 
 ## Special thanks and credits
- - [Plugaru T.](https://github.com/PlugaruT/) for developing the [original project](https://github.com/PlugaruT/wingpanel-monitor).
- - Application [icon](http://iynque.deviantart.com/art/iOS-7-Icons-Updated-378969049) by [iynque (Andrew Williams)](https://www.deviantart.com/iynque)
+ - [Plugaru T.](https://github.com/PlugaruT/) for developing the [original project](https://github.com/PlugaruT/wingpanel-monitor)
