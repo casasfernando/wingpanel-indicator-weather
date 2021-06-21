@@ -23,13 +23,13 @@
 
 namespace WingpanelWeather {
     public class TogglesWidget : Gtk.Grid {
-        private Wingpanel.Widgets.Switch indicator;
-        private Wingpanel.Widgets.Switch indicator_temp;
-        private Wingpanel.Widgets.Switch indicator_notifications;
-        private Wingpanel.Widgets.Switch weather_extended;
-        private Wingpanel.Widgets.Switch weather_sun;
-        private Wingpanel.Widgets.Switch weather_moon;
-        private Wingpanel.Widgets.Switch location_auto;
+        private Granite.SwitchModelButton indicator;
+        private Granite.SwitchModelButton indicator_temp;
+        private Granite.SwitchModelButton indicator_notifications;
+        private Granite.SwitchModelButton weather_extended;
+        private Granite.SwitchModelButton weather_sun;
+        private Granite.SwitchModelButton weather_moon;
+        private Granite.SwitchModelButton location_auto;
         private GWeather.LocationEntry location_search;
         private SpinRow weather_refresh_spin;
         private PopoverWidgetRow current_location;
@@ -49,22 +49,27 @@ namespace WingpanelWeather {
 
         construct {
             orientation = Gtk.Orientation.VERTICAL;
+            row_spacing = 6;
 
             // Enable indicator switch
-            indicator = new Wingpanel.Widgets.Switch ("Show indicator", settings.get_boolean ("display-indicator"));
-            settings.bind ("display-indicator", indicator.get_switch (), "active", SettingsBindFlags.DEFAULT);
+            indicator = new Granite.SwitchModelButton ("Show indicator");
+            indicator.set_active (settings.get_boolean ("display-indicator"));
+            settings.bind ("display-indicator", indicator, "active", SettingsBindFlags.DEFAULT);
 
             // Enable temperature displain in Wingpanel indicator switch
-            indicator_temp = new Wingpanel.Widgets.Switch ("Show temperature in panel", settings.get_boolean ("display-temperature"));
-            settings.bind ("display-temperature", indicator_temp.get_switch (), "active", SettingsBindFlags.DEFAULT);
+            indicator_temp = new Granite.SwitchModelButton ("Show temperature in panel");
+            indicator_temp.set_active (settings.get_boolean ("display-temperature"));
+            settings.bind ("display-temperature", indicator_temp, "active", SettingsBindFlags.DEFAULT);
 
             // Enable weather conditions change notifications
-            indicator_notifications = new Wingpanel.Widgets.Switch ("Show notifications", settings.get_boolean ("display-notifications"));
-            settings.bind ("display-notifications", indicator_notifications.get_switch (), "active", SettingsBindFlags.DEFAULT);
+            indicator_notifications = new Granite.SwitchModelButton ("Show notifications");
+            indicator_notifications.set_active (settings.get_boolean ("display-notifications"));
+            settings.bind ("display-notifications", indicator_notifications, "active", SettingsBindFlags.DEFAULT);
 
             // Location discovery switch
-            location_auto = new Wingpanel.Widgets.Switch ("Location discovery", settings.get_boolean ("location-auto"));
-            settings.bind ("location-auto", location_auto.get_switch (), "active", SettingsBindFlags.DEFAULT);
+            location_auto = new Granite.SwitchModelButton ("Location discovery");
+            location_auto.set_active (settings.get_boolean ("location-auto"));
+            settings.bind ("location-auto", location_auto, "active", SettingsBindFlags.DEFAULT);
 
             // Current location label
             current_location = new PopoverWidgetRow ("Current location", settings.get_string ("weather-location"), 4);
@@ -90,14 +95,17 @@ namespace WingpanelWeather {
             });
 
             // Show extended weather information
-            weather_extended = new Wingpanel.Widgets.Switch ("Show weather extended information", settings.get_boolean ("display-weather-extended"));
-            settings.bind ("display-weather-extended", weather_extended.get_switch (), "active", SettingsBindFlags.DEFAULT);
+            weather_extended = new Granite.SwitchModelButton ("Show weather extended information");
+            weather_extended.set_active (settings.get_boolean ("display-weather-extended"));
+            settings.bind ("display-weather-extended", weather_extended, "active", SettingsBindFlags.DEFAULT);
             // Show sunrise/sunset information
-            weather_sun = new Wingpanel.Widgets.Switch ("Show sunrise/sunset time", settings.get_boolean ("display-weather-sun"));
-            settings.bind ("display-weather-sun", weather_sun.get_switch (), "active", SettingsBindFlags.DEFAULT);
+            weather_sun = new Granite.SwitchModelButton ("Show sunrise/sunset time");
+            weather_sun.set_active (settings.get_boolean ("display-weather-sun"));
+            settings.bind ("display-weather-sun", weather_sun, "active", SettingsBindFlags.DEFAULT);
             // Show moon phase information
-            weather_moon = new Wingpanel.Widgets.Switch ("Show moon phase information", settings.get_boolean ("display-weather-moon"));
-            settings.bind ("display-weather-moon", weather_moon.get_switch (), "active", SettingsBindFlags.DEFAULT);
+            weather_moon = new Granite.SwitchModelButton ("Show moon phase information");
+            weather_moon.set_active (settings.get_boolean ("display-weather-moon"));
+            settings.bind ("display-weather-moon", weather_moon, "active", SettingsBindFlags.DEFAULT);
 
             // Unit Distance
             string[] unit_dist_val = { "Kilometer (km)", "Mile (mi)" };
