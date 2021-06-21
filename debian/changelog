@@ -1,3 +1,11 @@
+wingpanel-indicator-weather (0.7.1) bionic; urgency=medium
+
+  * Updated README file
+  * Fixed a bug in distance unit configuration
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Mon, 21 Jun 2021 22:20:00 +0200
+
+
 wingpanel-indicator-weather (0.7.0) bionic; urgency=medium
 
   * Changed application icon
