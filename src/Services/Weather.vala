@@ -235,15 +235,15 @@ namespace WingpanelWeather {
                 string udistsym;
                 switch (settings.get_int ("unit-distance")) {
                     case 0:
-                        udist = GWeather.TemperatureUnit.KM;
+                        udist = GWeather.DistanceUnit.KM;
                         udistsym = "km";
                         break;
                     case 1:
-                        udist = GWeather.TemperatureUnit.MILES;
+                        udist = GWeather.DistanceUnit.MILES;
                         udistsym = "mi";
                         break;
                     default:
-                        udist = GWeather.TemperatureUnit.KM;
+                        udist = GWeather.DistanceUnit.KM;
                         udistsym = "km";
                         break;
                 }
