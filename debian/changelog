@@ -1,3 +1,12 @@
+wingpanel-indicator-weather (0.7.2) focal; urgency=medium
+
+  * Fixed the application opening a new settings window every time Open Settings is clicked
+  * Added additional keyboard shortcut to close the settings window: CTRL+q
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Sat, 16 Oct 2021 21:30:00 +0200
+
+
 wingpanel-indicator-weather (0.7.1) focal; urgency=medium
 
   * Added support for elementary OS Odin
