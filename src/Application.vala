@@ -28,28 +28,30 @@ namespace WingpanelWeather {
                     flags : ApplicationFlags.FLAGS_NONE);
         }
 
+        private MainWindow app_window = null;
+
         protected override void activate () {
-            var app_window = new MainWindow (this);
-            app_window.show_all ();
+            if (app_window == null) {
+                app_window = new MainWindow (this);
+                app_window.set_application (this);
+                app_window.show_all ();
+            }
+
+            app_window.present ();
 
             var quit_action = new SimpleAction ("quit", null);
-
             add_action (quit_action);
             set_accels_for_action ("app.quit", {"Escape"});
 
             quit_action.activate.connect (() => {
-                                              if (app_window != null) {
-                                                  app_window.destroy ();
-                                              }
-                                          });
+                                                    if (app_window != null) {
+                                                        app_window.destroy ();
+                                                    }
+                                                });
         }
 
-
         private static int main (string[] args) {
-            Gtk.init (ref args);
-
-            var app = new WingpanelWeather ();
-            return app.run (args);
+            return new WingpanelWeather ().run (args);
         }
     }
 }
