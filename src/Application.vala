@@ -41,7 +41,7 @@ namespace WingpanelWeather {
 
             var quit_action = new SimpleAction ("quit", null);
             add_action (quit_action);
-            set_accels_for_action ("app.quit", {"Escape"});
+            set_accels_for_action ("app.quit", {"<Control>q", "Escape"});
 
             quit_action.activate.connect (() => {
                                                     if (app_window != null) {
