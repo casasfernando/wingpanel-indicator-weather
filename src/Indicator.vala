@@ -82,7 +82,7 @@ namespace WingpanelWeather {
                 Timeout.add_seconds (1, () => {
                     display_widget.update_weather ();
                     update_popover_widget_data ();
-                    return true;
+                    return GLib.Source.CONTINUE;
                 });
             }
         }
@@ -207,7 +207,7 @@ namespace WingpanelWeather {
         private bool update_weather () {
             debug ("wingpanel-indicator-weather: weather information update requested by the indicator: refresh (automatic)");
             WingpanelWeather.Weather.weather_data_update();
-            return true;
+            return GLib.Source.CONTINUE;
         }
     }
 }
