@@ -45,12 +45,12 @@ You'll need the following dependencies:
 
 ```
 libglib2.0-dev
-libgranite-dev
-libgtk-3-dev
-libwingpanel-2.0-dev
 libgeoclue-2-dev
 libgweather-3-dev
 libnotify-dev
+libgranite-dev
+libgtk-3-dev
+libwingpanel-2.0-dev
 meson
 valac
 ```
@@ -58,7 +58,7 @@ valac
 You can install them running:
 
 ```
-sudo apt install libgranite-dev libgtk-3-dev libwingpanel-2.0-dev meson valac libgeoclue-2-dev libgweather-3-dev libnotify-dev
+sudo apt install libgeoclue-2-dev libgweather-3-dev libnotify-dev libgranite-dev libgtk-3-dev libwingpanel-2.0-dev meson valac
 ```
 
 Run `meson` to configure the build environment and then `ninja` to build
