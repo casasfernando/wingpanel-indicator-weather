@@ -1,3 +1,11 @@
+wingpanel-indicator-weather (0.7.3) bionic; urgency=medium
+
+  * Updated README file
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Mon, 18 Oct 2021 00:20:00 +0200
+
+
 wingpanel-indicator-weather (0.7.2) bionic; urgency=medium
 
   * Fixed the application opening a new settings window every time Open Settings is clicked
