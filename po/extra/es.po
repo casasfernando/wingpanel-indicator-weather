@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-27 21:46+0200\n"
-"PO-Revision-Date: 2021-10-27 21:46+0200\n"
+"PO-Revision-Date: 2021-10-27 21:53+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -25,12 +25,12 @@ msgstr ""
 
 #: data/com.github.casasfernando.wingpanel-indicator-weather.appdata.xml.in:7
 msgid "Weather indicator for Wingpanel"
-msgstr ""
+msgstr "Indicador de clima para Wingpanel"
 
 #: data/com.github.casasfernando.wingpanel-indicator-weather.appdata.xml.in:9
 #: data/com.github.casasfernando.wingpanel-indicator-weather.desktop.in:5
 msgid "Display weather status information in elementary OS Wingpanel"
-msgstr ""
+msgstr "Muestra el estado del clima en Wingpanel de elementary OS"
 
 #: data/com.github.casasfernando.wingpanel-indicator-weather.appdata.xml.in:22
 msgid "Fernando Casas Schössow"
@@ -46,4 +46,4 @@ msgstr ""
 
 #: data/com.github.casasfernando.wingpanel-indicator-weather.desktop.in:12
 msgid "Weather;Forecast;"
-msgstr ""
+msgstr "Clima;Previsión;"
