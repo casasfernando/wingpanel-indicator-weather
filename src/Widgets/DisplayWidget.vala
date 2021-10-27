@@ -42,7 +42,7 @@ namespace WingpanelWeather {
             valign = Gtk.Align.CENTER;
 
             weather_info = new IndicatorWidget ("weather-clear-symbolic", 4);
-            weather_info.tooltip_text = "%s in %s".printf ("Clear sky", settings.get_string ("weather-location"));
+            weather_info.tooltip_text = "%s in %s".printf (_("Clear sky"), settings.get_string ("weather-location"));
 
             add (weather_info);
 
@@ -70,18 +70,18 @@ namespace WingpanelWeather {
                     conditions = settings.get_string ("weather-sky");
                 }
                 if (settings.get_boolean ("display-notifications")) {
-                    nbody = "%s in %s\nTemperature: %s\nFeels like: %s\nWind: %s\nHumidity: %s".printf (conditions, settings.get_string ("weather-location"), settings.get_string ("weather-temperature"), settings.get_string ("weather-feel"), settings.get_string ("weather-wind"), settings.get_string ("weather-humidity"));
+                    nbody = _("%s in %s\nTemperature: %s\nFeels like: %s\nWind: %s\nHumidity: %s").printf (conditions, settings.get_string ("weather-location"), settings.get_string ("weather-temperature"), settings.get_string ("weather-feel"), settings.get_string ("weather-wind"), settings.get_string ("weather-humidity"));
                     weather_conditions_change_notify (nbody);
                 }
             } else if (conditions == "-") {
                 conditions = settings.get_string ("weather-sky");
             }
-            weather_info.tooltip_text = "%s in %s".printf (conditions, settings.get_string ("weather-location"));
+            weather_info.tooltip_text = _("%s in %s").printf (conditions, settings.get_string ("weather-location"));
         }
 
         public void weather_conditions_change_notify (string body) {
             Notify.init ("com.github.casasfernando.wingpanel-indicator-weather");
-            var notification = new Notify.Notification ("Weather conditions update", body, "com.github.casasfernando.wingpanel-indicator-weather");
+            var notification = new Notify.Notification (_("Weather conditions update"), body, "com.github.casasfernando.wingpanel-indicator-weather");
             notification.set_app_name ("Wingpanel Weather");
             notification.set_hint ("desktop-entry", "com.github.casasfernando.wingpanel-indicator-weather");
             notification.set_urgency (Notify.Urgency.LOW);

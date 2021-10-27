@@ -84,7 +84,7 @@ namespace WingpanelWeather {
                     int t = (int) temp;
                     settings.set_string ("weather-temperature", "%s".printf (t.to_string ()).concat (utempsym));
                 } else {
-                    settings.set_string ("weather-temperature", "N/A");
+                    settings.set_string ("weather-temperature", _("N/A"));
                 }
                 // Feels Like
                 double feel;
@@ -92,7 +92,7 @@ namespace WingpanelWeather {
                     int f = (int) feel;
                     settings.set_string ("weather-feel", "%s".printf (f.to_string ()).concat (utempsym));
                 } else {
-                    settings.set_string ("weather-feel", "N/A");
+                    settings.set_string ("weather-feel", _("N/A"));
                 }
                 // Wind
                 GWeather.SpeedUnit uspeed;
@@ -108,7 +108,7 @@ namespace WingpanelWeather {
                         break;
                     case 2:
                         uspeed = GWeather.SpeedUnit.KNOTS;
-                        uspeedsym = "knots";
+                        uspeedsym = _("knots");
                         break;
                     case 3:
                         uspeed = GWeather.SpeedUnit.MS;
@@ -130,63 +130,63 @@ namespace WingpanelWeather {
                     string wdirstr;
                     switch (wdir) {
                         case E:
-                            wdirstr = "E";
+                            wdirstr = _("E");
                             break;
                         case ENE:
-                            wdirstr = "ENE";
+                            wdirstr = _("ENE");
                             break;
                         case ESE:
-                            wdirstr = "ESE";
+                            wdirstr = _("ESE");
                             break;
                         case N:
-                            wdirstr = "N";
+                            wdirstr = _("N");
                             break;
                         case NE:
-                            wdirstr = "NE";
+                            wdirstr = _("NE");
                             break;
                         case NNE:
-                            wdirstr = "NNE";
+                            wdirstr = _("NNE");
                             break;
                         case NNW:
-                            wdirstr = "NNW";
+                            wdirstr = _("NNW");
                             break;
                         case NW:
-                            wdirstr = "NW";
+                            wdirstr = _("NW");
                             break;
                         case S:
-                            wdirstr = "S";
+                            wdirstr = _("S");
                             break;
                         case SE:
-                            wdirstr = "SE";
+                            wdirstr = _("SE");
                             break;
                         case SSE:
-                            wdirstr = "SSE";
+                            wdirstr = _("SSE");
                             break;
                         case SSW:
-                            wdirstr = "SSW";
+                            wdirstr = _("SSW");
                             break;
                         case SW:
-                            wdirstr = "SW";
+                            wdirstr = _("SW");
                             break;
                         case VARIABLE:
-                            wdirstr = "Variable";
+                            wdirstr = _("Variable");
                             break;
                         case W:
-                            wdirstr = "W";
+                            wdirstr = _("W");
                             break;
                         case WNW:
-                            wdirstr = "WNW";
+                            wdirstr = _("WNW");
                             break;
                         case WSW:
-                            wdirstr = "WSW";
+                            wdirstr = _("WSW");
                             break;
                         default:
-                            wdirstr = "N/A";
+                            wdirstr = _("N/A");
                             break;
                     }
                     settings.set_string ("weather-wind", "%s".printf (wdirstr.concat (" ", ws.to_string (), " ", uspeedsym)));
                 } else {
-                    settings.set_string ("weather-wind", "N/A");
+                    settings.set_string ("weather-wind", _("N/A"));
                 }
                 // Humidity
                 settings.set_string ("weather-humidity", dgettext ("libgweather", weather_info.get_humidity ()));
@@ -196,7 +196,7 @@ namespace WingpanelWeather {
                     int d = (int) dew;
                     settings.set_string ("weather-dew", "%s".printf (d.to_string ()).concat (utempsym));
                 } else {
-                    settings.set_string ("weather-dew", "N/A");
+                    settings.set_string ("weather-dew", _("N/A"));
                 }
                 // Pressure
                 GWeather.PressureUnit upress;
@@ -228,7 +228,7 @@ namespace WingpanelWeather {
                     int p = (int) press;
                     settings.set_string ("weather-pressure", "%s".printf (p.to_string ()).concat(" ", upresssym));
                 } else {
-                    settings.set_string ("weather-pressure", "N/A");
+                    settings.set_string ("weather-pressure", _("N/A"));
                 }
                 // Visibility
                 GWeather.DistanceUnit udist;
@@ -252,7 +252,7 @@ namespace WingpanelWeather {
                     int di = (int) dist;
                     settings.set_string ("weather-visibility", "%s".printf (di.to_string ()).concat (" ", udistsym));
                 } else {
-                    settings.set_string ("weather-visibility", "N/A");
+                    settings.set_string ("weather-visibility", _("N/A"));
                 }
                 // Sunrise / Sunset
                 string tformat;
@@ -267,7 +267,7 @@ namespace WingpanelWeather {
                     var srtl = new DateTime.from_unix_local (srte);
                     settings.set_string ("weather-sunrise", "%s".printf (srtl.format (tformat)));
                 } else {
-                    settings.set_string ("weather-sunrise", "N/A");
+                    settings.set_string ("weather-sunrise", _("N/A"));
                 }
                 // Sunset
                 ulong sste;
@@ -275,24 +275,24 @@ namespace WingpanelWeather {
                     var sstl = new DateTime.from_unix_local (sste);
                     settings.set_string ("weather-sunset", "%s".printf (sstl.format (tformat)));
                 } else {
-                    settings.set_string ("weather-sunset", "N/A");
+                    settings.set_string ("weather-sunset", _("N/A"));
                 }
                 // Moon Phase
                 double mp;
                 double lat;
                 if (weather_info.get_value_moonphase (out mp, out lat)) {
-                    if (mp < 22.5 | mp > 337.5) { settings.set_string ("weather-moon-phase", "New moon"); settings.set_string ("weather-moon-phase-icon", "new-moon"); }
-                    else if (mp > 22.5 & mp < 67.5) { settings.set_string ("weather-moon-phase", "Waxing crescent"); settings.set_string ("weather-moon-phase-icon", "waxing-crescent-moon"); }
-                    else if (mp > 67.5 & mp < 112.5) { settings.set_string ("weather-moon-phase", "First quarter"); settings.set_string ("weather-moon-phase-icon", "first-quarter-moon"); }
-                    else if (mp > 112.5 & mp < 157.5) { settings.set_string ("weather-moon-phase", "Waxing gibbous"); settings.set_string ("weather-moon-phase-icon", "waxing-gibbous-moon"); }
-                    else if (mp > 157.5 & mp < 202.5) { settings.set_string ("weather-moon-phase", "Full moon"); settings.set_string ("weather-moon-phase-icon", "full-moon"); }
-                    else if (mp > 202.5 & mp < 247.5) { settings.set_string ("weather-moon-phase", "Waning gibbous"); settings.set_string ("weather-moon-phase-icon", "waning-gibbous-moon"); }
-                    else if (mp > 247.5 & mp < 292.5) { settings.set_string ("weather-moon-phase", "Third quarter"); settings.set_string ("weather-moon-phase-icon", "third-quarter-moon"); }
-                    else if (mp > 292.5 & mp < 337.5) { settings.set_string ("weather-moon-phase", "Waning crescent"); settings.set_string ("weather-moon-phase-icon", "waning-crescent-moon"); }
-                    else { settings.set_string ("weather-moon-phase", "N/A"); settings.set_string ("weather-moon-phase-icon", "full-moon"); }
+                    if (mp < 22.5 | mp > 337.5) { settings.set_string ("weather-moon-phase", _("New moon")); settings.set_string ("weather-moon-phase-icon", "new-moon"); }
+                    else if (mp > 22.5 & mp < 67.5) { settings.set_string ("weather-moon-phase", _("Waxing crescent")); settings.set_string ("weather-moon-phase-icon", "waxing-crescent-moon"); }
+                    else if (mp > 67.5 & mp < 112.5) { settings.set_string ("weather-moon-phase", _("First quarter")); settings.set_string ("weather-moon-phase-icon", "first-quarter-moon"); }
+                    else if (mp > 112.5 & mp < 157.5) { settings.set_string ("weather-moon-phase", _("Waxing gibbous")); settings.set_string ("weather-moon-phase-icon", "waxing-gibbous-moon"); }
+                    else if (mp > 157.5 & mp < 202.5) { settings.set_string ("weather-moon-phase", _("Full moon")); settings.set_string ("weather-moon-phase-icon", "full-moon"); }
+                    else if (mp > 202.5 & mp < 247.5) { settings.set_string ("weather-moon-phase", _("Waning gibbous")); settings.set_string ("weather-moon-phase-icon", "waning-gibbous-moon"); }
+                    else if (mp > 247.5 & mp < 292.5) { settings.set_string ("weather-moon-phase", _("Third quarter")); settings.set_string ("weather-moon-phase-icon", "third-quarter-moon"); }
+                    else if (mp > 292.5 & mp < 337.5) { settings.set_string ("weather-moon-phase", _("Waning crescent")); settings.set_string ("weather-moon-phase-icon", "waning-crescent-moon"); }
+                    else { settings.set_string ("weather-moon-phase", _("N/A")); settings.set_string ("weather-moon-phase-icon", "full-moon"); }
                     //info("wingpanel-indicator-weather: current phase of the moon in degrees: ".concat ("%s".printf (mp.to_string ())));
                 } else {
-                    settings.set_string ("weather-moon-phase", "N/A");
+                    settings.set_string ("weather-moon-phase", _("N/A"));
                     settings.set_string ("weather-moon-phase-icon", "full-moon"); 
                 }
 
