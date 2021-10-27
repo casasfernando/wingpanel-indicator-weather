@@ -10,7 +10,7 @@ Wingpanel Weather is a status indicator that displays weather status information
 Being this one of my first Vala applications I'm sure that the code can be improved, so:
 
 - If you find any problems while running the application please report it through an issue.
-- Pull requests are welcome.
+- Pull requests and translations are welcome.
 - Feedback and suggestions are always welcome as well.
 
 ### Features:

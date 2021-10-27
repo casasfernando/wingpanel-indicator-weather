@@ -49,24 +49,24 @@ namespace WingpanelWeather {
             orientation = Gtk.Orientation.VERTICAL;
             column_spacing = 4;
 
-            last_refresh = new PopoverWidgetRow ("Last Update", "N/A", 4);
-            cur_loc = new PopoverWidgetRow ("Location", "N/A", 4);
-            cur_details = new PopoverWidgetRowIconic ("", settings.get_string ("weather-icon"), "N/A", 4);
-            cur_temp = new PopoverWidgetRow ("Temperature", "N/A", 4);
-            cur_feel = new PopoverWidgetRow ("Feels Like", "N/A", 4);
-            cur_wind = new PopoverWidgetRow ("Wind", "N/A", 4);
-            cur_hum = new PopoverWidgetRow ("Humidity", "N/A", 4);
-            cur_dew = new PopoverWidgetRow ("Dew Point", "N/A", 4);
-            cur_press = new PopoverWidgetRow ("Pressure", "N/A", 4);
-            cur_vis = new PopoverWidgetRow ("Visibility", "N/A", 4);
+            last_refresh = new PopoverWidgetRow (_("Last Update"), _("N/A"), 4);
+            cur_loc = new PopoverWidgetRow (_("Location"), _("N/A"), 4);
+            cur_details = new PopoverWidgetRowIconic ("", settings.get_string ("weather-icon"), _("N/A"), 4);
+            cur_temp = new PopoverWidgetRow (_("Temperature"), _("N/A"), 4);
+            cur_feel = new PopoverWidgetRow (_("Feels Like"), _("N/A"), 4);
+            cur_wind = new PopoverWidgetRow (_("Wind"), _("N/A"), 4);
+            cur_hum = new PopoverWidgetRow (_("Humidity"), _("N/A"), 4);
+            cur_dew = new PopoverWidgetRow (_("Dew Point"), _("N/A"), 4);
+            cur_press = new PopoverWidgetRow (_("Pressure"), _("N/A"), 4);
+            cur_vis = new PopoverWidgetRow (_("Visibility"), _("N/A"), 4);
             sun_info = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-            srise = new PopoverWidgetRowIconic ("Sunrise", "daytime-sunrise-symbolic", "N/A", 4);
-            sset = new PopoverWidgetRowIconic ("Sunset", "daytime-sunset-symbolic", "N/A", 4);
+            srise = new PopoverWidgetRowIconic (_("Sunrise"), "daytime-sunrise-symbolic", _("N/A"), 4);
+            sset = new PopoverWidgetRowIconic (_("Sunset"), "daytime-sunset-symbolic", _("N/A"), 4);
             moon_info = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-            mphase = new PopoverWidgetRowIconic ("Moon Phase", settings.get_string ("weather-moon-phase-icon"), "N/A", 4);
+            mphase = new PopoverWidgetRowIconic (_("Moon Phase"), settings.get_string ("weather-moon-phase-icon"), _("N/A"), 4);
 
             var settings_button = new Gtk.ModelButton ();
-            settings_button.text = _ ("Open Settings...");
+            settings_button.text = _("Open Settings...");
             /*
             var settings_button = new Gtk.Button.from_icon_name ("preferences-system-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             settings_button.always_show_image = true;
@@ -76,7 +76,7 @@ namespace WingpanelWeather {
             settings_button.clicked.connect (open_settings);
 
             var refresh_button = new Gtk.ModelButton ();
-            refresh_button.text = _ ("Update Weather Now");
+            refresh_button.text = _("Update Weather Data");
             /*
             var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             refresh_button.always_show_image = true;

@@ -6,7 +6,7 @@
   <name>Wingpanel Weather</name>
   <summary>Weather indicator for Wingpanel</summary>
   <description>
-    <p>Display weather information in Wingpanel.</p>
+    <p>Display weather status information in elementary OS Wingpanel</p>
   </description>
   <custom>
      <value key="x-appcenter-suggested-price">0</value>

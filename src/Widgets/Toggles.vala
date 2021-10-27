@@ -51,29 +51,29 @@ namespace WingpanelWeather {
             orientation = Gtk.Orientation.VERTICAL;
 
             // Enable indicator switch
-            indicator = new Wingpanel.Widgets.Switch ("Show indicator", settings.get_boolean ("display-indicator"));
+            indicator = new Wingpanel.Widgets.Switch (_("Show indicator"), settings.get_boolean ("display-indicator"));
             settings.bind ("display-indicator", indicator.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
             // Enable temperature displain in Wingpanel indicator switch
-            indicator_temp = new Wingpanel.Widgets.Switch ("Show temperature in panel", settings.get_boolean ("display-temperature"));
+            indicator_temp = new Wingpanel.Widgets.Switch (_("Show temperature in panel"), settings.get_boolean ("display-temperature"));
             settings.bind ("display-temperature", indicator_temp.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
             // Enable weather conditions change notifications
-            indicator_notifications = new Wingpanel.Widgets.Switch ("Show notifications", settings.get_boolean ("display-notifications"));
+            indicator_notifications = new Wingpanel.Widgets.Switch (_("Show notifications"), settings.get_boolean ("display-notifications"));
             settings.bind ("display-notifications", indicator_notifications.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
             // Location discovery switch
-            location_auto = new Wingpanel.Widgets.Switch ("Location discovery", settings.get_boolean ("location-auto"));
+            location_auto = new Wingpanel.Widgets.Switch (_("Location discovery"), settings.get_boolean ("location-auto"));
             settings.bind ("location-auto", location_auto.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
             // Current location label
-            current_location = new PopoverWidgetRow ("Current location", settings.get_string ("weather-location"), 4);
+            current_location = new PopoverWidgetRow (_("Current location"), settings.get_string ("weather-location"), 4);
             settings.changed["weather-location"].connect ( () =>{
                 current_location.label_value = settings.get_string ("weather-location");
             });
 
             // Search your location label
-            find_location = new PopoverWidgetRow ("Search your location:", "", 4);
+            find_location = new PopoverWidgetRow (_("Search your location:"), "", 4);
             settings.bind ("location-auto", find_location, "visible", SettingsBindFlags.INVERT_BOOLEAN);
 
             // Search location search entry
@@ -83,56 +83,56 @@ namespace WingpanelWeather {
             settings.bind ("location-auto", location_search, "visible", SettingsBindFlags.INVERT_BOOLEAN);
 
             // Weather information update refresh rate selector
-            weather_refresh_spin = new SpinRow ("Update weather data (in mins)", 15, 1440);
+            weather_refresh_spin = new SpinRow (_("Update weather data (in mins)"), 15, 1440);
             weather_refresh_spin.set_spin_value (settings.get_int ("weather-update-rate"));
             weather_refresh_spin.changed.connect ( () => {
                 settings.set_int ("weather-update-rate", weather_refresh_spin.get_spin_value ());
             });
 
             // Show extended weather information
-            weather_extended = new Wingpanel.Widgets.Switch ("Show weather extended information", settings.get_boolean ("display-weather-extended"));
+            weather_extended = new Wingpanel.Widgets.Switch (_("Show weather extended information"), settings.get_boolean ("display-weather-extended"));
             settings.bind ("display-weather-extended", weather_extended.get_switch (), "active", SettingsBindFlags.DEFAULT);
             // Show sunrise/sunset information
-            weather_sun = new Wingpanel.Widgets.Switch ("Show sunrise/sunset time", settings.get_boolean ("display-weather-sun"));
+            weather_sun = new Wingpanel.Widgets.Switch (_("Show sunrise/sunset time"), settings.get_boolean ("display-weather-sun"));
             settings.bind ("display-weather-sun", weather_sun.get_switch (), "active", SettingsBindFlags.DEFAULT);
             // Show moon phase information
-            weather_moon = new Wingpanel.Widgets.Switch ("Show moon phase information", settings.get_boolean ("display-weather-moon"));
+            weather_moon = new Wingpanel.Widgets.Switch (_("Show moon phase information"), settings.get_boolean ("display-weather-moon"));
             settings.bind ("display-weather-moon", weather_moon.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
             // Unit Distance
-            string[] unit_dist_val = { "Kilometer (km)", "Mile (mi)" };
-            unit_dist = new ComboRow ("Distance", unit_dist_val, settings.get_int ("unit-distance"));
+            string[] unit_dist_val = { _("Kilometer (km)"), _("Mile (mi)") };
+            unit_dist = new ComboRow (_("Distance"), unit_dist_val, settings.get_int ("unit-distance"));
             unit_dist.changed.connect( () => {
                 settings.set_int ("unit-distance", unit_dist.get_combo_value ());
             });
             // Unit Pressure
-            string[] unit_press_val = { "Hectopascal (hPa)", "Inches of mercury (inHg)", "Millibars (mbar)", "Millimeters of mercury (mmHg)" };
-            unit_press = new ComboRow ("Pressure", unit_press_val, settings.get_int ("unit-pressure"));
+            string[] unit_press_val = { "Hectopascal (hPa)", _("Inches of mercury (inHg)"), _("Millibars (mbar)"), _("Millimeters of mercury (mmHg)") };
+            unit_press = new ComboRow (_("Pressure"), unit_press_val, settings.get_int ("unit-pressure"));
             unit_press.changed.connect( () => {
                 settings.set_int ("unit-pressure", unit_press.get_combo_value ());
             });
             // Unit Speed
-            string[] unit_speed_val = { "Beaufort (bft)", "Kilometers per hour (km/h)", "Knots (knots)", "Meters per second (m/s)", "Miles per hour (mph)" };
-            unit_speed = new ComboRow ("Speed", unit_speed_val, settings.get_int ("unit-speed"));
+            string[] unit_speed_val = { "Beaufort (bft)", _("Kilometers per hour (km/h)"), _("Knots (knots)"), _("Meters per second (m/s)"), _("Miles per hour (mph)") };
+            unit_speed = new ComboRow (_("Speed"), unit_speed_val, settings.get_int ("unit-speed"));
             unit_speed.changed.connect( () => {
                 settings.set_int ("unit-speed", unit_speed.get_combo_value ());
             });
             // Unit Temperature
             string[] unit_temp_val = { "Celsius (ºC)", "Fahrenheit (ºF)" };
-            unit_temp = new ComboRow ("Temperature", unit_temp_val, settings.get_int ("unit-temperature"));
+            unit_temp = new ComboRow (_("Temperature"), unit_temp_val, settings.get_int ("unit-temperature"));
             unit_temp.changed.connect( () => {
                 settings.set_int ("unit-temperature", unit_temp.get_combo_value ());
             });
 
             // Date Format
             string[] date_format_val = { "DD/MM/YYYY", "MM/DD/YYYY", "DD.MM.YYYY" };
-            date_format = new ComboRow ("Date format", date_format_val, settings.get_int ("date-format"));
+            date_format = new ComboRow (_("Date format"), date_format_val, settings.get_int ("date-format"));
             date_format.changed.connect( () => {
                 settings.set_int ("date-format", date_format.get_combo_value ());
             });
             // Time Format
-            string[] time_format_val = { "AM/PM", "24-hour" };
-            time_format = new ComboRow ("Time format", time_format_val, settings.get_int ("time-format"));
+            string[] time_format_val = { "AM/PM", _("24-hour") };
+            time_format = new ComboRow (_("Time format"), time_format_val, settings.get_int ("time-format"));
             time_format.changed.connect( () => {
                 settings.set_int ("time-format", time_format.get_combo_value ());
             });
