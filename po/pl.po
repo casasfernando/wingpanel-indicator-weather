@@ -1,22 +1,11 @@
-# Polish translations for com.github.casasfernando.wingpanel-indicator-weather package.
-# Copyright (C) 2021 THE com.github.casasfernando.wingpanel-indicator-weather'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the com.github.casasfernando.wingpanel-indicator-weather package.
-# Automatically generated, 2021.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: com.github.casasfernando.wingpanel-indicator-weather\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-27 21:46+0200\n"
-"PO-Revision-Date: 2021-10-27 21:46+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
-"Language: pl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Wingpanel Weather\n"
+"Language: pl\n"
 
 #. info("wingpanel-indicator-weather: current phase of the moon in degrees: ".concat ("%s".printf (mp.to_string ())));
 #: src/Services/Weather.vala:87 src/Services/Weather.vala:95
@@ -33,7 +22,7 @@ msgstr ""
 #: src/Widgets/PopoverWidget.vala:63 src/Widgets/PopoverWidget.vala:64
 #: src/Widgets/PopoverWidget.vala:66
 msgid "N/A"
-msgstr ""
+msgstr "B/D"
 
 #: src/Services/Weather.vala:111
 msgid "knots"
@@ -109,111 +98,112 @@ msgstr ""
 
 #: src/Services/Weather.vala:284
 msgid "New moon"
-msgstr ""
+msgstr "Pełnia"
 
 #: src/Services/Weather.vala:285
 msgid "Waxing crescent"
-msgstr ""
+msgstr "Przybywający sierp"
 
 #: src/Services/Weather.vala:286
 msgid "First quarter"
-msgstr ""
+msgstr "Pierwsza kwadra"
 
 #: src/Services/Weather.vala:287
 msgid "Waxing gibbous"
-msgstr ""
+msgstr "Przybywający garbaty"
 
 #: src/Services/Weather.vala:288
 msgid "Full moon"
-msgstr ""
+msgstr "Pełnia"
 
 #: src/Services/Weather.vala:289
 msgid "Waning gibbous"
-msgstr ""
+msgstr "Ubywający garbaty"
 
 #: src/Services/Weather.vala:290
 msgid "Third quarter"
-msgstr ""
+msgstr "Trzecia kwadra"
 
 #: src/Services/Weather.vala:291
 msgid "Waning crescent"
-msgstr ""
+msgstr "Ubywający sierp"
 
 #: src/Widgets/DisplayWidget.vala:45
 msgid "Clear sky"
-msgstr ""
+msgstr "Czyste niebo"
 
 #: src/Widgets/DisplayWidget.vala:73
-#, c-format
-msgid ""
-"%s in %s\n"
+msgid "%s in %s\n"
 "Temperature: %s\n"
 "Feels like: %s\n"
 "Wind: %s\n"
 "Humidity: %s"
-msgstr ""
+msgstr "%s w %s\n"
+"Temperatura: %s\n"
+"Odczuwalna: %s\n"
+"Wiatr: %s\n"
+"Wilgotność: %s"
 
 #: src/Widgets/DisplayWidget.vala:79
-#, c-format
 msgid "%s in %s"
-msgstr ""
+msgstr "%s w %s"
 
 #: src/Widgets/DisplayWidget.vala:84
 msgid "Weather conditions update"
-msgstr ""
+msgstr "Aktualizacja warunków pogodowych"
 
 #: src/Widgets/PopoverWidget.vala:52
 msgid "Last Update"
-msgstr ""
+msgstr "Ostatnia aktualizacja"
 
 #: src/Widgets/PopoverWidget.vala:53
 msgid "Location"
-msgstr ""
+msgstr "Lokalizacja"
 
 #. Unit Temperature
 #: src/Widgets/PopoverWidget.vala:55 src/Widgets/Toggles.vala:130
 msgid "Temperature"
-msgstr ""
+msgstr "Temperatura"
 
 #: src/Widgets/PopoverWidget.vala:56
 msgid "Feels Like"
-msgstr ""
+msgstr "Odczuwalna"
 
 #: src/Widgets/PopoverWidget.vala:57
 msgid "Wind"
-msgstr ""
+msgstr "Wiatr"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Humidity"
-msgstr ""
+msgstr "Wilgotność"
 
 #: src/Widgets/PopoverWidget.vala:59
 msgid "Dew Point"
-msgstr ""
+msgstr "Punkt rosy"
 
 #: src/Widgets/PopoverWidget.vala:60 src/Widgets/Toggles.vala:118
 msgid "Pressure"
-msgstr ""
+msgstr "Ciśnienie"
 
 #: src/Widgets/PopoverWidget.vala:61
 msgid "Visibility"
-msgstr ""
+msgstr "Widoczność"
 
 #: src/Widgets/PopoverWidget.vala:63
 msgid "Sunrise"
-msgstr ""
+msgstr "Wschód"
 
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Sunset"
-msgstr ""
+msgstr "Zachód"
 
 #: src/Widgets/PopoverWidget.vala:66
 msgid "Moon Phase"
-msgstr ""
+msgstr "Fazy Księżyca"
 
 #: src/Widgets/PopoverWidget.vala:69
 msgid "Open Settings..."
-msgstr ""
+msgstr "Otwórz ustawienia..."
 
 #: src/Widgets/PopoverWidget.vala:79
 msgid "Update Weather Data"
@@ -222,7 +212,7 @@ msgstr ""
 #. Enable indicator switch
 #: src/Widgets/Toggles.vala:55
 msgid "Show indicator"
-msgstr ""
+msgstr "Pokaż indykator"
 
 #. Enable temperature displain in Wingpanel indicator switch
 #: src/Widgets/Toggles.vala:60
@@ -232,7 +222,7 @@ msgstr ""
 #. Enable weather conditions change notifications
 #: src/Widgets/Toggles.vala:65
 msgid "Show notifications"
-msgstr ""
+msgstr "Pokaż notyfikacje"
 
 #. Location discovery switch
 #: src/Widgets/Toggles.vala:70
@@ -242,12 +232,12 @@ msgstr ""
 #. Current location label
 #: src/Widgets/Toggles.vala:75
 msgid "Current location"
-msgstr ""
+msgstr "Aktualne położenie"
 
 #. Search your location label
 #: src/Widgets/Toggles.vala:81
 msgid "Search your location:"
-msgstr ""
+msgstr "Wyszukaj swoje połóżenie:"
 
 #. Weather information update refresh rate selector
 #: src/Widgets/Toggles.vala:91
@@ -257,22 +247,22 @@ msgstr ""
 #. Show extended weather information
 #: src/Widgets/Toggles.vala:98
 msgid "Show weather extended information"
-msgstr ""
+msgstr "Pokaż dodatkową informację o pogodzie"
 
 #. Show sunrise/sunset information
 #: src/Widgets/Toggles.vala:102
 msgid "Show sunrise/sunset time"
-msgstr ""
+msgstr "Pokaż czas wschodu/zachodu"
 
 #. Show moon phase information
 #: src/Widgets/Toggles.vala:106
 msgid "Show moon phase information"
-msgstr ""
+msgstr "Pokaż fazy księżyca"
 
 #. Unit Distance
 #: src/Widgets/Toggles.vala:111
 msgid "Kilometer (km)"
-msgstr ""
+msgstr "Kilometr (km)"
 
 #: src/Widgets/Toggles.vala:111
 msgid "Mile (mi)"
@@ -280,7 +270,7 @@ msgstr ""
 
 #: src/Widgets/Toggles.vala:112
 msgid "Distance"
-msgstr ""
+msgstr "Odległość"
 
 #. Unit Pressure
 #: src/Widgets/Toggles.vala:117
@@ -329,3 +319,4 @@ msgstr ""
 #: src/Widgets/Toggles.vala:143
 msgid "Time format"
 msgstr ""
+
