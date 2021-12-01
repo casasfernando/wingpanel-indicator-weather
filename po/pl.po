@@ -1,13 +1,14 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: Wingpanel Weather\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-01 22:28+0100\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
-"Project-Id-Version: Wingpanel Weather\n"
-"Language: pl\n"
 
-#. info("wingpanel-indicator-weather: current phase of the moon in degrees: ".concat ("%s".printf (mp.to_string ())));
 #: src/Services/Weather.vala:87 src/Services/Weather.vala:95
 #: src/Services/Weather.vala:184 src/Services/Weather.vala:189
 #: src/Services/Weather.vala:199 src/Services/Weather.vala:231
@@ -133,18 +134,22 @@ msgid "Clear sky"
 msgstr "Czyste niebo"
 
 #: src/Widgets/DisplayWidget.vala:73
-msgid "%s in %s\n"
+#, c-format
+msgid ""
+"%s in %s\n"
 "Temperature: %s\n"
 "Feels like: %s\n"
 "Wind: %s\n"
 "Humidity: %s"
-msgstr "%s w %s\n"
+msgstr ""
+"%s w %s\n"
 "Temperatura: %s\n"
 "Odczuwalna: %s\n"
 "Wiatr: %s\n"
 "Wilgotność: %s"
 
 #: src/Widgets/DisplayWidget.vala:79
+#, c-format
 msgid "%s in %s"
 msgstr "%s w %s"
 
@@ -160,7 +165,6 @@ msgstr "Ostatnia aktualizacja"
 msgid "Location"
 msgstr "Lokalizacja"
 
-#. Unit Temperature
 #: src/Widgets/PopoverWidget.vala:55 src/Widgets/Toggles.vala:130
 msgid "Temperature"
 msgstr "Temperatura"
@@ -209,57 +213,46 @@ msgstr "Otwórz ustawienia..."
 msgid "Update Weather Data"
 msgstr ""
 
-#. Enable indicator switch
 #: src/Widgets/Toggles.vala:55
 msgid "Show indicator"
 msgstr "Pokaż indykator"
 
-#. Enable temperature displain in Wingpanel indicator switch
 #: src/Widgets/Toggles.vala:60
 msgid "Show temperature in panel"
 msgstr ""
 
-#. Enable weather conditions change notifications
 #: src/Widgets/Toggles.vala:65
 msgid "Show notifications"
 msgstr "Pokaż notyfikacje"
 
-#. Location discovery switch
 #: src/Widgets/Toggles.vala:70
 msgid "Location discovery"
 msgstr ""
 
-#. Current location label
 #: src/Widgets/Toggles.vala:75
 msgid "Current location"
 msgstr "Aktualne położenie"
 
-#. Search your location label
 #: src/Widgets/Toggles.vala:81
 msgid "Search your location:"
 msgstr "Wyszukaj swoje połóżenie:"
 
-#. Weather information update refresh rate selector
 #: src/Widgets/Toggles.vala:91
 msgid "Update weather data (in mins)"
 msgstr ""
 
-#. Show extended weather information
 #: src/Widgets/Toggles.vala:98
 msgid "Show weather extended information"
 msgstr "Pokaż dodatkową informację o pogodzie"
 
-#. Show sunrise/sunset information
 #: src/Widgets/Toggles.vala:102
 msgid "Show sunrise/sunset time"
 msgstr "Pokaż czas wschodu/zachodu"
 
-#. Show moon phase information
 #: src/Widgets/Toggles.vala:106
 msgid "Show moon phase information"
 msgstr "Pokaż fazy księżyca"
 
-#. Unit Distance
 #: src/Widgets/Toggles.vala:111
 msgid "Kilometer (km)"
 msgstr "Kilometr (km)"
@@ -272,7 +265,6 @@ msgstr ""
 msgid "Distance"
 msgstr "Odległość"
 
-#. Unit Pressure
 #: src/Widgets/Toggles.vala:117
 msgid "Inches of mercury (inHg)"
 msgstr ""
@@ -285,7 +277,6 @@ msgstr ""
 msgid "Millimeters of mercury (mmHg)"
 msgstr ""
 
-#. Unit Speed
 #: src/Widgets/Toggles.vala:123
 msgid "Kilometers per hour (km/h)"
 msgstr ""
@@ -306,12 +297,10 @@ msgstr ""
 msgid "Speed"
 msgstr ""
 
-#. Date Format
 #: src/Widgets/Toggles.vala:137
 msgid "Date format"
 msgstr ""
 
-#. Time Format
 #: src/Widgets/Toggles.vala:142
 msgid "24-hour"
 msgstr ""
@@ -319,4 +308,3 @@ msgstr ""
 #: src/Widgets/Toggles.vala:143
 msgid "Time format"
 msgstr ""
-
