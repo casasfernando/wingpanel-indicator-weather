@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.casasfernando.wingpanel-indicator-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-27 21:46+0200\n"
+"POT-Creation-Date: 2021-12-01 22:28+0100\n"
 "PO-Revision-Date: 2021-10-27 21:52+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,7 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#. info("wingpanel-indicator-weather: current phase of the moon in degrees: ".concat ("%s".printf (mp.to_string ())));
 #: src/Services/Weather.vala:87 src/Services/Weather.vala:95
 #: src/Services/Weather.vala:184 src/Services/Weather.vala:189
 #: src/Services/Weather.vala:199 src/Services/Weather.vala:231
@@ -174,7 +173,6 @@ msgstr "Últ. Actualización"
 msgid "Location"
 msgstr "Ubicación"
 
-#. Unit Temperature
 #: src/Widgets/PopoverWidget.vala:55 src/Widgets/Toggles.vala:130
 msgid "Temperature"
 msgstr "Temperatura"
@@ -223,57 +221,46 @@ msgstr "Abrir Configuración..."
 msgid "Update Weather Data"
 msgstr "Actualizar Datos Climáticos"
 
-#. Enable indicator switch
 #: src/Widgets/Toggles.vala:55
 msgid "Show indicator"
 msgstr "Mostrar indicador"
 
-#. Enable temperature displain in Wingpanel indicator switch
 #: src/Widgets/Toggles.vala:60
 msgid "Show temperature in panel"
 msgstr "Mostrar temperatura en el panel"
 
-#. Enable weather conditions change notifications
 #: src/Widgets/Toggles.vala:65
 msgid "Show notifications"
 msgstr "Mostrar notificaciones"
 
-#. Location discovery switch
 #: src/Widgets/Toggles.vala:70
 msgid "Location discovery"
 msgstr "Descubrir ubicación"
 
-#. Current location label
 #: src/Widgets/Toggles.vala:75
 msgid "Current location"
 msgstr "Ubicación actual"
 
-#. Search your location label
 #: src/Widgets/Toggles.vala:81
 msgid "Search your location:"
 msgstr "Buscar ubicación:"
 
-#. Weather information update refresh rate selector
 #: src/Widgets/Toggles.vala:91
 msgid "Update weather data (in mins)"
 msgstr "Actualizar datos del clima (en mins)"
 
-#. Show extended weather information
 #: src/Widgets/Toggles.vala:98
 msgid "Show weather extended information"
 msgstr "Mostrar información adicional del clima"
 
-#. Show sunrise/sunset information
 #: src/Widgets/Toggles.vala:102
 msgid "Show sunrise/sunset time"
 msgstr "Mostrar hora de salida/puesta del sol"
 
-#. Show moon phase information
 #: src/Widgets/Toggles.vala:106
 msgid "Show moon phase information"
 msgstr "Mostrar información de fase lunar"
 
-#. Unit Distance
 #: src/Widgets/Toggles.vala:111
 msgid "Kilometer (km)"
 msgstr "Kilómetro (km)"
@@ -286,7 +273,6 @@ msgstr "Milla (mi)"
 msgid "Distance"
 msgstr "Distancia"
 
-#. Unit Pressure
 #: src/Widgets/Toggles.vala:117
 msgid "Inches of mercury (inHg)"
 msgstr "Pulgadas de mercurio (inHG)"
@@ -299,7 +285,6 @@ msgstr "Milibares (mbar)"
 msgid "Millimeters of mercury (mmHg)"
 msgstr "Milímetros de mercurio (mmHg)"
 
-#. Unit Speed
 #: src/Widgets/Toggles.vala:123
 msgid "Kilometers per hour (km/h)"
 msgstr "Kilómetros por hora (km/h)"
@@ -320,12 +305,10 @@ msgstr "Millas por hora (mph)"
 msgid "Speed"
 msgstr "Velocidad"
 
-#. Date Format
 #: src/Widgets/Toggles.vala:137
 msgid "Date format"
 msgstr "Formato de fecha"
 
-#. Time Format
 #: src/Widgets/Toggles.vala:142
 msgid "24-hour"
 msgstr "24-horas"
