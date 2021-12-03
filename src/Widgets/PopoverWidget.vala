@@ -38,6 +38,7 @@ namespace WingpanelWeather {
         private PopoverWidgetRowIconic sset;
         private Gtk.Separator moon_info;
         private PopoverWidgetRowIconic mphase;
+        private SettingsDialog settings_dialog;
 
         public unowned Settings settings { get; construct set; }
 
@@ -117,7 +118,7 @@ namespace WingpanelWeather {
         }
 
         private void open_settings () {
-            var settings_dialog = new SettingsDialog (settings);
+            settings_dialog = new SettingsDialog (settings);
 
             settings_dialog.show_all ();
             settings_dialog.present ();

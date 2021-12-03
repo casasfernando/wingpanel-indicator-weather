@@ -27,13 +27,10 @@ namespace WingpanelWeather {
         public new signal void changed ();
 
         public ComboRow (string text, string[] values, int setval) {
-            //hexpand = true;
-            margin = 6;
-
             text_label = new Gtk.Label (text);
             text_label.halign = Gtk.Align.START;
             text_label.hexpand = true;
-            text_label.margin_start = 9;
+            text_label.margin_start = 4;
 
             unit_combo = new Gtk.ComboBoxText ();
             int setidx = 0;

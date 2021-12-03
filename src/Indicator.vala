@@ -23,7 +23,7 @@
 
 namespace WingpanelWeather {
     public class Indicator : Wingpanel.Indicator {
-        const string APPNAME = "wingpanel-indicator-weather";
+        const string APP_NAME = "wingpanel-indicator-weather";
 
         private DisplayWidget display_widget;
         private PopoverWidget popover_widget;
@@ -32,8 +32,8 @@ namespace WingpanelWeather {
 
         public Indicator (Wingpanel.IndicatorManager.ServerType server_type) {
             Object (
-                code_name: APPNAME
-                );
+                code_name: APP_NAME
+            );
         }
 
         construct {
@@ -48,10 +48,6 @@ namespace WingpanelWeather {
             Gtk.IconTheme.get_default ().add_resource_path ("/com/github/casasfernando/wingpanel-indicator-weather/icons");
 
             settings = new GLib.Settings ("com.github.casasfernando.wingpanel-indicator-weather");
-
-            visible = settings.get_boolean ("display-indicator");
-
-            settings.bind ("display-indicator", this, "visible", SettingsBindFlags.DEFAULT);
         }
 
         public override Gtk.Widget get_display_widget () {

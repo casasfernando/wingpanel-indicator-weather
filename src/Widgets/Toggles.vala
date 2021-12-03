@@ -23,7 +23,6 @@
 
 namespace WingpanelWeather {
     public class TogglesWidget : Gtk.Grid {
-        // private Granite.SwitchModelButton indicator;
         private Granite.SwitchModelButton indicator_temp;
         private Granite.SwitchModelButton indicator_notifications;
         private Granite.SwitchModelButton weather_extended;
@@ -50,11 +49,6 @@ namespace WingpanelWeather {
         construct {
             orientation = Gtk.Orientation.VERTICAL;
             row_spacing = 6;
-
-            // Enable indicator switch
-            // indicator = new Granite.SwitchModelButton (_("Show indicator"));
-            // indicator.set_active (settings.get_boolean ("display-indicator"));
-            // settings.bind ("display-indicator", indicator, "active", SettingsBindFlags.DEFAULT);
 
             // Enable temperature displain in Wingpanel indicator switch
             indicator_temp = new Granite.SwitchModelButton (_("Show temperature in panel"));
@@ -149,7 +143,6 @@ namespace WingpanelWeather {
                 settings.set_int ("time-format", time_format.get_combo_value ());
             });
 
-            // add (indicator);
             add (indicator_temp);
             add (indicator_notifications);
             add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
