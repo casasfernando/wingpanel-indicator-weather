@@ -25,27 +25,19 @@ add_project_arguments (
 # Listing dependencies
 wingpanel = dependency ('wingpanel')
 
-common_dependencies = [
+dependencies = [
     dependency ('granite'),
     dependency ('gtk+-3.0'),
     dependency ('gee-0.8'),
     dependency ('glib-2.0'),
     dependency ('libgeoclue-2.0'),
     dependency ('gweather-3.0'),
-    wingpanel
-]
-
-executable_dependencies = [
-    common_dependencies,
+    dependency ('gdk-x11-3.0'),
+    dependency ('libnotify'),
     dependency ('libhandy-1'),
+    wingpanel,
     meson.get_compiler ('c').find_library ('m', required : false),
     meson.get_compiler ('vala').find_library ('posix')
-]
-
-indicator_dependencies = [
-    common_dependencies,
-    dependency ('gdk-x11-3.0'),
-    dependency ('libnotify')
 ]
 
 # Compiling resources
@@ -70,23 +62,13 @@ c_args = [
 
 subdir ('src')
 
-# Define executable
-executable (
-    meson.project_name (),
-    executable_sources,
-    asresources,
-    c_args: c_args,
-    dependencies: executable_dependencies,
-    install: true
-)
-
 # Define indicator
 shared_module (
-    'wingpanel-indicator-weather',
-    indicator_sources,
+    meson.project_name (),
+    sources,
     asresources,
     c_args: c_args,
-    dependencies: indicator_dependencies,
+    dependencies: dependencies,
     install: true,
     install_dir : wingpanel.get_pkgconfig_variable('indicatorsdir', define_variable: ['libdir', join_paths (get_option ('prefix'), get_option ('libdir'))]),
 )

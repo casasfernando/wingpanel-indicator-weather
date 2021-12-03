@@ -23,7 +23,7 @@
 
 namespace WingpanelWeather {
     public class TogglesWidget : Gtk.Grid {
-        private Granite.SwitchModelButton indicator;
+        // private Granite.SwitchModelButton indicator;
         private Granite.SwitchModelButton indicator_temp;
         private Granite.SwitchModelButton indicator_notifications;
         private Granite.SwitchModelButton weather_extended;
@@ -52,9 +52,9 @@ namespace WingpanelWeather {
             row_spacing = 6;
 
             // Enable indicator switch
-            indicator = new Granite.SwitchModelButton (_("Show indicator"));
-            indicator.set_active (settings.get_boolean ("display-indicator"));
-            settings.bind ("display-indicator", indicator, "active", SettingsBindFlags.DEFAULT);
+            // indicator = new Granite.SwitchModelButton (_("Show indicator"));
+            // indicator.set_active (settings.get_boolean ("display-indicator"));
+            // settings.bind ("display-indicator", indicator, "active", SettingsBindFlags.DEFAULT);
 
             // Enable temperature displain in Wingpanel indicator switch
             indicator_temp = new Granite.SwitchModelButton (_("Show temperature in panel"));
@@ -112,24 +112,28 @@ namespace WingpanelWeather {
             unit_dist = new ComboRow (_("Distance"), unit_dist_val, settings.get_int ("unit-distance"));
             unit_dist.changed.connect( () => {
                 settings.set_int ("unit-distance", unit_dist.get_combo_value ());
+                WingpanelWeather.Weather.weather_data_update();
             });
             // Unit Pressure
-            string[] unit_press_val = { "Hectopascal (hPa)", _("Inches of mercury (inHg)"), _("Millibars (mbar)"), _("Millimeters of mercury (mmHg)") };
+            string[] unit_press_val = { _("Hectopascal (hPa)"), _("Inches of mercury (inHg)"), _("Millibars (mbar)"), _("Millimeters of mercury (mmHg)") };
             unit_press = new ComboRow (_("Pressure"), unit_press_val, settings.get_int ("unit-pressure"));
             unit_press.changed.connect( () => {
                 settings.set_int ("unit-pressure", unit_press.get_combo_value ());
+                WingpanelWeather.Weather.weather_data_update();
             });
             // Unit Speed
-            string[] unit_speed_val = { "Beaufort (bft)", _("Kilometers per hour (km/h)"), _("Knots (knots)"), _("Meters per second (m/s)"), _("Miles per hour (mph)") };
+            string[] unit_speed_val = { _("Beaufort (bft)"), _("Kilometers per hour (km/h)"), _("Knots (knots)"), _("Meters per second (m/s)"), _("Miles per hour (mph)") };
             unit_speed = new ComboRow (_("Speed"), unit_speed_val, settings.get_int ("unit-speed"));
             unit_speed.changed.connect( () => {
                 settings.set_int ("unit-speed", unit_speed.get_combo_value ());
+                WingpanelWeather.Weather.weather_data_update();
             });
             // Unit Temperature
-            string[] unit_temp_val = { "Celsius (ºC)", "Fahrenheit (ºF)" };
+            string[] unit_temp_val = { _("Celsius (ºC)"), _("Fahrenheit (ºF)") };
             unit_temp = new ComboRow (_("Temperature"), unit_temp_val, settings.get_int ("unit-temperature"));
             unit_temp.changed.connect( () => {
                 settings.set_int ("unit-temperature", unit_temp.get_combo_value ());
+                WingpanelWeather.Weather.weather_data_update();
             });
 
             // Date Format
@@ -139,13 +143,13 @@ namespace WingpanelWeather {
                 settings.set_int ("date-format", date_format.get_combo_value ());
             });
             // Time Format
-            string[] time_format_val = { "AM/PM", _("24-hour") };
+            string[] time_format_val = { _("AM/PM"), _("24-hour") };
             time_format = new ComboRow (_("Time format"), time_format_val, settings.get_int ("time-format"));
             time_format.changed.connect( () => {
                 settings.set_int ("time-format", time_format.get_combo_value ());
             });
 
-            add (indicator);
+            // add (indicator);
             add (indicator_temp);
             add (indicator_notifications);
             add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));

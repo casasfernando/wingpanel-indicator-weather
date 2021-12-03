@@ -21,35 +21,26 @@
  *              Fernando Casas Schössow <casasfernando@outlook.com>
  */
 
-namespace WingpanelWeather {
-    public class MainWindow : Hdy.ApplicationWindow {
-        private GLib.Settings settings;
+ namespace WingpanelWeather {
+    public class SettingsDialog : Gtk.Dialog {
+       
+        public unowned Settings settings { get; construct set; }
 
-        public MainWindow (Gtk.Application application) {
+        public SettingsDialog (Settings settings) {
             Object (
-                application: application,
+                settings: settings,
                 icon_name: "com.github.casasfernando.wingpanel-indicator-weather",
                 resizable: false,
-                title: "Wingpanel Weather",
+                title: "Wingpanel Weather Settings",
                 window_position: Gtk.WindowPosition.CENTER,
                 default_width: 300
-                );
+            );
         }
 
         construct {
-            Hdy.init ();
-            settings = new Settings ("com.github.casasfernando.wingpanel-indicator-weather");
+            var content_area = this.get_content_area ();
+
             var toggles = new TogglesWidget (settings);
-
-            var container = new Gtk.Grid ();
-
-            var header = new Hdy.HeaderBar ();
-            header.show_close_button = true;
-            header.title = "Wingpanel Weather";
-            var header_context = header.get_style_context ();
-            header_context.add_class ("titlebar");
-            header_context.add_class ("default-decoration");
-            header_context.add_class (Gtk.STYLE_CLASS_FLAT);
 
             var body = new Gtk.Grid ();
             body.hexpand = true;
@@ -58,12 +49,7 @@ namespace WingpanelWeather {
             body.row_spacing = 10;
             body.attach (toggles, 0, 0);
 
-            container.attach (header, 0, 0);
-            container.attach (body, 0, 1);
-
-            add (container);
-
+            content_area.add (body);
         }
-
     }
 }

@@ -117,14 +117,10 @@ namespace WingpanelWeather {
         }
 
         private void open_settings () {
-            try {
-                var appinfo = AppInfo.create_from_commandline (
-                    "com.github.casasfernando.wingpanel-indicator-weather", null, AppInfoCreateFlags.NONE
-                    );
-                appinfo.launch (null, null);
-            } catch (Error e) {
-                warning ("%s\n", e.message);
-            }
+            var settings_dialog = new SettingsDialog (settings);
+
+            settings_dialog.show_all ();
+            settings_dialog.present ();
         }
 
         public void set_widget_visible (Gtk.Widget widget, bool visible) {
