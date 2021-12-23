@@ -40,7 +40,7 @@ namespace WingpanelWeather {
 
         construct {
             var provider = new Gtk.CssProvider ();
-            provider.load_from_resource ("/com/github/casasfernando/wingpanel-indicator-weather/icons/Application.css");
+            provider.load_from_resource ("/com/github/casasfernando/wingpanel-indicator-weather/Application.css");
             Gtk.StyleContext.add_provider_for_screen (
                 Gdk.Screen.get_default (),
                 provider,
