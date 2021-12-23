@@ -2,13 +2,13 @@
 <gresources>
   <gresource prefix="/com/github/casasfernando/wingpanel-indicator-weather">
     <file alias="Application.css">Application.css</file>
-    <file compressed="true" preprocess="xml-stripblanks">icons/moon/first-quarter-moon.svg</file>
-    <file compressed="true" preprocess="xml-stripblanks">icons/moon/full-moon.svg</file>
-    <file compressed="true" preprocess="xml-stripblanks">icons/moon/new-moon.svg</file>
-    <file compressed="true" preprocess="xml-stripblanks">icons/moon/third-quarter-moon.svg</file>
-    <file compressed="true" preprocess="xml-stripblanks">icons/moon/waning-crescent-moon.svg</file>
-    <file compressed="true" preprocess="xml-stripblanks">icons/moon/waning-gibbous-moon.svg</file>
-    <file compressed="true" preprocess="xml-stripblanks">icons/moon/waxing-crescent-moon.svg</file>
-    <file compressed="true" preprocess="xml-stripblanks">icons/moon/waxing-gibbous-moon.svg</file>
+    <file compressed="true" preprocess="xml-stripblanks">icons/first-quarter-moon.svg</file>
+    <file compressed="true" preprocess="xml-stripblanks">icons/full-moon.svg</file>
+    <file compressed="true" preprocess="xml-stripblanks">icons/new-moon.svg</file>
+    <file compressed="true" preprocess="xml-stripblanks">icons/third-quarter-moon.svg</file>
+    <file compressed="true" preprocess="xml-stripblanks">icons/waning-crescent-moon.svg</file>
+    <file compressed="true" preprocess="xml-stripblanks">icons/waning-gibbous-moon.svg</file>
+    <file compressed="true" preprocess="xml-stripblanks">icons/waxing-crescent-moon.svg</file>
+    <file compressed="true" preprocess="xml-stripblanks">icons/waxing-gibbous-moon.svg</file>
   </gresource>
 </gresources>
