@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.casasfernando.wingpanel-indicator-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-01 22:55+0100\n"
-"PO-Revision-Date: 2021-10-27 21:52+0200\n"
+"POT-Creation-Date: 2021-12-23 23:56+0100\n"
+"PO-Revision-Date: 2021-12-23 23:57+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -214,8 +214,8 @@ msgid "Moon Phase"
 msgstr "Fase Lunar"
 
 #: src/Widgets/PopoverWidget.vala:69
-msgid "Open Settings..."
-msgstr "Abrir Configuración..."
+msgid "Open Settings…"
+msgstr "Abrir Configuración…"
 
 #: src/Widgets/PopoverWidget.vala:79
 msgid "Update Weather Data"
