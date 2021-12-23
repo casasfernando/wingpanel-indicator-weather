@@ -66,11 +66,11 @@ namespace WingpanelWeather {
             mphase = new PopoverWidgetRowIconic (_("Moon Phase"), settings.get_string ("weather-moon-phase-icon"), _("N/A"), 4);
 
             var settings_button = new Gtk.ModelButton ();
-            settings_button.text = _("Open Settings...");
+            settings_button.text = _("Open Settings…");
             /*
             var settings_button = new Gtk.Button.from_icon_name ("preferences-system-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             settings_button.always_show_image = true;
-            settings_button.label = "Open Settings...";
+            settings_button.label = "Open Settings…";
             settings_button.relief = Gtk.ReliefStyle.NONE;
             */
             settings_button.clicked.connect (open_settings);
@@ -80,7 +80,7 @@ namespace WingpanelWeather {
             /*
             var refresh_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.SMALL_TOOLBAR);
             refresh_button.always_show_image = true;
-            refresh_button.label = "Update weather...";
+            refresh_button.label = "Update weather…";
             refresh_button.relief = Gtk.ReliefStyle.NONE;
             */
             refresh_button.clicked.connect ( () => {
