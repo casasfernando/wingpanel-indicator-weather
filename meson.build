@@ -2,7 +2,7 @@
 project (
     'com.github.casasfernando.wingpanel-indicator-weather',
     'c', 'vala',
-    version: '0.7.3'
+    version: '0.7.4'
 )
 
 # GNOME module
