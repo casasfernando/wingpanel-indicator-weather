@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/com/github/casasfernando/wingpanel-indicator-weather/icons">
+  <gresource prefix="/com/github/casasfernando/wingpanel-indicator-weather">
     <file alias="Application.css">Application.css</file>
     <file compressed="true" preprocess="xml-stripblanks">icons/moon/first-quarter-moon.svg</file>
     <file compressed="true" preprocess="xml-stripblanks">icons/moon/full-moon.svg</file>
