@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.casasfernando.wingpanel-indicator-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-23 23:56+0100\n"
-"PO-Revision-Date: 2021-12-23 23:57+0100\n"
+"POT-Creation-Date: 2021-12-25 20:05+0100\n"
+"PO-Revision-Date: 2021-12-25 20:32+0100\n"
 "Last-Translator: Fernando Casas Schössow (@casasfernando)\n"
 "Language-Team: none\n"
 "Language: es\n"
@@ -173,7 +173,7 @@ msgstr "Últ. Actualización"
 msgid "Location"
 msgstr "Ubicación"
 
-#: src/Widgets/PopoverWidget.vala:55 src/Widgets/Toggles.vala:130
+#: src/Widgets/PopoverWidget.vala:55 src/Widgets/Toggles.vala:122
 msgid "Temperature"
 msgstr "Temperatura"
 
@@ -193,7 +193,7 @@ msgstr "Humedad"
 msgid "Dew Point"
 msgstr "Punto De Rocío"
 
-#: src/Widgets/PopoverWidget.vala:60 src/Widgets/Toggles.vala:118
+#: src/Widgets/PopoverWidget.vala:60 src/Widgets/Toggles.vala:110
 msgid "Pressure"
 msgstr "Presión"
 
@@ -221,98 +221,98 @@ msgstr "Abrir Configuración…"
 msgid "Update Weather Data"
 msgstr "Actualizar Datos Climáticos"
 
-#: src/Widgets/Toggles.vala:55
+#: src/Widgets/Toggles.vala:54
 msgid "Show indicator"
 msgstr "Mostrar indicador"
 
-#: src/Widgets/Toggles.vala:60
+#: src/Widgets/Toggles.vala:58
 msgid "Show temperature in panel"
 msgstr "Mostrar temperatura en el panel"
 
-#: src/Widgets/Toggles.vala:65
+#: src/Widgets/Toggles.vala:62
 msgid "Show notifications"
 msgstr "Mostrar notificaciones"
 
-#: src/Widgets/Toggles.vala:70
+#: src/Widgets/Toggles.vala:66
 msgid "Location discovery"
 msgstr "Descubrir ubicación"
 
-#: src/Widgets/Toggles.vala:75
+#: src/Widgets/Toggles.vala:70
 msgid "Current location"
 msgstr "Ubicación actual"
 
-#: src/Widgets/Toggles.vala:81
+#: src/Widgets/Toggles.vala:76
 msgid "Search your location:"
 msgstr "Buscar ubicación:"
 
-#: src/Widgets/Toggles.vala:91
+#: src/Widgets/Toggles.vala:86
 msgid "Update weather data (in mins)"
 msgstr "Actualizar datos del clima (en mins)"
 
-#: src/Widgets/Toggles.vala:98
+#: src/Widgets/Toggles.vala:93
 msgid "Show weather extended information"
 msgstr "Mostrar información adicional del clima"
 
-#: src/Widgets/Toggles.vala:102
+#: src/Widgets/Toggles.vala:96
 msgid "Show sunrise/sunset time"
 msgstr "Mostrar hora de salida/puesta del sol"
 
-#: src/Widgets/Toggles.vala:106
+#: src/Widgets/Toggles.vala:99
 msgid "Show moon phase information"
 msgstr "Mostrar información de fase lunar"
 
-#: src/Widgets/Toggles.vala:111
+#: src/Widgets/Toggles.vala:103
 msgid "Kilometer (km)"
 msgstr "Kilómetro (km)"
 
-#: src/Widgets/Toggles.vala:111
+#: src/Widgets/Toggles.vala:103
 msgid "Mile (mi)"
 msgstr "Milla (mi)"
 
-#: src/Widgets/Toggles.vala:112
+#: src/Widgets/Toggles.vala:104
 msgid "Distance"
 msgstr "Distancia"
 
-#: src/Widgets/Toggles.vala:117
+#: src/Widgets/Toggles.vala:109
 msgid "Inches of mercury (inHg)"
 msgstr "Pulgadas de mercurio (inHG)"
 
-#: src/Widgets/Toggles.vala:117
+#: src/Widgets/Toggles.vala:109
 msgid "Millibars (mbar)"
 msgstr "Milibares (mbar)"
 
-#: src/Widgets/Toggles.vala:117
+#: src/Widgets/Toggles.vala:109
 msgid "Millimeters of mercury (mmHg)"
 msgstr "Milímetros de mercurio (mmHg)"
 
-#: src/Widgets/Toggles.vala:123
+#: src/Widgets/Toggles.vala:115
 msgid "Kilometers per hour (km/h)"
 msgstr "Kilómetros por hora (km/h)"
 
-#: src/Widgets/Toggles.vala:123
+#: src/Widgets/Toggles.vala:115
 msgid "Knots (knots)"
 msgstr "Nudos (nudos)"
 
-#: src/Widgets/Toggles.vala:123
+#: src/Widgets/Toggles.vala:115
 msgid "Meters per second (m/s)"
 msgstr "Metros por segundo (m/s)"
 
-#: src/Widgets/Toggles.vala:123
+#: src/Widgets/Toggles.vala:115
 msgid "Miles per hour (mph)"
 msgstr "Millas por hora (mph)"
 
-#: src/Widgets/Toggles.vala:124
+#: src/Widgets/Toggles.vala:116
 msgid "Speed"
 msgstr "Velocidad"
 
-#: src/Widgets/Toggles.vala:137
+#: src/Widgets/Toggles.vala:129
 msgid "Date format"
 msgstr "Formato de fecha"
 
-#: src/Widgets/Toggles.vala:142
+#: src/Widgets/Toggles.vala:134
 msgid "24-hour"
 msgstr "24-horas"
 
-#: src/Widgets/Toggles.vala:143
+#: src/Widgets/Toggles.vala:135
 msgid "Time format"
 msgstr "Formato de hora"

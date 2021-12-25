@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.casasfernando.wingpanel-indicator-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-23 23:56+0100\n"
-"PO-Revision-Date: 2021-12-23 23:57+0100\n"
+"POT-Creation-Date: 2021-12-25 20:05+0100\n"
+"PO-Revision-Date: 2021-12-25 20:32+0100\n"
 "Last-Translator: Stanisław (@stsdc)\n"
 "Language-Team: none\n"
 "Language: pl\n"
@@ -174,7 +174,7 @@ msgstr "Ostatnia aktualizacja"
 msgid "Location"
 msgstr "Lokalizacja"
 
-#: src/Widgets/PopoverWidget.vala:55 src/Widgets/Toggles.vala:130
+#: src/Widgets/PopoverWidget.vala:55 src/Widgets/Toggles.vala:122
 msgid "Temperature"
 msgstr "Temperatura"
 
@@ -194,7 +194,7 @@ msgstr "Wilgotność"
 msgid "Dew Point"
 msgstr "Punkt rosy"
 
-#: src/Widgets/PopoverWidget.vala:60 src/Widgets/Toggles.vala:118
+#: src/Widgets/PopoverWidget.vala:60 src/Widgets/Toggles.vala:110
 msgid "Pressure"
 msgstr "Ciśnienie"
 
@@ -222,98 +222,98 @@ msgstr "Otwórz ustawienia…"
 msgid "Update Weather Data"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:55
+#: src/Widgets/Toggles.vala:54
 msgid "Show indicator"
 msgstr "Pokaż indykator"
 
-#: src/Widgets/Toggles.vala:60
+#: src/Widgets/Toggles.vala:58
 msgid "Show temperature in panel"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:65
+#: src/Widgets/Toggles.vala:62
 msgid "Show notifications"
 msgstr "Pokaż notyfikacje"
 
-#: src/Widgets/Toggles.vala:70
+#: src/Widgets/Toggles.vala:66
 msgid "Location discovery"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:75
+#: src/Widgets/Toggles.vala:70
 msgid "Current location"
 msgstr "Aktualne położenie"
 
-#: src/Widgets/Toggles.vala:81
+#: src/Widgets/Toggles.vala:76
 msgid "Search your location:"
 msgstr "Wyszukaj swoje połóżenie:"
 
-#: src/Widgets/Toggles.vala:91
+#: src/Widgets/Toggles.vala:86
 msgid "Update weather data (in mins)"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:98
+#: src/Widgets/Toggles.vala:93
 msgid "Show weather extended information"
 msgstr "Pokaż dodatkową informację o pogodzie"
 
-#: src/Widgets/Toggles.vala:102
+#: src/Widgets/Toggles.vala:96
 msgid "Show sunrise/sunset time"
 msgstr "Pokaż czas wschodu/zachodu"
 
-#: src/Widgets/Toggles.vala:106
+#: src/Widgets/Toggles.vala:99
 msgid "Show moon phase information"
 msgstr "Pokaż fazy księżyca"
 
-#: src/Widgets/Toggles.vala:111
+#: src/Widgets/Toggles.vala:103
 msgid "Kilometer (km)"
 msgstr "Kilometr (km)"
 
-#: src/Widgets/Toggles.vala:111
+#: src/Widgets/Toggles.vala:103
 msgid "Mile (mi)"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:112
+#: src/Widgets/Toggles.vala:104
 msgid "Distance"
 msgstr "Odległość"
 
-#: src/Widgets/Toggles.vala:117
+#: src/Widgets/Toggles.vala:109
 msgid "Inches of mercury (inHg)"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:117
+#: src/Widgets/Toggles.vala:109
 msgid "Millibars (mbar)"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:117
+#: src/Widgets/Toggles.vala:109
 msgid "Millimeters of mercury (mmHg)"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:123
+#: src/Widgets/Toggles.vala:115
 msgid "Kilometers per hour (km/h)"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:123
+#: src/Widgets/Toggles.vala:115
 msgid "Knots (knots)"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:123
+#: src/Widgets/Toggles.vala:115
 msgid "Meters per second (m/s)"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:123
+#: src/Widgets/Toggles.vala:115
 msgid "Miles per hour (mph)"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:124
+#: src/Widgets/Toggles.vala:116
 msgid "Speed"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:137
+#: src/Widgets/Toggles.vala:129
 msgid "Date format"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:142
+#: src/Widgets/Toggles.vala:134
 msgid "24-hour"
 msgstr ""
 
-#: src/Widgets/Toggles.vala:143
+#: src/Widgets/Toggles.vala:135
 msgid "Time format"
 msgstr ""
