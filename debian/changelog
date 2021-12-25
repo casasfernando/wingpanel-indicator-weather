@@ -1,3 +1,15 @@
+wingpanel-indicator-weather (0.7.4) bionic; urgency=medium
+
+  * Added support for translations
+  * Added spanish translation
+  * Added polish translation
+  * Improved meson build system
+  * Minor UI changes
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Sat, 25 Dec 2021 20:35:00 +0100
+
+
 wingpanel-indicator-weather (0.7.3) bionic; urgency=medium
 
   * Updated README file
