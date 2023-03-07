@@ -41,9 +41,16 @@ namespace WingpanelWeather {
                 location = location.deserialize (settings.get_value ("location-manual"));
             }
             // Set current location
+            debug ("wingpanel-indicator-weather: creating weather info object using current location setting");
             weather_info = new GWeather.Info (location);
+            // Set application ID
+            debug ("wingpanel-indicator-weather: setting weather info object application ID");
+            weather_info.set_application_id ("com.github.casasfernando.wingpanel-indicator-weather");
+            // Set contact information
+            debug ("wingpanel-indicator-weather: setting weather info object contact information");
+            weather_info.set_contact_info ("https://github.com/casasfernando/wingpanel-indicator-weather");
             // Update weather data
-            debug ("wingpanel-indicator-weather: weather information update requested");
+            debug ("wingpanel-indicator-weather: requesting weather information update");
             settings.set_int64 ("weather-last-update-req", new DateTime.now_local ().to_unix ());
             weather_info.update ();
             // Process updated weather data
