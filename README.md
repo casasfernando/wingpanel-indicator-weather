@@ -25,6 +25,7 @@ Being this one of my first Vala applications I'm sure that the code can be impro
 
 - elementary OS 5.1.7 Hera
 - elementary OS 6.0 Odin
+- elementary OS 7.0 Horus
 
 ## Screenshots
 
@@ -52,8 +53,8 @@ libnotify-dev
 libgranite-dev
 libgtk-3-dev
 libwingpanel-2.0-dev (Hera)
-libwingpanel-dev (Odin)
-libhandy-1-dev (Odin)
+libwingpanel-dev (Odin/Horus)
+libhandy-1-dev (Odin/Horus)
 meson
 valac
 ```
@@ -64,7 +65,7 @@ You can install them in **elementary OS Hera** running:
 sudo apt install libgeoclue-2-dev libgweather-3-dev libnotify-dev libgranite-dev libgtk-3-dev libwingpanel-2.0-dev meson valac
 ```
 
-Or in **elementary OS Odin** running:
+Or in **elementary OS Odin/Horus** running:
 
 ```
 sudo apt install libgeoclue-2-dev libgweather-3-dev libnotify-dev libgranite-dev libgtk-3-dev libwingpanel-dev libhandy-1-dev meson valac
@@ -91,7 +92,7 @@ You can also find a deb package available with every release in the releases pag
 To install it you just need to download the package for your elementary OS release and run:
 
 ```
-sudo dpkg -i wingpanel-indicator-weather_<release>_<hera|odin>_amd64.deb
+sudo dpkg -i wingpanel-indicator-weather_<release>_<hera|odin|horus>_amd64.deb
 ```
 
 ## Special thanks and credits
