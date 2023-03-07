@@ -1,3 +1,11 @@
+wingpanel-indicator-weather (0.7.5) jammy; urgency=medium
+
+  * Fixed location and weather update failure in elementary OS 7 due to missing missing weather info object contact information
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Tue, 07 Mar 2023 18:18:00 +0100
+
+
 wingpanel-indicator-weather (0.7.4) focal; urgency=medium
 
   * Added support for translations
