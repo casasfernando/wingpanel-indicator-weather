@@ -43,6 +43,8 @@ namespace WingpanelWeather {
             // Set current location
             debug ("wingpanel-indicator-weather: creating weather info object using current location setting");
             weather_info = new GWeather.Info (location);
+            // Set enabled providers to Norwegian Meteorological Institute (met.no)
+            weather_info.set_enabled_providers (MET_NO);
             // Set application ID
             debug ("wingpanel-indicator-weather: setting weather info object application ID");
             weather_info.set_application_id ("com.github.casasfernando.wingpanel-indicator-weather");

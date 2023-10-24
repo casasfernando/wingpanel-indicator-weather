@@ -1,3 +1,11 @@
+wingpanel-indicator-weather (0.7.6) jammy; urgency=medium
+
+  * Changed weather data provider to Norwegian Meteorological Institute (met.no) since METAR API is currently not working with libgweather
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Tue, 24 Oct 2023 23:50:00 +0200
+
+
 wingpanel-indicator-weather (0.7.5) jammy; urgency=medium
 
   * Fixed location and weather update failure in elementary OS 7 due to missing missing weather info object contact information

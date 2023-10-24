@@ -65,6 +65,17 @@ namespace WingpanelWeather {
             moon_info = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
             mphase = new PopoverWidgetRowIconic (_("Moon Phase"), settings.get_string ("weather-moon-phase-icon"), _("N/A"), 4);
 
+            var weather_data_attr = new Gtk.Label ("Weather data from the <a href=\"https://www.met.no/\">Norwegian Meteorological Institute</a>.");
+            weather_data_attr.halign = Gtk.Align.START;
+            weather_data_attr.hexpand = true;
+            weather_data_attr.margin_top = 6;
+            weather_data_attr.margin_start = 12;
+            weather_data_attr.margin_end = 12;
+            weather_data_attr.margin_bottom = 6;
+            weather_data_attr.use_markup = true;
+            weather_data_attr.wrap = true;
+            weather_data_attr.max_width_chars = 22;
+
             var settings_button = new Gtk.ModelButton ();
             settings_button.text = _("Open Settings…");
             /*
@@ -114,6 +125,9 @@ namespace WingpanelWeather {
 
             add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
             add (settings_button);
+
+            add (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
+            add (weather_data_attr);
         }
 
         private void open_settings () {
