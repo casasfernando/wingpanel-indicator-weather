@@ -30,7 +30,7 @@ namespace WingpanelWeather {
         private Granite.SwitchModelButton weather_sun;
         private Granite.SwitchModelButton weather_moon;
         private Granite.SwitchModelButton location_auto;
-        private GWeather.LocationEntry location_search;
+        private LocationEntry location_search;
         private SpinRow weather_refresh_spin;
         private PopoverWidgetRow current_location;
         private PopoverWidgetRow find_location;
@@ -82,7 +82,7 @@ namespace WingpanelWeather {
             settings.bind ("location-auto", find_location, "visible", SettingsBindFlags.INVERT_BOOLEAN);
 
             // Search location search entry
-            location_search = new GWeather.LocationEntry (GWeather.Location.get_world ());
+            location_search = new LocationEntry (GWeather.Location.get_world ());
             location_search.set_activates_default (true);
             location_search.changed.connect (location_selected);
             settings.bind ("location-auto", location_search, "visible", SettingsBindFlags.INVERT_BOOLEAN);

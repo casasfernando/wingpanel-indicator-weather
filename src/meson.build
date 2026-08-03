@@ -3,6 +3,7 @@ executable_sources = files (
     'MainWindow.vala',
 
     'Widgets/ComboRow.vala',
+    'Widgets/LocationEntry.vala',
     'Widgets/PopoverWidgetRow.vala',
     'Widgets/SpinRow.vala',
     'Widgets/Toggles.vala'

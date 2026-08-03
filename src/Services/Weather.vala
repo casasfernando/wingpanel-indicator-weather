@@ -287,9 +287,10 @@ namespace WingpanelWeather {
                     settings.set_string ("weather-sunset", _("N/A"));
                 }
                 // Moon Phase
-                double mp;
-                double lat;
-                if (weather_info.get_value_moonphase (out mp, out lat)) {
+                GWeather.MoonPhase mpval;
+                GWeather.MoonLatitude latval;
+                if (weather_info.get_value_moonphase (out mpval, out latval)) {
+                    double mp = (double) mpval;
                     if (mp < 22.5 | mp > 337.5) { settings.set_string ("weather-moon-phase", _("New moon")); settings.set_string ("weather-moon-phase-icon", "new-moon"); }
                     else if (mp > 22.5 & mp < 67.5) { settings.set_string ("weather-moon-phase", _("Waxing crescent")); settings.set_string ("weather-moon-phase-icon", "waxing-crescent-moon"); }
                     else if (mp > 67.5 & mp < 112.5) { settings.set_string ("weather-moon-phase", _("First quarter")); settings.set_string ("weather-moon-phase-icon", "first-quarter-moon"); }
