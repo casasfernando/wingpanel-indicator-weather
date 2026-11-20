@@ -3,6 +3,10 @@
 </p>
 <h1 align="center">Wingpanel Weather</h1>
 
+## Archive notice
+
+Since I decided to migrate to a different distro, it's time for me to let this project go and archive it.
+
 ## About
 
 Wingpanel Weather is a status indicator that displays weather status information in elementary OS Wingpanel.
