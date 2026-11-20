@@ -1,3 +1,11 @@
+wingpanel-indicator-weather (0.7.7) noble; urgency=medium
+
+  * Added support for elementary OS Cirse
+
+
+ -- Fernando Casas Schössow <casasfernando@outlook.com>  Fri, 20 Nov 2026 10:05:00 +0100
+
+
 wingpanel-indicator-weather (0.7.6) jammy; urgency=medium
 
   * Changed weather data provider to Norwegian Meteorological Institute (met.no) since METAR API is currently not working with libgweather
