@@ -11,6 +11,7 @@ Build-Depends: debhelper (>= 11),
                libgranite-dev,
                libgtk-3-dev (>= 3.12),
                libwingpanel-dev,
+               libhandy-1-dev,
                meson,
                valac (>= 0.40)
 Standards-Version: 4.1.4

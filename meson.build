@@ -37,6 +37,7 @@ common_dependencies = [
 
 executable_dependencies = [
     common_dependencies,
+    dependency ('libhandy-1'),
     meson.get_compiler ('c').find_library ('m', required : false),
     meson.get_compiler ('vala').find_library ('posix')
 ]

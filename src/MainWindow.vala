@@ -22,7 +22,7 @@
  */
 
 namespace WingpanelWeather {
-    public class MainWindow : Gtk.ApplicationWindow {
+    public class MainWindow : Hdy.ApplicationWindow {
         private GLib.Settings settings;
 
         public MainWindow (Gtk.Application application) {
@@ -37,13 +37,17 @@ namespace WingpanelWeather {
         }
 
         construct {
+            Hdy.init ();
             settings = new Settings ("com.github.casasfernando.wingpanel-indicator-weather");
             var toggles = new TogglesWidget (settings);
 
-            var header = new Gtk.HeaderBar ();
+            var container = new Gtk.Grid ();
+
+            var header = new Hdy.HeaderBar ();
             header.show_close_button = true;
             header.title = "Wingpanel Weather";
             var header_context = header.get_style_context ();
+            header_context.add_class ("titlebar");
             header_context.add_class ("default-decoration");
             header_context.add_class (Gtk.STYLE_CLASS_FLAT);
 
@@ -54,8 +58,10 @@ namespace WingpanelWeather {
             body.row_spacing = 10;
             body.attach (toggles, 0, 0);
 
-            set_titlebar (header);
-            add (body);
+            container.attach (header, 0, 0);
+            container.attach (body, 0, 1);
+
+            add (container);
 
         }
 
