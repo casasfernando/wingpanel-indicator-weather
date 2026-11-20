@@ -31,7 +31,7 @@ common_dependencies = [
     dependency ('gee-0.8'),
     dependency ('glib-2.0'),
     dependency ('libgeoclue-2.0'),
-    dependency ('gweather-3.0'),
+    dependency ('gweather4'),
     wingpanel
 ]
 

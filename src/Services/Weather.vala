@@ -302,7 +302,7 @@ namespace WingpanelWeather {
                     //info("wingpanel-indicator-weather: current phase of the moon in degrees: ".concat ("%s".printf (mp.to_string ())));
                 } else {
                     settings.set_string ("weather-moon-phase", _("N/A"));
-                    settings.set_string ("weather-moon-phase-icon", "full-moon"); 
+                    settings.set_string ("weather-moon-phase-icon", "full-moon");
                 }
 
             });
